@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "67008698989",
+    "firebase_url": "https://campogrande-a286a.firebaseio.com",
+    "project_id": "campogrande-a286a",
+    "storage_bucket": "campogrande-a286a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:67008698989:android:73e6c77f41a21de059bd64",
+        "android_client_info": {
+          "package_name": "com.example.campogrande"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "67008698989-3ohgp3askek0oqi9pkce0agco3bb3ghr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.campogrande",
+            "certificate_hash": "5c8d052c43929f9b1dc574174729c7d0ab417d3f"
+          }
+        },
+        {
+          "client_id": "67008698989-o5ovvnqoj775ob7sneuuqi88v9frefg8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsBKogNNKVtOaNMunz5mnU9Vr9ufvSGuk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "67008698989-o5ovvnqoj775ob7sneuuqi88v9frefg8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
