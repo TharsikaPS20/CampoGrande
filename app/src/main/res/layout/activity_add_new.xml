@@ -31,7 +31,6 @@
         app:srcCompat="@mipmap/ic_launcher"
         />
     <ImageButton
-        android:id="@+id/select_image2"
         android:layout_width="wrap_content"
         android:layout_height="100dp"
         android:layout_toEndOf="@+id/select_image1"
@@ -132,7 +131,6 @@
             android:text="@string/water"
         />
         <RadioButton
-            android:id="@+id/radioElectricity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -145,7 +143,6 @@
         />
 
     <Button
-        android:id="@+id/add_new_property"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/radioWater"

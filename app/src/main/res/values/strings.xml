@@ -9,4 +9,8 @@
     <string name="water">Water</string>
     <string name="electricity">Electricity</string>
     <string name="add">Add</string>
+
+
+    <string name="fb_login_protocol_scheme">fb706307326546017</string>
+
 </resources>
