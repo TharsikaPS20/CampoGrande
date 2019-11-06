@@ -7,6 +7,18 @@
     android:background="@drawable/bg2"
     tools:context=".LoginActivity">
 
+    <ProgressBar
+        android:id="@+id/progressbar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:max="100"
+        android:backgroundTint="@android:color/white"
+        android:indeterminateTint="#1a09d6"
+        android:layout_marginTop="7dp"
+        android:visibility="invisible"/>
+
     <ImageView
         android:id="@+id/login_appLogo"
         android:layout_width="300dp"
@@ -117,5 +129,23 @@
         android:layout_marginLeft="80dp"
         android:layout_marginEnd="25dp"
         android:visibility="invisible"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/login_btn"
+        android:layout_marginTop="20dp">
+
+        <Button
+            android:id="@+id/google"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Google"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="facebook"/>
+    </LinearLayout>
 
 </RelativeLayout>
