@@ -30,6 +30,7 @@ public class RegisterActivity_new extends AppCompatActivity implements View.OnCl
     private static final String TAG = "RegisterActivity_new";
     ProgressBar progressBar;
     EditText editTextEmail, editTextPassword;
+    Button register;
 
     private FirebaseAuth mAuth;
 
@@ -38,9 +39,10 @@ public class RegisterActivity_new extends AppCompatActivity implements View.OnCl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_new);
 
-        editTextEmail = (EditText) findViewById(R.id.register_email_input);
-        editTextPassword = (EditText) findViewById(R.id.register_password_input);
-        progressBar = (ProgressBar) findViewById(R.id.progressbar);
+        register = findViewById(R.id.register_btn);
+        editTextEmail = findViewById(R.id.register_email_input);
+        editTextPassword = findViewById(R.id.register_password_input);
+        progressBar = findViewById(R.id.progressbar);
 
         mAuth = FirebaseAuth.getInstance();
 
