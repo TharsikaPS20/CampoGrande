@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "337080602550",
+    "firebase_url": "https://campo-grande-75c14.firebaseio.com",
+    "project_id": "campo-grande-75c14",
+    "storage_bucket": "campo-grande-75c14.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:337080602550:android:75fd697c815793c06bfb17",
+        "android_client_info": {
+          "package_name": "com.example.campogrande"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "337080602550-e4abolnmqagqqlj785a5jh1ehue0rqpj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.campogrande",
+            "certificate_hash": "62fdaa9142d303af24dc76965f7b8c67c708b4af"
+          }
+        },
+        {
+          "client_id": "337080602550-dbb75i4a5no857jfmpk55r4hrh0intm1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUCb7JSo_yN0r9GI4Ca1dU8PbE5dywFu0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "337080602550-dbb75i4a5no857jfmpk55r4hrh0intm1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
