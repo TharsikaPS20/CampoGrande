@@ -6,14 +6,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background2"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    style="@style/Theme.AppCompat.DayNight.NoActionBar">
     
     <ImageView
         android:id="@+id/logo"
         android:layout_width="400dp"
-        android:layout_height="200dp"
+        android:layout_height="150dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:src="@drawable/cg_logo_trans"/>
 
     <TextView
@@ -23,7 +24,7 @@
         android:layout_below="@id/logo"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="263dp"
+        android:layout_marginTop="200dp"
         android:layout_centerHorizontal="true"
         android:text="Here we can write our slogan!"
         android:textAlignment="center"
@@ -32,36 +33,168 @@
         android:textStyle="bold|italic" />
 
     <Button
+        android:id="@+id/join_now"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="250dp"
+        android:background="@drawable/inputs"
+        android:padding="15dp"
+        android:textAllCaps="false"
+        android:textSize="17sp"
+        android:text="Join now!"
+        android:textColor="@android:color/black"/>
+    <Button
     android:id="@+id/login"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_alignParentBottom="true"
     android:layout_alignParentStart="true"
-    android:layout_marginBottom="120dp"
+    android:layout_marginTop="10dp"
+        android:layout_below="@+id/join_now"
     android:layout_marginLeft="15dp"
     android:layout_marginRight="15dp"
     android:background="@drawable/buttons"
-    android:padding="20dp"
+    android:padding="15dp"
     android:textAllCaps="false"
     android:textSize="17sp"
     android:text="Already have an account? Log in here!"
     android:textColor="@android:color/black"/>
 
-    <Button
-        android:id="@+id/join_now"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:id="@+id/or_layout"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/login"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/inputs"
-        android:padding="20dp"
-        android:textAllCaps="false"
-        android:textSize="17sp"
-        android:text="Join now!"
-        android:textColor="@android:color/black"/>
+        android:orientation="horizontal"
+        android:layout_below="@+id/login"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp">
+        <View
+            android:layout_weight="2"
+            android:layout_height="3dp"
+            android:layout_width="0dp"
+            android:background="@android:color/darker_gray"
+            android:layout_gravity="center_vertical"/>
+        <TextView
+            android:layout_weight="1"
+            android:layout_height="20dp"
+            android:layout_width="5dp"
+            android:text="@string/or"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark"
+            android:textAllCaps="true"/>
+        <View
+            android:layout_weight="2"
+            android:layout_height="3dp"
+            android:layout_width="5dp"
+            android:background="@android:color/darker_gray"
+            android:layout_gravity="center_vertical"/>
+    </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/google_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="4"
+        android:layout_below="@+id/or_layout">
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/google_layout_2">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/google_lo">
+
+            <com.google.android.gms.common.SignInButton
+                android:id="@+id/signInButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="200dp"
+                android:layout_marginRight="200dp"
+                android:visibility="visible"
+                tools:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/signOutAndDisconnect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal"
+                android:paddingStart="140dp"
+                android:paddingEnd="140dp"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <Button
+                    android:id="@+id/signOutButton"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sign_out"
+                    android:background="@drawable/signoutbuttongoogle"
+                    android:theme="@style/ThemeOverlay.MyDarkButton"
+                    android:layout_width="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:textAllCaps="false"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+</LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="4">
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp">
+
+            <com.facebook.login.widget.LoginButton
+                android:id="@+id/buttonFacebookLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true" />
+
+            <Button
+                android:id="@+id/buttonFacebookSignout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/sign_out"
+                android:theme="@style/ThemeOverlay.MyDarkButton"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:text="@string/continue_as_guest"
+            android:gravity="center_horizontal"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"
+            />
+
+    </LinearLayout>
+    </LinearLayout>
 
 </RelativeLayout>

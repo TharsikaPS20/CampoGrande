@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -18,29 +17,37 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
 
     FirebaseAuth mAuth;
     private EditText InputEmail, InputPassword;
     private Button LoginButton;
+    private Button facebookBtn;
     private ProgressBar progressBar;
+    private Button google;
 
-    private String parentDbName = "Users";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+
+
         mAuth = FirebaseAuth.getInstance();
 
-        LoginButton = findViewById(R.id.login_btn);
+        LoginButton = findViewById(R.id.login);
         InputEmail = findViewById(R.id.login_email_input);
         InputPassword = findViewById(R.id.login_password_input);
         progressBar = findViewById(R.id.progressbar);
+        facebookBtn = findViewById(R.id.login_button);
+        google =findViewById(R.id.google);
 
-        findViewById(R.id.login_btn).setOnClickListener(this); }
+
+
+        findViewById(R.id.login).setOnClickListener(this);
+        findViewById(R.id.google).setOnClickListener(this)
+        ;}
 
     private void LoginUser() {
         String email = InputEmail.getText().toString();
@@ -94,14 +101,17 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View view) {
             switch (view.getId()) {
-                case R.id.login_btn:
+                case R.id.login:
                     LoginUser();
                     break;
 
                 case R.id.google:
-                    finish();
-                    startActivity(new Intent(this, RegisterActivity_new.class));
+                    startActivity(new Intent(this, FacebookTryout.class));
                     break;
+
+                   // case R.id.login_button:
+                     //startActivity(new Intent(this, FacebookLoginActivity.class));
+                     //break;
         }
 
     }

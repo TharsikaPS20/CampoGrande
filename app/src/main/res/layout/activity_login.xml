@@ -91,7 +91,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/login_btn"
+        android:id="@+id/login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/linear_layout_1"
@@ -117,23 +117,10 @@
         android:layout_marginLeft="80dp"
         android:layout_marginEnd="23dp"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="I'm not an admin"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/login_btn"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginLeft="80dp"
-        android:layout_marginEnd="25dp"
-        android:visibility="invisible"/>
-
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/login_btn"
+        android:layout_below="@id/login"
         android:layout_marginTop="20dp">
 
         <Button
@@ -142,10 +129,16 @@
             android:layout_height="wrap_content"
             android:text="Google"/>
 
+
         <Button
+            android:id="@+id/login_button"
+            android:text="login to facebook"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="facebook"/>
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:layout_marginLeft="50dp"/>
     </LinearLayout>
 
 </RelativeLayout>
