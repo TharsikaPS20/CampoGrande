@@ -28,6 +28,7 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 
@@ -178,7 +179,7 @@ public class AddNewActivity extends AppCompatActivity {
                         {
                             DownloadImageUrl = task.getResult().toString();
                             Toast.makeText(AddNewActivity.this, "Got the Property image Url successfully... ", Toast.LENGTH_SHORT).show();
-                            
+
                             SavePropertyInfoToDatabase();
                         }
                     }
@@ -188,7 +189,7 @@ public class AddNewActivity extends AppCompatActivity {
     }
 
     private void SavePropertyInfoToDatabase() {
-        CampingProperites campingProperites = new CampingProperites(PropertyRandomKey, CurrentDate, CurrentTime, PropertyName, Address, Size, Price, Description, DownloadImageUrl);
+        CampingProperites campingProperites = new CampingProperites(CurrentDate, CurrentTime, PropertyName, Address, Size, Price, Description, DownloadImageUrl);
         PropertiesRef.push().setValue(campingProperites);
         SelectImage.setImageURI(Uri.parse(""));
         InputPropertyName.setText("");
@@ -207,7 +208,6 @@ public class AddNewActivity extends AppCompatActivity {
         propertyMap.put("price", Price.toString());
         propertyMap.put("description", Description.toString());
         propertyMap.put("image", DownloadImageUrl.toString());
-
         PropertiesRef.child(PropertyRandomKey).updateChildren(propertyMap);
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override

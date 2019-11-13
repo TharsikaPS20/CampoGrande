@@ -1,7 +1,9 @@
 package com.example.campogrande;
 
+import java.util.ArrayList;
+
 public class CampingProperites {
-    private String propRandomKey;
+    //private String propRandomKey;
     private String currentDate;
     private String currentTime;
     private String propertyName;
@@ -17,8 +19,8 @@ public class CampingProperites {
 
     }
 
-    public CampingProperites (String propRandomKey, String currentDate, String currentTime, String propertyName, String address, String size, String price, String description, String imageUrl ) {
-        this.propRandomKey = propRandomKey;
+    public CampingProperites (/*String propRandomKey, */String currentDate, String currentTime, String propertyName, String address, String size, String price, String description, String imageUrl ) {
+        //this.propRandomKey = propRandomKey;
         this.currentDate = currentDate;
         this.currentTime = currentTime;
         this.propertyName = propertyName;
@@ -29,13 +31,13 @@ public class CampingProperites {
         this.imageUrl = imageUrl;
     }
 
-    public String getPropRandomKey() {
+   /* public String getPropRandomKey() {
         return propRandomKey;
     }
 
     public void setPropRandomKey(String propRandomKey) {
         this.propRandomKey = propRandomKey;
-    }
+    }*/
 
     public String getCurrentDate() {
         return currentDate;

@@ -13,6 +13,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ViewProperties">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".FacebookTryout" />
         <activity
             android:name="com.facebook.FacebookActivity"
@@ -31,18 +38,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".ProfileActivity" />
-        <activity android:name=".AddNewActivity" />
+        <activity android:name=".AddNewActivity">
+
+        </activity>
         <activity android:name=".LoginActivity" />
         <activity android:name=".RegisterActivity_new" />
         <activity android:name=".GoogleSignInActivity" />
-        <activity android:name=".MainActivity"/>
-        <activity android:name=".MainActivity_v2"><intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-        </activity>
-
+        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity_v2"></activity>
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
