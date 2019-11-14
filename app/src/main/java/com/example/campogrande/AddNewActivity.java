@@ -28,6 +28,7 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 
@@ -36,12 +37,15 @@ import io.grpc.Context;
 public class AddNewActivity extends AppCompatActivity {
 
     private String PropertyName, Address, Size, Price, Description, CurrentDate, CurrentTime, PropertyRandomKey, DownloadImageUrl;
+    private ArrayList<String> ImageUrlList = new ArrayList<String>();
     private Button AddNewPropertyButton;
     private EditText InputPropertyName,InputAddress,InputSize,InputPrice,InputDescription;
     private ImageButton SelectImage,SelectImage1,SelectImage2;
     private RadioButton RadioWater, RadioElectricity;
     private static final int GalleryPick = 1;
     private Uri ImageUri;
+    private ArrayList<Uri> ImageList = new ArrayList<Uri>();
+    private int upload_count = 0;
     private StorageReference PropertyImageRef;
     private DatabaseReference PropertiesRef;
 
@@ -81,8 +85,9 @@ public class AddNewActivity extends AppCompatActivity {
 
     private void OpenGallery() {
         Intent galleryIntent = new Intent();
-        galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
         galleryIntent.setType("image/*");
+        galleryIntent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
+        galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(galleryIntent, GalleryPick);
     }
 
@@ -92,10 +97,24 @@ public class AddNewActivity extends AppCompatActivity {
 
         if (requestCode==GalleryPick && resultCode==RESULT_OK && data!=null)
         {
-            ImageUri = data.getData();
-            SelectImage.setImageURI(ImageUri);
+            int countData = data.getClipData().getItemCount();
+            int currentImageSelect = 0;
+
+            while (currentImageSelect <= countData)
+            {
+                ImageUri = data.getClipData().getItemAt(currentImageSelect).getUri();
+                ImageList.add(ImageUri);
+
+                currentImageSelect = currentImageSelect + 1;
+            }
+            Toast.makeText(this, "You have selected: " + ImageList.size() +" Images", Toast.LENGTH_LONG).show();
+
+
         }
     }
+
+
+
 
     private void ValidateProductData() {
         PropertyName = InputPropertyName.getText().toString();
@@ -104,7 +123,7 @@ public class AddNewActivity extends AppCompatActivity {
         Price = InputPrice.getText().toString();
         Description = InputDescription.getText().toString();
 
-        if (ImageUri == null)
+        if (ImageList == null)
         {
             Toast.makeText(this, "Property image is mandatory...", Toast.LENGTH_SHORT).show();
         }
@@ -135,93 +154,51 @@ public class AddNewActivity extends AppCompatActivity {
     }
 
     private void StorePropertyInformation() {
-        Calendar calendar = Calendar.getInstance();
 
-        SimpleDateFormat currentDate = new SimpleDateFormat("dd. MMM. yyyy");
-        CurrentDate = currentDate.format(calendar.getTime());
+        for(upload_count = 0; upload_count < ImageList.size(); upload_count++)
+        {
+            Calendar calendar = Calendar.getInstance();
 
-        SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm:ss a");
-        CurrentTime = currentTime.format(calendar.getTime());
+            SimpleDateFormat currentDate = new SimpleDateFormat("dd. MMM. yyyy");
+            CurrentDate = currentDate.format(calendar.getTime());
 
-        PropertyRandomKey = CurrentDate + CurrentTime;
+            SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm:ss a");
+            CurrentTime = currentTime.format(calendar.getTime());
 
-        final StorageReference filePath = PropertyImageRef.child(ImageUri.getLastPathSegment() + PropertyRandomKey + ".jpg");
+            PropertyRandomKey = CurrentDate + CurrentTime;
 
-        final UploadTask uploadTask = filePath.putFile(ImageUri);
+            Uri IndividualImage = ImageList.get(upload_count);
+            final StorageReference filePath = PropertyImageRef.child(ImageUri.getLastPathSegment() + PropertyRandomKey + ".jpg");
 
-        uploadTask.addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                String message = e.toString();
-                Toast.makeText(AddNewActivity.this, "Error: " + message, Toast.LENGTH_SHORT).show();
-            }
-        }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-            @Override
-            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                Toast.makeText(AddNewActivity.this, "Image uploaded successfully... ", Toast.LENGTH_SHORT).show();
-
-                Task<Uri> UrlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
-                    @Override
-                    public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
-                        if (!task.isSuccessful())
-                        {
-                            throw task.getException();
+            filePath.putFile(IndividualImage).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    filePath.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+                            DownloadImageUrl = String.valueOf(uri);
+                            ImageUrlList.add(DownloadImageUrl);
                         }
+                    });
+                }
+            });
+        }
 
-                        DownloadImageUrl = filePath.getDownloadUrl().toString();
-                        return filePath.getDownloadUrl();
-                    }
-                }).addOnCompleteListener(new OnCompleteListener<Uri>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Uri> task) {
-                        if (task.isSuccessful())
-                        {
-                            DownloadImageUrl = task.getResult().toString();
-                            Toast.makeText(AddNewActivity.this, "Got the Property image Url successfully... ", Toast.LENGTH_SHORT).show();
-                            
-                            SavePropertyInfoToDatabase();
-                        }
-                    }
-                });
-            }
-        });
+        SavePropertyInfoToDatabase();
     }
 
     private void SavePropertyInfoToDatabase() {
-        CampingProperites campingProperites = new CampingProperites(PropertyRandomKey, CurrentDate, CurrentTime, PropertyName, Address, Size, Price, Description, DownloadImageUrl);
+        //String key = PropertyRandomKey.toString();
+        DownloadImageUrl = ImageUrlList.get(0).toString();
+        CampingProperites campingProperites = new CampingProperites(CurrentDate, CurrentTime, PropertyName, Address, Size, Price, Description, DownloadImageUrl, ImageUrlList);
         PropertiesRef.push().setValue(campingProperites);
+        //PropertiesRef.child(key).setValue(campingProperites);
+
         SelectImage.setImageURI(Uri.parse(""));
         InputPropertyName.setText("");
         InputAddress.setText("");
         InputSize.setText("");
         InputPrice.setText("");
         InputDescription.setText("");
-
-        /*HashMap<String, Object> propertyMap = new HashMap<>();
-        propertyMap.put("pid", PropertyRandomKey.toString());
-        propertyMap.put("date", CurrentDate.toString());
-        propertyMap.put("time", CurrentTime.toString());
-        propertyMap.put("pname", PropertyName.toString());
-        propertyMap.put("address", Address.toString());
-        propertyMap.put("size", Size.toString());
-        propertyMap.put("price", Price.toString());
-        propertyMap.put("description", Description.toString());
-        propertyMap.put("image", DownloadImageUrl.toString());
-
-        PropertiesRef.child(PropertyRandomKey).updateChildren(propertyMap);
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if (task.isSuccessful())
-                        {
-                            Toast.makeText(AddNewActivity.this, "Property is added successfully... ", Toast.LENGTH_SHORT).show();
-                        }
-                        else
-                        {
-                            String message = task.getException().toString();
-                            Toast.makeText(AddNewActivity.this, "Error: " + message, Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });*/
     }
 }

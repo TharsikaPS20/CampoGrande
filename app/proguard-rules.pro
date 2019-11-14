@@ -27,3 +27,5 @@
     }
 -keepattributes *Annotation*
 
+-keep class androidx.appcompat.widget.** { *; }
+

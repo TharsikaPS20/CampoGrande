@@ -67,6 +67,7 @@
         android:layout_marginTop="5dp">
 
         <CheckBox
+            android:id="@+id/remember_me"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/Material.Drawable.CheckBox"
@@ -76,15 +77,6 @@
             android:textSize="16sp"
             android:textStyle="bold"
             android:layout_marginLeft="17dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="I forgot my password"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="17sp"
-            android:textStyle="bold"
-            android:layout_marginLeft="80dp"/>
 
 
 
@@ -106,39 +98,18 @@
         android:textColor="@android:color/black"/>
 
     <TextView
+        android:id="@+id/forgotpassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="I'm an admin"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/login_btn"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="20sp"
+        android:text="I forgot my password"
+        android:textColor="@android:color/black"
+        android:textSize="17sp"
         android:textStyle="bold"
         android:layout_marginLeft="80dp"
-        android:layout_marginEnd="23dp"/>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_below="@id/login"
-        android:layout_marginTop="20dp">
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:clickable="true" />
 
-        <Button
-            android:id="@+id/google"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Google"/>
-
-
-        <Button
-            android:id="@+id/login_button"
-            android:text="login to facebook"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="30dp"
-            android:layout_marginLeft="50dp"/>
-    </LinearLayout>
 
 </RelativeLayout>

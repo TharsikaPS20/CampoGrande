@@ -8,26 +8,21 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import com.firebase.ui.auth.AuthUI;
-import com.firebase.ui.auth.IdpResponse;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseUser;
-import java.util.Arrays;
-import java.util.List;
 
-public class RegisterActivity_new extends AppCompatActivity implements View.OnClickListener {
+public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private static final String TAG = "RegisterActivity_new";
+    private static final String TAG = "RegisterActivity";
     ProgressBar progressBar;
     EditText editTextEmail, editTextPassword;
     Button register;
@@ -37,7 +32,7 @@ public class RegisterActivity_new extends AppCompatActivity implements View.OnCl
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register_new);
+        setContentView(R.layout.activity_register);
 
         register = findViewById(R.id.register_btn);
         editTextEmail = findViewById(R.id.register_email_input);
@@ -85,11 +80,11 @@ public class RegisterActivity_new extends AppCompatActivity implements View.OnCl
             public void onComplete(@NonNull Task<AuthResult> task) {
                 progressBar.setVisibility(View.GONE);
                 if (task.isSuccessful()) {
-                    Toast.makeText(RegisterActivity_new.this,
+                    Toast.makeText(RegisterActivity.this,
                             "You have been successfully registered and will receive a verification email!",
                             Toast.LENGTH_LONG).show();
                     sendEmailVerification();
-                    startActivity(new Intent(RegisterActivity_new.this, LoginActivity.class));
+                    startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                 } else {
 
                     if (task.getException() instanceof FirebaseAuthUserCollisionException) {
@@ -119,12 +114,15 @@ public class RegisterActivity_new extends AppCompatActivity implements View.OnCl
                         findViewById(R.id.register_btn).setEnabled(true);
 
                         if (task.isSuccessful()) {
-                            Toast.makeText(RegisterActivity_new.this,
+                            Toast.makeText(RegisterActivity.this,
                                     "Verification email sent to " + user.getEmail(),
                                     Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
+                            startActivity(intent);
+
                         } else {
                             Log.e(TAG, "sendEmailVerification", task.getException());
-                            Toast.makeText(RegisterActivity_new.this,
+                            Toast.makeText(RegisterActivity.this,
                                     "Failed to send verification email.",
                                     Toast.LENGTH_SHORT).show();
                         }

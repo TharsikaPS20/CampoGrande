@@ -1,7 +1,9 @@
 package com.example.campogrande;
 
+import java.util.ArrayList;
+
 public class CampingProperites {
-    private String propRandomKey;
+    //private String propRandomKey;
     private String currentDate;
     private String currentTime;
     private String propertyName;
@@ -10,6 +12,7 @@ public class CampingProperites {
     private String price;
     private String description;
     private String imageUrl;
+    private ArrayList<String> imageUrls;
 
     // private String id;
 
@@ -17,8 +20,8 @@ public class CampingProperites {
 
     }
 
-    public CampingProperites (String propRandomKey, String currentDate, String currentTime, String propertyName, String address, String size, String price, String description, String imageUrl ) {
-        this.propRandomKey = propRandomKey;
+    public CampingProperites (/*String propRandomKey, */String currentDate, String currentTime, String propertyName, String address, String size, String price, String description, String imageUrl , ArrayList<String> imageUrls) {
+        //this.propRandomKey = propRandomKey;
         this.currentDate = currentDate;
         this.currentTime = currentTime;
         this.propertyName = propertyName;
@@ -27,15 +30,16 @@ public class CampingProperites {
         this.price = price;
         this.description = description;
         this.imageUrl = imageUrl;
+        this.imageUrls = imageUrls;
     }
 
-    public String getPropRandomKey() {
+    /*public String getPropRandomKey() {
         return propRandomKey;
     }
 
     public void setPropRandomKey(String propRandomKey) {
         this.propRandomKey = propRandomKey;
-    }
+    }*/
 
     public String getCurrentDate() {
         return currentDate;
@@ -98,4 +102,13 @@ public class CampingProperites {
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
+
+    public ArrayList<String> getImageUrls() {
+        return imageUrls;
+    }
+
+    public void setImageUrls(ArrayList<String> imageUrls) {
+        this.imageUrls = imageUrls;
+    }
+
 }

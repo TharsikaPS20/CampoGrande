@@ -5,26 +5,30 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.login.Login;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.rey.material.widget.CheckBox;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
 
     FirebaseAuth mAuth;
     private EditText InputEmail, InputPassword;
     private Button LoginButton;
-    private Button facebookBtn;
     private ProgressBar progressBar;
-    private Button google;
+    private TextView forgot_password;
+   // private CheckBox rememberMe;
 
 
     @Override
@@ -40,18 +44,20 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         InputEmail = findViewById(R.id.login_email_input);
         InputPassword = findViewById(R.id.login_password_input);
         progressBar = findViewById(R.id.progressbar);
-        facebookBtn = findViewById(R.id.login_button);
-        google =findViewById(R.id.google);
+        forgot_password=findViewById(R.id.forgotpassword);
+        forgot_password.setOnClickListener(this);
+
+        //rememberMe = findViewById(R.id.remember_me);
+
 
 
 
         findViewById(R.id.login).setOnClickListener(this);
-        findViewById(R.id.google).setOnClickListener(this)
         ;}
 
     private void LoginUser() {
-        String email = InputEmail.getText().toString();
-        String password = InputPassword.getText().toString();
+        final String email = InputEmail.getText().toString();
+        final String password = InputPassword.getText().toString();
 
         if (email.isEmpty()) {
             InputEmail.setError("Email is required");
@@ -83,10 +89,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     progressBar.setVisibility(View.VISIBLE);
-                    Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);
-                    Toast.makeText(LoginActivity.this, "Login successful!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Login successful!", Toast.LENGTH_LONG).show();
+
+                    Intent i = new Intent(LoginActivity.this, Welcome.class);
+                    i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(i);
                 }
 
                 else
@@ -100,19 +107,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View view) {
-            switch (view.getId()) {
-                case R.id.login:
+        int i = view.getId();
+            if(i==R.id.login) {
                     LoginUser();
-                    break;
-
-                case R.id.google:
-                    startActivity(new Intent(this, FacebookTryout.class));
-                    break;
-
-                   // case R.id.login_button:
-                     //startActivity(new Intent(this, FacebookLoginActivity.class));
-                     //break;
         }
+            if(i==R.id.forgotpassword)
+            {
+                Intent intent=new Intent(LoginActivity.this,Password.class);
+                startActivity(intent);
+            }
 
     }
 }

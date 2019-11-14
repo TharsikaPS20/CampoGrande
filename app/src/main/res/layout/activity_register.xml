@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity_new"
+    tools:context=".RegisterActivity"
     android:background="@drawable/backgroundgreen">
 
     <ImageView
@@ -98,16 +98,6 @@
         android:visibility="invisible"/>
 
 
-
-    <Button
-        android:id="@+id/btn_sign_out"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:textAlignment="center"
-        android:layout_below="@id/already_user_btn"
-        android:enabled="false"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="Sign out" />
 
 
     </RelativeLayout>
