@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_profile"
+            android:title="@string/profile" />
+        <item
+            android:id="@+id/nav_reservations"
+            android:icon="@drawable/ic_reservation"
+            android:title="@string/reservations" />
+        <item
+            android:id="@+id/nav_favourites"
+            android:icon="@drawable/ic_favorite"
+            android:title="@string/favourites" />
+        <item
+            android:id="@+id/nav_messages"
+            android:icon="@drawable/ic_message"
+            android:title="@string/messages" />
+
+    <item android:title="@string/host">
+        <menu>
+            <item
+                android:id="@+id/nav_host"
+                android:icon="@drawable/ic_host"
+                android:title="@string/host" />
+            <item
+                android:id="@+id/nav_listings"
+                android:icon="@drawable/ic_listings"
+                android:title="@string/listings" />
+
+        </menu>
+    </item>
+
+
+    <item android:title="General">
+        <menu>
+
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@drawable/ic_about"
+                android:title="@string/about"/>
+
+            <item
+                android:id="@+id/nav_signout"
+                android:icon="@drawable/ic_signout"
+                android:title="@string/signoutofapp"/>
+        </menu>
+    </item>
+    </group>
+
+</menu>
