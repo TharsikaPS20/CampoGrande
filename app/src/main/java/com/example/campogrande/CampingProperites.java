@@ -12,7 +12,6 @@ public class CampingProperites {
     private String price;
     private String description;
     private String imageUrl;
-    private ArrayList<String> imageUrls;
 
     // private String id;
 
@@ -20,7 +19,7 @@ public class CampingProperites {
 
     }
 
-    public CampingProperites (/*String propRandomKey, */String currentDate, String currentTime, String propertyName, String address, String size, String price, String description, String imageUrl , ArrayList<String> imageUrls) {
+    public CampingProperites (/*String propRandomKey, */String currentDate, String currentTime, String propertyName, String address, String size, String price, String description, String imageUrl ) {
         //this.propRandomKey = propRandomKey;
         this.currentDate = currentDate;
         this.currentTime = currentTime;
@@ -30,10 +29,9 @@ public class CampingProperites {
         this.price = price;
         this.description = description;
         this.imageUrl = imageUrl;
-        this.imageUrls = imageUrls;
     }
 
-    /*public String getPropRandomKey() {
+   /* public String getPropRandomKey() {
         return propRandomKey;
     }
 
@@ -102,13 +100,4 @@ public class CampingProperites {
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
-
-    public ArrayList<String> getImageUrls() {
-        return imageUrls;
-    }
-
-    public void setImageUrls(ArrayList<String> imageUrls) {
-        this.imageUrls = imageUrls;
-    }
-
 }
