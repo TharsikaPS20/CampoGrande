@@ -61,15 +61,20 @@
         <activity android:name=".EditProfileActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:label="@string/profile"/>
-        <activity android:name=".AddNewActivity"/>
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".AddNewActivity">
+
+        </activity>
+        <activity android:name=".ViewProperties">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".MainActivity">
+
         </activity>
         <activity android:name=".Password" />
 
