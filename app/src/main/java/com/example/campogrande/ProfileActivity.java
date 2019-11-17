@@ -1,51 +1,30 @@
 package com.example.campogrande;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+
 import android.content.Intent;
 import android.os.Bundle;
-
-import com.facebook.login.LoginManager;
-import com.google.android.gms.auth.api.Auth;
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.core.view.GravityCompat;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-
+import com.facebook.login.LoginManager;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
-import androidx.drawerlayout.widget.DrawerLayout;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.view.Menu;
-import android.widget.TextView;
-
-public class Home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
-
+public class ProfileActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_profile);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -67,7 +46,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        //navigationView.bringToFront();
+        navigationView.bringToFront();
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
      /*  mAppBarConfiguration = new AppBarConfiguration.Builder(
@@ -110,8 +89,8 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         int id = menuItem.getItemId();
 
 
-        if(id==R.id.nav_profile){
-            openProfile();
+        if(id==R.id.nav_home){
+            openHome();
         }
         else if(id==R.id.nav_reservations){
             openReservations();
@@ -125,7 +104,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         {
             openMessages();
         }
-        
+
 
         else if(id ==R.id.nav_host)
         {
@@ -154,28 +133,28 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     }
 
     private void openReservations() {
-        Intent intent = new Intent(Home.this, Reservations.class);
+        Intent intent = new Intent(ProfileActivity.this, Reservations.class);
         startActivity(intent);
     }
 
     private void openMessages() {
-        Intent intent = new Intent(Home.this, Messages.class);
+        Intent intent = new Intent(ProfileActivity.this, Messages.class);
         startActivity(intent);
     }
 
     private void openHost() {
-        Intent intent = new Intent(Home.this, Host.class);
+        Intent intent = new Intent(ProfileActivity.this, Host.class);
         startActivity(intent);
     }
 
     private void openListings() {
-        Intent intent = new Intent(Home.this, Listings.class);
+        Intent intent = new Intent(ProfileActivity.this, Listings.class);
         startActivity(intent);
     }
 
 
     private void openAbout() {
-        Intent intent = new Intent(Home.this, About.class);
+        Intent intent = new Intent(ProfileActivity.this, About.class);
         startActivity(intent);
     }
 
@@ -186,21 +165,19 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         Intent intent = new Intent(getApplicationContext(),Home.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
-        Intent intent1 = new Intent(Home.this,MainActivity.class);
+        Intent intent1 = new Intent(ProfileActivity.this,MainActivity.class);
         startActivity(intent1);
-
     }
 
     private void openFavourites() {
-        Intent intent = new Intent(Home.this, Favourites.class);
+        Intent intent = new Intent(ProfileActivity.this, Favourites.class);
         startActivity(intent);
     }
 
-    private void openProfile() {
-        Intent intent = new Intent(Home.this, EditProfileActivity.class);
+    private void openHome() {
+        Intent intent = new Intent(ProfileActivity.this, Home.class);
         startActivity(intent);
     }
 
 
 }
-

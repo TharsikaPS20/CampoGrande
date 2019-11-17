@@ -16,7 +16,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexWarning">
-        <activity android:name=".PropertyDetailsActivity"></activity>
+        <activity android:name=".ProfileActivity"></activity>
+        <activity
+            android:name=".FacebookLoginActivity"
+            android:label="Campo Grande - Facebook login" />
+        <activity
+            android:name=".GoogleSignInActivity"
+            android:label="Campo Grande - Google login" />
+        <activity android:name=".BaseActivity" />
         <activity
             android:name=".Listings"
             android:label="@string/listings"
@@ -69,17 +76,19 @@
             android:name=".EditProfileActivity"
             android:label="@string/profile"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".AddNewActivity"></activity>
-        <activity android:name=".ViewProperties">
+        <activity android:name=".AddNewActivity" />
+        <activity android:name=".ViewProperties" />
+        <activity
+            android:name=".LoginActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".MainActivity"></activity>
         <activity android:name=".Password" />
 
         <meta-data

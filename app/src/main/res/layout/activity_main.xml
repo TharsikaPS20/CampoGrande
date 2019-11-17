@@ -2,7 +2,6 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:fb="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background2"
@@ -113,38 +112,19 @@
             android:layout_gravity="center_horizontal"
             android:id="@+id/google_lo">
 
-            <com.google.android.gms.common.SignInButton
-                android:id="@+id/signInButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_marginLeft="200dp"
-                android:layout_marginRight="200dp"
-                android:visibility="visible"
-                tools:visibility="gone" />
+           <Button
+               android:id="@+id/continue_facebook"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:drawableLeft="@drawable/facebook_icon"
+               android:text="  Continue with Facebook"
+               android:layout_marginStart="10dp"
+               android:layout_marginEnd="10dp"
+              />
 
-            <LinearLayout
-                android:id="@+id/signOutAndDisconnect"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:orientation="horizontal"
-                android:paddingStart="140dp"
-                android:paddingEnd="140dp"
-                android:visibility="gone"
-                tools:visibility="visible">
 
-                <Button
-                    android:id="@+id/signOutButton"
-                    android:layout_height="wrap_content"
-                    android:text="@string/sign_out"
-                    android:background="@drawable/signoutbuttongoogle"
-                    android:theme="@style/ThemeOverlay.MyDarkButton"
-                    android:layout_width="wrap_content"
-                    android:textColor="@android:color/black"
-                    android:textAllCaps="false"/>
 
-            </LinearLayout>
+
 
         </RelativeLayout>
 </LinearLayout>
@@ -162,25 +142,21 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="60dp"
             android:layout_weight="1"
             android:layout_marginTop="10dp">
 
 
-            <com.facebook.login.widget.LoginButton
-                android:id="@+id/buttonFacebookLogin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"/>
-
             <Button
-                android:id="@+id/buttonFacebookSignout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/continue_google"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:drawableLeft="@drawable/google_icon"
                 android:layout_centerInParent="true"
-                android:text="@string/sign_out"
-                android:theme="@style/ThemeOverlay.MyDarkButton"
-                android:visibility="gone"/>
+                android:text="Continue with Google"/>
+
 
         </RelativeLayout>
 

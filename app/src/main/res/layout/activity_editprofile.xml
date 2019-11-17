@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:showIn="@layout/activity_profile"
-    tools:context=".ProfileActivity">
+    tools:context=".EditProfileActivity">
 
     <FrameLayout
         android:id="@+id/screen_area"
@@ -16,7 +15,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginLeft="10dp">
         <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="150dp"
             android:layout_height="150dp"
