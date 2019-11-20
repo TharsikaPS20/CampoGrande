@@ -17,10 +17,10 @@
     <string name="or">or</string>
 
     <string name="label_google_sign_in">Firebase + Google Sign In</string>
-    <string name="desc_google_sign_in">Use a Google Sign In credential to authenticate with Firebase.</string>
+    <string name="desc_google_sign_in">Sign in to Campo Grande with your Google account.</string>
 
     <string name="label_facebook_login">Firebase + Facebook Login</string>
-    <string name="desc_facebook_login">Use a Facebook Login credential to authenticate with Firebase.</string>
+    <string name="desc_facebook_login">Sign in to Campo Grande with your Facebook account.</string>
 
     <string name="label_emailpassword">Email/Password Authentication</string>
     <string name="desc_emailpassword">Use an email and password to authenticate with Firebase.</string>

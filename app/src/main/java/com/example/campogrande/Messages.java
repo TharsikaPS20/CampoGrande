@@ -3,6 +3,7 @@ package com.example.campogrande;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.facebook.login.LoginManager;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -18,6 +19,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -168,8 +170,13 @@ import android.view.Menu;
 
 
         private void signOut() {
-            Intent intent = new Intent(Messages.this, MainActivity.class);
+            FirebaseAuth.getInstance().signOut();
+            LoginManager.getInstance().logOut();
+            Intent intent = new Intent(getApplicationContext(),Home.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
+            Intent intent1 = new Intent(Messages.this,MainActivity.class);
+            startActivity(intent1);
         }
 
         private void openFavourites() {

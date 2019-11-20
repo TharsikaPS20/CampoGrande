@@ -5,52 +5,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:showIn="@layout/activity_host"
-    tools:context=".Host">
+    tools:context=".EditProfileActivity">
 
-<ListView
-    android:id="@+id/listView"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"/>
-    <LinearLayout
-        android:id="@+id/pic_layout"
+    <FrameLayout
+        android:id="@+id/screen_area"
         android:layout_width="match_parent"
-        android:layout_height="220dp"
-        android:orientation="vertical"
-        android:background="@android:color/holo_blue_dark">
+        android:layout_height="match_parent"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="10dp">
         <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="170dp"
-            android:layout_height="170dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:src="@drawable/profile_pic"
             android:layout_gravity="center"
+            android:foregroundGravity="center_horizontal"
             android:id="@+id/image_profile"
-            android:layout_marginTop="10dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:contextClickable="true"/>
-        <Button
+            android:layout_margin="10dp"/>
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Change photo"
             android:layout_gravity="center"
-            android:id="@+id/photochange"
-            android:textSize="10sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/text_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_below="@id/pic_layout">
+            android:id="@+id/text_change_photo1"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"/>
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/fullname"
             android:hint="Full name"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             app:met_floatingLabel="normal"
             />
 
@@ -59,7 +48,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/city"
             android:hint="City"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             app:met_floatingLabel="normal"
             />
 
@@ -68,7 +57,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/age"
             android:hint="Age"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             app:met_floatingLabel="normal"/>
 
         <com.rengwuxian.materialedittext.MaterialEditText
@@ -78,12 +67,7 @@
             android:hint="Introduce yourself"
             android:layout_marginTop="20dp"
             app:met_floatingLabel="normal"
-            android:layout_marginBottom="80dp"
             />
-
-
-
     </LinearLayout>
-
 
 </RelativeLayout>
