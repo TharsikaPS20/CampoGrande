@@ -2,33 +2,47 @@ package com.example.campogrande;
 
 import android.content.Intent;
 import android.os.Bundle;
-
 import com.facebook.login.LoginManager;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
-
 import android.view.MenuItem;
 import android.view.View;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.core.view.GravityCompat;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.Picasso;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.Menu;
+import android.widget.TextView;
+
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class Listings extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+    private DatabaseReference ref;
+    private FirebaseAuth mAuth;
+    private StorageReference stor;
+    RecyclerView.LayoutManager lm;
+    TextView nameD, cityD, ageD, introD;
+    CircleImageView displayImg;
+    private FirebaseUser user;
+    private String userid;
 
 
     @Override
@@ -37,6 +51,52 @@ public class Listings extends AppCompatActivity implements NavigationView.OnNavi
         setContentView(R.layout.activity_listings);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        //fdb = FirebaseDatabase.getInstance();
+        //imageRef= fdb.getReference();
+        //first = imageRef.child("Profile pics");
+        mAuth = FirebaseAuth.getInstance();
+        stor = FirebaseStorage.getInstance().getReference();
+
+        nameD=findViewById(R.id.fullnameRead);
+        cityD=findViewById(R.id.cityRead);
+        ageD = findViewById(R.id.ageRead);
+        introD = findViewById(R.id.profiletextRead);
+        displayImg=findViewById(R.id.image_profile_display);
+        
+
+
+     user = mAuth.getCurrentUser();
+        if (user != null) {
+            userid = user.getUid();
+        }
+
+        ref = FirebaseDatabase.getInstance().getReference("Users");
+        ref.child(userid).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(final DataSnapshot dataSnapshot) {
+                //String image = dataSnapshot.child("imageUrl").getValue(String.class);
+                String name = dataSnapshot.child("name").getValue().toString();
+                String city = dataSnapshot.child("city").getValue().toString();
+                String age = dataSnapshot.child("age").getValue().toString();
+                String intro = dataSnapshot.child("intro").getValue().toString();
+               String img = dataSnapshot.child("imageUrl").getValue(String.class);
+                // displayImg.setImageURI(Uri.parse(image));
+                nameD.setText(name);
+                cityD.setText(city);
+                ageD.setText(age);
+                introD.setText(intro);
+                Picasso.get().load(img).into(displayImg);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
+
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -49,7 +109,7 @@ public class Listings extends AppCompatActivity implements NavigationView.OnNavi
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar,R.string.navigation_drawer_open, R.string.navigation_drawer_close
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
         );
         drawer.addDrawerListener(toggle);
         toggle.syncState();
@@ -57,17 +117,25 @@ public class Listings extends AppCompatActivity implements NavigationView.OnNavi
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.bringToFront();
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-     /*  mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_profile, R.id.nav_reservations,
-                R.id.nav_favourites, R.id.nav_messages, R.id.nav_host, R.id.nav_listings, R.id.nav_about, R.id.nav_signout)
-                .setDrawerLayout(drawer)
-                .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
-        NavigationUI.setupWithNavController(navigationView, navController);*/
+
     }
+
+   /* @Override
+    protected void onStart() {
+        super.onStart();
+        first.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String img = dataSnapshot.getValue(String.class);
+                Picasso.get().load(img).into(displayImg);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

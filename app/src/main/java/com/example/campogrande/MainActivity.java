@@ -35,12 +35,14 @@ import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 public class MainActivity extends AppCompatActivity {
 
     private Button joinNow, login, facebook, google;
     private TextView guestView;
+    FirebaseAuth mAuth;
 
 
     @Override
@@ -53,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         guestView = findViewById(R.id.guest_view);
         facebook = findViewById(R.id.continue_facebook);
         google = findViewById(R.id.continue_google);
+        mAuth = FirebaseAuth.getInstance();
 
 
         login.setOnClickListener(new View.OnClickListener() {
@@ -96,7 +99,12 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-
-
-
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if(mAuth.getCurrentUser()!=null){
+            finish();
+            startActivity(new Intent(this,Listings.class));
+        }
+    }
 }

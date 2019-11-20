@@ -6,7 +6,116 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_listings"
-    tools:context="com.example.campogrande.Listings">
+    tools:context=".Listings">
 
 
+
+
+
+    <LinearLayout
+        android:id="@+id/pic_layout"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:orientation="vertical"
+        android:background="@android:color/holo_blue_dark">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:src="@drawable/profile_pic"
+            android:layout_gravity="center"
+            android:id="@+id/image_profile_display"
+            android:layout_marginTop="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:contextClickable="true"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/text_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@id/pic_layout">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/fullname"
+            android:text="Full name"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            app:met_floatingLabel="normal"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/fullnameRead"
+            android:padding="10dp"
+            android:textSize="20sp"
+            app:met_floatingLabel="normal"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/city"
+            android:text="City"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            app:met_floatingLabel="normal"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/cityRead"
+            android:textSize="20sp"
+            app:met_floatingLabel="normal"
+            android:padding="10dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/age"
+            android:text="Age"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            app:met_floatingLabel="normal"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ageRead"
+            android:textSize="20sp"
+            android:layout_margin="10dp"
+            app:met_floatingLabel="normal"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/profiletext"
+            android:text="Introduce yourself"
+            android:layout_marginTop="20dp"
+            android:textSize="20sp"
+            app:met_floatingLabel="normal"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/profiletextRead"
+            android:layout_margin="10dp"
+            android:textSize="20sp"
+            app:met_floatingLabel="normal"
+            android:layout_marginBottom="80dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/idDisplay"/>
+
+
+
+    </LinearLayout>
 </RelativeLayout>
