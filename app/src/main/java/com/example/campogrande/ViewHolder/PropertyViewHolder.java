@@ -22,6 +22,7 @@ public class PropertyViewHolder extends RecyclerView.ViewHolder implements View.
         txtPropertyDescription = (TextView) itemView.findViewById(R.id.property_description);
         txtPropertyPrice = (TextView) itemView.findViewById(R.id.property_price);
         txtPropertySize = (TextView) itemView.findViewById(R.id.property_size);
+
     }
 
     public void setItemClickListener (ItemClickListener listener)
