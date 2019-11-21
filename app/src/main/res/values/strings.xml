@@ -111,6 +111,7 @@
     <string name="listings">My listings</string>
     <string name="about">About Campo Grande</string>
     <string name="signoutofapp">Sign out</string>
+    <string name="accountinfo">Profile information</string>
 
 
 </resources>

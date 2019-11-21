@@ -9,6 +9,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -83,7 +85,7 @@ public class EditProfileActivity extends AppCompatActivity {
         userid=user.getUid();
 
 
-        Button changePhoto = findViewById(R.id.photochange);
+        ImageView changePhoto = findViewById(R.id.photochange);
         updateProfile = findViewById(R.id.fab);
 
 
