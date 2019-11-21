@@ -49,7 +49,7 @@ import android.view.Menu;
 
             DrawerLayout drawer = findViewById(R.id.drawer_layout);
             ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                    this, drawer, toolbar,R.string.navigation_drawer_open, R.string.navigation_drawer_close
+                    this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
             );
             drawer.addDrawerListener(toggle);
             toggle.syncState();
@@ -57,16 +57,6 @@ import android.view.Menu;
             NavigationView navigationView = findViewById(R.id.nav_view);
             navigationView.setNavigationItemSelectedListener(this);
             navigationView.bringToFront();
-            // Passing each menu ID as a set of Ids because each
-            // menu should be considered as top level destinations.
-     /*  mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_profile, R.id.nav_reservations,
-                R.id.nav_favourites, R.id.nav_messages, R.id.nav_host, R.id.nav_listings, R.id.nav_about, R.id.nav_signout)
-                .setDrawerLayout(drawer)
-                .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
-        NavigationUI.setupWithNavController(navigationView, navController);*/
         }
 
         @Override
@@ -148,7 +138,7 @@ import android.view.Menu;
         }
 
         private void openProfile() {
-            Intent intent = new Intent(Messages.this, EditProfileActivity.class);
+            Intent intent = new Intent(Messages.this, UserProfile.class);
             startActivity(intent);
         }
 

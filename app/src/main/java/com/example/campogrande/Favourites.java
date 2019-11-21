@@ -148,7 +148,7 @@ public class Favourites extends AppCompatActivity implements NavigationView.OnNa
     }
 
     private void openProfile() {
-        Intent intent = new Intent(Favourites.this, EditProfileActivity.class);
+        Intent intent = new Intent(Favourites.this, UserProfile.class);
         startActivity(intent);
     }
 

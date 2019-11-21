@@ -17,7 +17,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexWarning">
-        <activity android:name=".ProfileActivity"/>
         <activity
             android:name=".FacebookLoginActivity"
             android:label="Campo Grande - Facebook login" />
@@ -25,6 +24,11 @@
             android:name=".GoogleSignInActivity"
             android:label="Campo Grande - Google login" />
         <activity android:name=".BaseActivity" />
+
+        <activity android:name=".UserProfile"
+            android:label="@string/profile"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
         <activity
             android:name=".Listings"
             android:label="@string/listings"
@@ -75,8 +79,9 @@
         </activity>
         <activity
             android:name=".EditProfileActivity"
-            android:label="@string/profile"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:label="@string/editprofile"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".UserProfile"/>
         <activity android:name=".AddNewActivity" />
         <activity android:name=".ViewProperties" />
         <activity
@@ -96,6 +101,9 @@
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id"
             tools:replace="android:value" />
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".UserProfile" />
     </application>
 
 </manifest>

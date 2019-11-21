@@ -148,7 +148,7 @@ public class Reservations extends AppCompatActivity implements NavigationView.On
     }
 
     private void openProfile() {
-        Intent intent = new Intent(Reservations.this, EditProfileActivity.class);
+        Intent intent = new Intent(Reservations.this, UserProfile.class);
         startActivity(intent);
     }
 

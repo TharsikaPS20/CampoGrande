@@ -103,6 +103,7 @@
     <string name="menu_home">Home</string>
     <string name="home">Home/string></string>
     <string name="profile">Profile</string>
+    <string name="editprofile">Edit profile</string>
     <string name="reservations">My reservations</string>
     <string name="favourites">My favourites</string>
     <string name="messages">Messages</string>

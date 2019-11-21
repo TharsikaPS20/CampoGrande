@@ -148,7 +148,7 @@ public class About extends AppCompatActivity implements NavigationView.OnNavigat
     }
 
     private void openProfile() {
-        Intent intent = new Intent(About.this, EditProfileActivity.class);
+        Intent intent = new Intent(About.this, UserProfile.class);
         startActivity(intent);
     }
 

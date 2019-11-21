@@ -99,37 +99,6 @@ public class Host extends AppCompatActivity implements NavigationView.OnNavigati
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        profilePictureRef = FirebaseStorage.getInstance().getReference().child("Profile pics");
-        rootRef = FirebaseDatabase.getInstance().getReference().child("Users");
-
-        profilepic = findViewById(R.id.image_profile);
-        mName = findViewById(R.id.fullname);
-        mCity = findViewById(R.id.city);
-        mAge = findViewById(R.id.age);
-        mIntroduction=findViewById(R.id.profiletext);
-
-        mAuth=FirebaseAuth.getInstance();
-        user= mAuth.getCurrentUser();
-        userid=user.getUid();
-
-
-        Button changePhoto = findViewById(R.id.photochange);
-        updateProfile = findViewById(R.id.fab1);
-
-
-        changePhoto.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                choosePhoto();
-            }
-        });
-
-       updateProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                checkInformation();
-            }
-        });
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -142,115 +111,7 @@ public class Host extends AppCompatActivity implements NavigationView.OnNavigati
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.bringToFront();
 
-            }
 
-            private void choosePhoto() {
-                Intent galleryIntent = new Intent();
-                galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
-                galleryIntent.setType("image/*");
-                startActivityForResult(galleryIntent, GalleryPick);
-            }
-
-            @Override
-            protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-                super.onActivityResult(requestCode, resultCode, data);
-
-                if (requestCode==GalleryPick && resultCode==RESULT_OK && data!=null)
-                {
-                    uriProfilePic = data.getData();
-                    profilepic.setImageURI(uriProfilePic);
-                }
-            }
-
-
-
-            private void checkInformation() {
-                uName = mName.getText().toString();
-                uAge = mAge.getText().toString();
-                uCity = mCity.getText().toString();
-                uIntro = mIntroduction.getText().toString();
-
-                user = mAuth.getCurrentUser();
-                if(user!=null) {
-
-
-                    if (uriProfilePic == null) {
-                        Toast.makeText(this, "Please upload a profile picture", Toast.LENGTH_SHORT).show();
-                    } else if (TextUtils.isEmpty(uName)) {
-                        Toast.makeText(this, "Please enter your full name", Toast.LENGTH_SHORT).show();
-                        mName.requestFocus();
-                    } else if (TextUtils.isEmpty(uAge)) {
-                        Toast.makeText(this, "Please enter your birthday", Toast.LENGTH_SHORT).show();
-                        mAge.requestFocus();
-                    } else if (TextUtils.isEmpty(uCity)) {
-                        Toast.makeText(this, "Please enter your city", Toast.LENGTH_SHORT).show();
-                        mCity.requestFocus();
-                    } else if (TextUtils.isEmpty(uIntro)) {
-                        Toast.makeText(this, "Please introduce yourself", Toast.LENGTH_SHORT).show();
-                        mIntroduction.requestFocus();
-                    } else {
-                        addProfileInformation();
-                    }
-                }
-
-                else{Toast.makeText(Host.this, "Please create a user or sign in to use this feature!",Toast.LENGTH_SHORT).show();
-
-                }
-
-            }
-
-            private void addProfileInformation() {
-
-
-                final StorageReference filePath = profilePictureRef.child(uriProfilePic.getLastPathSegment() + ".jpg");
-
-                final UploadTask uploadTask = filePath.putFile(uriProfilePic);
-
-                uploadTask.addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        String message = e.toString();
-                        Toast.makeText(Host.this, "Error: " + message, Toast.LENGTH_SHORT).show();
-                    }
-                }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                    @Override
-                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                        Toast.makeText(Host.this, "Data stored successfully", Toast.LENGTH_SHORT).show();
-
-                        Task<Uri> UrlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
-                            @Override
-                            public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
-                                if (!task.isSuccessful())
-                                {
-                                    throw task.getException();
-                                }
-
-                                uDownloadProfImageUrl = filePath.getDownloadUrl().toString();
-                                return filePath.getDownloadUrl();
-                            }
-                        }).addOnCompleteListener(new OnCompleteListener<Uri>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Uri> task) {
-                                if (task.isSuccessful())
-                                {
-                                    uDownloadProfImageUrl = task.getResult().toString();
-
-                                    SaveToDatabase();
-                                }
-                            }
-                        });
-                    }
-                });
-            }
-
-            private void SaveToDatabase() {
-                user=mAuth.getCurrentUser();
-                userid = user.getUid();
-                ProfileInformation profileInformation = new ProfileInformation(userid, uName, uAge, uCity, uIntro, uDownloadProfImageUrl);
-                rootRef.child(userid).setValue(profileInformation);
-                //rootRef.push().setValue(profileInformation);
-                Intent i = new Intent (Host.this,Listings.class);
-                startActivity(i);
 
         }
 
@@ -260,7 +121,6 @@ public class Host extends AppCompatActivity implements NavigationView.OnNavigati
 
         @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.home, menu);
         return true;
     }
@@ -274,13 +134,6 @@ public class Host extends AppCompatActivity implements NavigationView.OnNavigati
 
         return super.onOptionsItemSelected(item);
     }
-
-  /*  @Override
-    public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        return NavigationUI.navigateUp(navController, mAppBarConfiguration)
-                || super.onSupportNavigateUp();
-    }*/
 
 
 
@@ -338,7 +191,7 @@ public class Host extends AppCompatActivity implements NavigationView.OnNavigati
     }
 
     private void openProfile() {
-        Intent intent = new Intent(Host.this, EditProfileActivity.class);
+        Intent intent = new Intent(Host.this, UserProfile.class);
         startActivity(intent);
     }
 

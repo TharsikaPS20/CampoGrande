@@ -1,10 +1,17 @@
 package com.example.campogrande;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import com.facebook.login.LoginManager;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+
+import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
 import androidx.annotation.NonNull;
@@ -20,6 +27,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -30,11 +38,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.Menu;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class Listings extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class UserProfile extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DatabaseReference ref;
     private FirebaseAuth mAuth;
     private StorageReference stor;
@@ -48,13 +57,68 @@ public class Listings extends AppCompatActivity implements NavigationView.OnNavi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_listings);
+        setContentView(R.layout.activity_userprofile);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        //fdb = FirebaseDatabase.getInstance();
+        //imageRef= fdb.getReference();
+        //first = imageRef.child("Profile pics");
+        mAuth = FirebaseAuth.getInstance();
+        stor = FirebaseStorage.getInstance().getReference();
+
+        nameD=findViewById(R.id.fullnameRead);
+        cityD=findViewById(R.id.cityRead);
+        ageD = findViewById(R.id.ageRead);
+        introD = findViewById(R.id.profiletextRead);
+        displayImg=findViewById(R.id.image_profile_display);
+
+
+
+        user = mAuth.getCurrentUser();
+        if (user != null) {
+            userid = user.getUid();
+        }
+
+        ref = FirebaseDatabase.getInstance().getReference("Users");
+        ref.child(userid).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(final DataSnapshot dataSnapshot) {
+                //String image = dataSnapshot.child("imageUrl").getValue(String.class);
+                String name = dataSnapshot.child("name").getValue().toString();
+                String city = dataSnapshot.child("city").getValue().toString();
+                String age = dataSnapshot.child("age").getValue().toString();
+                String intro = dataSnapshot.child("intro").getValue().toString();
+                String img = dataSnapshot.child("imageUrl").getValue(String.class);
+                // displayImg.setImageURI(Uri.parse(image));
+                nameD.setText(name);
+                cityD.setText(city);
+                ageD.setText(age);
+                introD.setText(intro);
+                Picasso.get().load(img).into(displayImg);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
+
+
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(UserProfile.this,EditProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
+                this, drawer, toolbar,R.string.navigation_drawer_open, R.string.navigation_drawer_close
         );
         drawer.addDrawerListener(toggle);
         toggle.syncState();
@@ -63,10 +127,9 @@ public class Listings extends AppCompatActivity implements NavigationView.OnNavi
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.bringToFront();
 
-    }
+            }
 
-
-    @Override
+        @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.home, menu);
@@ -82,6 +145,14 @@ public class Listings extends AppCompatActivity implements NavigationView.OnNavi
 
         return super.onOptionsItemSelected(item);
     }
+
+  /*  @Override
+    public boolean onSupportNavigateUp() {
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        return NavigationUI.navigateUp(navController, mAppBarConfiguration)
+                || super.onSupportNavigateUp();
+    }*/
+
 
 
     @Override
@@ -100,20 +171,20 @@ public class Listings extends AppCompatActivity implements NavigationView.OnNavi
             openFavourites();
         }
 
-        else if(id==R.id.nav_profile)
-        {
-            openProfile();
-        }
-
-
-        else if(id ==R.id.nav_host)
+        else if(id==R.id.nav_host)
         {
             openHost();
         }
 
+
         else if(id ==R.id.nav_messages)
         {
             openMessages();
+        }
+
+        else if(id ==R.id.nav_listings)
+        {
+            openListings();
         }
 
 
@@ -133,28 +204,28 @@ public class Listings extends AppCompatActivity implements NavigationView.OnNavi
     }
 
     private void openReservations() {
-        Intent intent = new Intent(Listings.this, Reservations.class);
-        startActivity(intent);
-    }
-
-    private void openProfile() {
-        Intent intent = new Intent(Listings.this, UserProfile.class);
+        Intent intent = new Intent(UserProfile.this, Reservations.class);
         startActivity(intent);
     }
 
     private void openHost() {
-        Intent intent = new Intent(Listings.this, Host.class);
+        Intent intent = new Intent(UserProfile.this, Host.class);
         startActivity(intent);
     }
 
     private void openMessages() {
-        Intent intent = new Intent(Listings.this, Messages.class);
+        Intent intent = new Intent(UserProfile.this, Messages.class);
+        startActivity(intent);
+    }
+
+    private void openListings() {
+        Intent intent = new Intent(UserProfile.this, Listings.class);
         startActivity(intent);
     }
 
 
     private void openAbout() {
-        Intent intent = new Intent(Listings.this, About.class);
+        Intent intent = new Intent(UserProfile.this, About.class);
         startActivity(intent);
     }
 
@@ -165,23 +236,22 @@ public class Listings extends AppCompatActivity implements NavigationView.OnNavi
         Intent intent = new Intent(getApplicationContext(),Home.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
-        Intent intent1 = new Intent(Listings.this,MainActivity.class);
+        Intent intent1 = new Intent(UserProfile.this,MainActivity.class);
         startActivity(intent1);
     }
 
     private void openFavourites() {
-        Intent intent = new Intent(Listings.this, Favourites.class);
+        Intent intent = new Intent(UserProfile.this, Favourites.class);
         startActivity(intent);
     }
 
     private void openHome() {
-        Intent intent = new Intent(Listings.this, Home.class);
+        Intent intent = new Intent(UserProfile.this, Home.class);
         startActivity(intent);
     }
 
 
 }
-
 
 
 
