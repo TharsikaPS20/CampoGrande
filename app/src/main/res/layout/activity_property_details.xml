@@ -23,6 +23,8 @@
             <include layout="@layout/property_images_layout"/>
 
             <include layout="@layout/rewards_layout"/>
+
+            <include layout="@layout/property_description_layout"/>
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
