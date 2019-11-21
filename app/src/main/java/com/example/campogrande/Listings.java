@@ -35,14 +35,7 @@ import android.widget.TextView;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class Listings extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    private DatabaseReference ref;
-    private FirebaseAuth mAuth;
-    private StorageReference stor;
-    RecyclerView.LayoutManager lm;
-    TextView nameD, cityD, ageD, introD;
-    CircleImageView displayImg;
-    private FirebaseUser user;
-    private String userid;
+
 
 
     @Override

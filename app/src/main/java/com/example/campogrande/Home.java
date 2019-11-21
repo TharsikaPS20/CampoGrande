@@ -63,7 +63,7 @@ Button button;
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(Home.this,Messages.class);
+                Intent i = new Intent(Home.this,EditProfileActivity.class);
                 startActivity(i);
             }
         });

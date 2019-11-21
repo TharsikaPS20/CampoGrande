@@ -48,7 +48,7 @@ public class UserProfile extends AppCompatActivity implements NavigationView.OnN
     private FirebaseAuth mAuth;
     private StorageReference stor;
     RecyclerView.LayoutManager lm;
-    TextView nameD, cityD, ageD, introD;
+    TextView nameD, cityD, phoneD, introD;
     CircleImageView displayImg;
     private FirebaseUser user;
     private String userid;
@@ -61,15 +61,12 @@ public class UserProfile extends AppCompatActivity implements NavigationView.OnN
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //fdb = FirebaseDatabase.getInstance();
-        //imageRef= fdb.getReference();
-        //first = imageRef.child("Profile pics");
         mAuth = FirebaseAuth.getInstance();
         stor = FirebaseStorage.getInstance().getReference();
 
         nameD=findViewById(R.id.fullnameRead);
         cityD=findViewById(R.id.cityRead);
-        ageD = findViewById(R.id.ageRead);
+        phoneD = findViewById(R.id.phoneRead);
         introD = findViewById(R.id.profiletextRead);
         displayImg=findViewById(R.id.image_profile_display);
 
@@ -80,22 +77,32 @@ public class UserProfile extends AppCompatActivity implements NavigationView.OnN
             userid = user.getUid();
         }
 
+
         ref = FirebaseDatabase.getInstance().getReference("Users");
         ref.child(userid).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(final DataSnapshot dataSnapshot) {
-                //String image = dataSnapshot.child("imageUrl").getValue(String.class);
-                String name = dataSnapshot.child("name").getValue().toString();
+                if (dataSnapshot.exists())
+                {String name = dataSnapshot.child("name").getValue().toString();
                 String city = dataSnapshot.child("city").getValue().toString();
-                String age = dataSnapshot.child("age").getValue().toString();
+                String phone = dataSnapshot.child("phone").getValue().toString();
                 String intro = dataSnapshot.child("intro").getValue().toString();
                 String img = dataSnapshot.child("imageUrl").getValue(String.class);
                 // displayImg.setImageURI(Uri.parse(image));
                 nameD.setText(name);
                 cityD.setText(city);
-                ageD.setText(age);
+                phoneD.setText(phone);
                 introD.setText(intro);
-                Picasso.get().load(img).into(displayImg);
+                Picasso.get().load(img).into(displayImg);}
+
+                if(!dataSnapshot.exists())
+                {
+                    nameD.setText("");
+                    cityD.setText("");
+                    phoneD.setText("");
+                    introD.setText("");
+                    displayImg.setImageURI(null);
+                }
             }
 
             @Override

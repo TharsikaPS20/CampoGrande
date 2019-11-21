@@ -42,11 +42,11 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class EditProfileActivity extends AppCompatActivity {
 
-    private String uUserId, uName, uAge, uCity, uIntro, uDownloadProfImageUrl;
+    private String uUserId, uName, uPhone, uCity, uIntro, uDownloadProfImageUrl;
     private FloatingActionButton updateProfile;
     private static final int GalleryPick = 1;
     private Uri uriProfilePic;
-    private MaterialEditText mName, mCity,mAge,mIntroduction;
+    private MaterialEditText mName, mCity,mPhone,mIntroduction;
     private StorageReference profilePictureRef;
     private DatabaseReference rootRef;
 
@@ -77,7 +77,7 @@ public class EditProfileActivity extends AppCompatActivity {
         profilepic = findViewById(R.id.image_profile);
         mName = findViewById(R.id.fullname);
         mCity = findViewById(R.id.city);
-        mAge = findViewById(R.id.age);
+        mPhone = findViewById(R.id.phone);
         mIntroduction=findViewById(R.id.profiletext);
 
         mAuth=FirebaseAuth.getInstance();
@@ -128,7 +128,7 @@ public class EditProfileActivity extends AppCompatActivity {
 
     private void checkInformation() {
         uName = mName.getText().toString();
-        uAge = mAge.getText().toString();
+        uPhone = mPhone.getText().toString();
         uCity = mCity.getText().toString();
         uIntro = mIntroduction.getText().toString();
 
@@ -141,9 +141,9 @@ public class EditProfileActivity extends AppCompatActivity {
             } else if (TextUtils.isEmpty(uName)) {
                 Toast.makeText(this, "Please enter your full name", Toast.LENGTH_SHORT).show();
                 mName.requestFocus();
-            } else if (TextUtils.isEmpty(uAge)) {
-                Toast.makeText(this, "Please enter your birthday", Toast.LENGTH_SHORT).show();
-                mAge.requestFocus();
+            } else if (TextUtils.isEmpty(uPhone)) {
+                Toast.makeText(this, "Please enter your phone number", Toast.LENGTH_SHORT).show();
+                mPhone.requestFocus();
             } else if (TextUtils.isEmpty(uCity)) {
                 Toast.makeText(this, "Please enter your city", Toast.LENGTH_SHORT).show();
                 mCity.requestFocus();
@@ -209,10 +209,11 @@ public class EditProfileActivity extends AppCompatActivity {
     private void SaveToDatabase() {
         user=mAuth.getCurrentUser();
         userid = user.getUid();
-        ProfileInformation profileInformation = new ProfileInformation(userid, uName, uAge, uCity, uIntro, uDownloadProfImageUrl);
+        ProfileInformation profileInformation = new ProfileInformation(userid, uName, uPhone, uCity, uIntro, uDownloadProfImageUrl);
         rootRef.child(userid).setValue(profileInformation);
         Intent i = new Intent (EditProfileActivity.this,UserProfile.class);
         startActivity(i);
+        finish();
 
     }
 
