@@ -17,12 +17,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexWarning">
+        <activity android:name=".Contact"
+            android:parentActivityName=".About"/>
         <activity
-            android:name=".ActivityTwo"
+            android:name=".HostListings"
+            android:label="@string/listings"
             android:parentActivityName=".Listings" />
         <activity
-            android:name=".ActivityOne"
-            android:parentActivityName=".Listings"/>
+            android:name=".HostBookings"
+            android:label="@string/calendar_activity"
+            android:parentActivityName=".Listings" />
         <activity
             android:name=".FacebookLoginActivity"
             android:label="Campo Grande - Facebook login" />
@@ -36,7 +40,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Listings"
-            android:label="@string/listings"
+            android:label="@string/add_new"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Host"
@@ -107,9 +111,7 @@
             tools:replace="android:value" />
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
-            android:value=".UserProfile"/>
-
-
+            android:value=".UserProfile" />
     </application>
 
 </manifest>

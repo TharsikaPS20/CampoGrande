@@ -95,12 +95,12 @@ public class Listings extends AppCompatActivity implements NavigationView.OnNavi
                 switch (item.getItemId()){
 
                     case R.id.calendar:
-                        Intent intent2 = new Intent(Listings.this, ActivityOne.class);
+                        Intent intent2 = new Intent(Listings.this, HostBookings.class);
                         startActivity(intent2);
                         break;
 
                     case R.id.listings:
-                        Intent intent3 = new Intent(Listings.this, ActivityTwo.class);
+                        Intent intent3 = new Intent(Listings.this, HostListings.class);
                         startActivity(intent3);
                         break;
 
@@ -250,8 +250,8 @@ public class Listings extends AppCompatActivity implements NavigationView.OnNavi
     }
 
     private void SavePropertyInfoToDatabase() {
-        CampingProperites campingProperites = new CampingProperites(CurrentDate, CurrentTime, PropertyName, Address, Size, Price, Description, DownloadImageUrl);
-        PropertiesRef.push().setValue(campingProperites);
+        CampingProperties campingProperties = new CampingProperties(CurrentDate, CurrentTime, PropertyName, Address, Size, Price, Description, DownloadImageUrl);
+        PropertiesRef.push().setValue(campingProperties);
         SelectImage.setImageURI(Uri.parse(""));
         InputPropertyName.setText("");
         InputAddress.setText("");

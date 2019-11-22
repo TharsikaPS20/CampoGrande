@@ -78,12 +78,17 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
-                            Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
+                            if(user.isEmailVerified())
+                            {Log.d(TAG, "signInWithEmail:success");
                             updateUI(user);
                             Intent i = new Intent(LoginActivity.this, Welcome.class);
                             i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                            startActivity(i);
+                            startActivity(i);}
+
+                            else{
+                                Toast.makeText(LoginActivity.this,"Please verify your email by clicking the link that was sent to your email.", Toast.LENGTH_LONG).show();
+                            }
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());

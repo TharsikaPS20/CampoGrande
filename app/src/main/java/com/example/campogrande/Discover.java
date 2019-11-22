@@ -85,7 +85,7 @@ public class Discover extends AppCompatActivity implements NavigationView.OnNavi
                         propertyViewHolder.txtPropertyName.setText(properties.getPropertyName());
                         propertyViewHolder.txtPropertyDescription.setText(properties.getDescription());
                         propertyViewHolder.txtPropertyPrice.setText("Price: " + properties.getPrice() + " DKK");
-                        propertyViewHolder.txtPropertySize.setText("Size: " + properties.getSize() + " m^2");
+                        propertyViewHolder.txtPropertySize.setText("Size: " + properties.getSize() + " m²");
                         Picasso.get().load(properties.getImageUrl()).into(propertyViewHolder.imgPropertyImage);
                     }
 

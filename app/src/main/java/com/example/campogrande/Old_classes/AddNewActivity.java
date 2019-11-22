@@ -15,7 +15,7 @@ import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
-import com.example.campogrande.CampingProperites;
+import com.example.campogrande.CampingProperties;
 import com.example.campogrande.R;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -186,8 +186,8 @@ public class AddNewActivity extends AppCompatActivity {
     }
 
     private void SavePropertyInfoToDatabase() {
-        CampingProperites campingProperites = new CampingProperites(CurrentDate, CurrentTime, PropertyName, Address, Size, Price, Description, DownloadImageUrl);
-        PropertiesRef.push().setValue(campingProperites);
+        CampingProperties campingProperties = new CampingProperties(CurrentDate, CurrentTime, PropertyName, Address, Size, Price, Description, DownloadImageUrl);
+        PropertiesRef.push().setValue(campingProperties);
         SelectImage.setImageURI(Uri.parse(""));
         InputPropertyName.setText("");
         InputAddress.setText("");

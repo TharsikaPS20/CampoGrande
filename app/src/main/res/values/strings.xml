@@ -108,14 +108,21 @@
     <string name="favourites">My favourites</string>
     <string name="messages">Messages</string>
     <string name="host">Host profile</string>
-    <string name="listings">My listings</string>
+    <string name="listings">Host - My listings</string>
     <string name="about">About Campo Grande</string>
     <string name="signoutofapp">Sign out</string>
     <string name="accountinfo">Profile information</string>
-    <string name="title_activity_my_listings">MyListings</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_my_listings">My Listings</string>
+    <string name="calendar_activity">Host - My bookings</string>
+    <string name="listings_name">My listings</string>
+    <string name="add_new">Host - Add new listing</string>
+    <string name="latin">Lorem ipsum dolor sit amet, brute admodum invidunt in usu, ea cum quis omnis...</string>
+    <string name="email_contact"> <u>240249@via.dk</u></string>
+    <string name="phone_contact"> +45 12 34 56 78</string>
+    <string name="hours_contact"> 9AM to 7PM (Monday to Sunday)</string>
+    <string name="address1"> Chr. M. Østergaardsvej 4</string>
+    <string name="address2"> 8700 Horsens</string>
+    <string name="address3"> Denmark</string>
 
 
 </resources>
