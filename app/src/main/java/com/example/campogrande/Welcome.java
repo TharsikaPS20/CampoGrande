@@ -6,15 +6,10 @@ import android.animation.ObjectAnimator;
 import android.graphics.Path;
 import android.os.Build;
 import android.os.Bundle;
-import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
-import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -63,7 +58,7 @@ public class Welcome extends AppCompatActivity {
     }
 
     private void openActivity() {
-        Intent i= new Intent(this,Home.class);
+        Intent i= new Intent(this, Discover.class);
         startActivity(i);
     }
 

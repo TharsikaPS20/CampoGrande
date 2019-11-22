@@ -1,10 +1,9 @@
-package com.example.campogrande;
+package com.example.campogrande.Old_classes;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -16,6 +15,8 @@ import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import com.example.campogrande.CampingProperites;
+import com.example.campogrande.R;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -28,11 +29,7 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.HashMap;
-
-import io.grpc.Context;
 
 public class AddNewActivity extends AppCompatActivity {
 

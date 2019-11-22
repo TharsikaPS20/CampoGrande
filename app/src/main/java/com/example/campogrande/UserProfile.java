@@ -1,17 +1,10 @@
 package com.example.campogrande;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import com.facebook.login.LoginManager;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
-import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
 import androidx.annotation.NonNull;
@@ -27,7 +20,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -38,7 +30,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.Menu;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -240,7 +231,7 @@ public class UserProfile extends AppCompatActivity implements NavigationView.OnN
     private void signOut() {
         FirebaseAuth.getInstance().signOut();
         LoginManager.getInstance().logOut();
-        Intent intent = new Intent(getApplicationContext(),Home.class);
+        Intent intent = new Intent(getApplicationContext(), Discover.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
         Intent intent1 = new Intent(UserProfile.this,MainActivity.class);
@@ -253,7 +244,7 @@ public class UserProfile extends AppCompatActivity implements NavigationView.OnN
     }
 
     private void openHome() {
-        Intent intent = new Intent(UserProfile.this, Home.class);
+        Intent intent = new Intent(UserProfile.this, Discover.class);
         startActivity(intent);
     }
 

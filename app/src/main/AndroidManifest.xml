@@ -4,8 +4,8 @@
     package="com.example.campogrande">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_PROFILE"/>
-    <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION"/>
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
@@ -18,17 +18,22 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexWarning">
         <activity
+            android:name=".ActivityTwo"
+            android:parentActivityName=".Listings" />
+        <activity
+            android:name=".ActivityOne"
+            android:parentActivityName=".Listings"/>
+        <activity
             android:name=".FacebookLoginActivity"
             android:label="Campo Grande - Facebook login" />
         <activity
             android:name=".GoogleSignInActivity"
             android:label="Campo Grande - Google login" />
         <activity android:name=".BaseActivity" />
-
-        <activity android:name=".UserProfile"
+        <activity
+            android:name=".UserProfile"
             android:label="@string/profile"
-            android:theme="@style/AppTheme.NoActionBar"/>
-
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Listings"
             android:label="@string/listings"
@@ -54,8 +59,8 @@
             android:label="@string/about"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Home"
-            android:label="@string/title_activity_home"
+            android:name=".Discover"
+            android:label="@string/menu_discover"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Welcome" />
         <activity
@@ -80,10 +85,10 @@
         <activity
             android:name=".EditProfileActivity"
             android:label="@string/editprofile"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:parentActivityName=".UserProfile"/>
-        <activity android:name=".AddNewActivity" />
-        <activity android:name=".ViewProperties" />
+            android:parentActivityName=".UserProfile"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="$Old_classes.AddNewActivity" />
+        <activity android:name="$Old_classes.ViewProperties" />
         <activity
             android:name=".LoginActivity"
             android:windowSoftInputMode="adjustPan" />
@@ -91,7 +96,6 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -103,7 +107,9 @@
             tools:replace="android:value" />
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
-            android:value=".UserProfile" />
+            android:value=".UserProfile"/>
+
+
     </application>
 
 </manifest>

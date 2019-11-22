@@ -5,18 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".Home"
+    tools:context=".Discover"
     tools:showIn="@layout/activity_home">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/buttontest"
-        android:text="Push me"/>
-
-    <FrameLayout
-        android:id="@+id/screen_area"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_menu"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        >
+
+    </androidx.recyclerview.widget.RecyclerView>
 
 </RelativeLayout>

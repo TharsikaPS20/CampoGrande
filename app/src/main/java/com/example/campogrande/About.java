@@ -13,10 +13,6 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.core.view.GravityCompat;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -172,7 +168,7 @@ public class About extends AppCompatActivity implements NavigationView.OnNavigat
     private void signOut() {
         FirebaseAuth.getInstance().signOut();
         LoginManager.getInstance().logOut();
-        Intent intent = new Intent(getApplicationContext(),Home.class);
+        Intent intent = new Intent(getApplicationContext(), Discover.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
         Intent intent1 = new Intent(About.this,MainActivity.class);
@@ -185,7 +181,7 @@ public class About extends AppCompatActivity implements NavigationView.OnNavigat
     }
 
     private void openHome() {
-        Intent intent = new Intent(About.this, Home.class);
+        Intent intent = new Intent(About.this, Discover.class);
         startActivity(intent);
     }
 

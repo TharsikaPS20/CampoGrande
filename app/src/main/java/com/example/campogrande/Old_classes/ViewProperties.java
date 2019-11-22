@@ -1,4 +1,4 @@
-package com.example.campogrande;
+package com.example.campogrande.Old_classes;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.campogrande.Model.Properties;
+import com.example.campogrande.R;
 import com.example.campogrande.ViewHolder.PropertyViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
