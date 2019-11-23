@@ -23,6 +23,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
@@ -34,7 +35,6 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.view.Menu;
 import android.view.ViewGroup;
 
 public class Discover extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
@@ -42,6 +42,8 @@ public class Discover extends AppCompatActivity implements NavigationView.OnNavi
     private DatabaseReference PropertyRef;
     private RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
+    FirebaseUser user;
+    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +57,11 @@ public class Discover extends AppCompatActivity implements NavigationView.OnNavi
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
+
+        AccessFragment mdf;
+
+        mAuth= FirebaseAuth.getInstance();
+
 
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -103,22 +110,6 @@ public class Discover extends AppCompatActivity implements NavigationView.OnNavi
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.home, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        int id = item.getItemId();
-        if(id==R.id.action_settings){
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 
   @Override
     public boolean onSupportNavigateUp() {
@@ -221,10 +212,18 @@ public class Discover extends AppCompatActivity implements NavigationView.OnNavi
     }
 
     private void openProfile() {
-        Intent intent = new Intent(Discover.this, UserProfile.class);
-        startActivity(intent);
+        user =mAuth.getCurrentUser();
+        if (user != null) {
+            Intent intent = new Intent(Discover.this, UserProfile.class);
+            startActivity(intent);
+        }
+            else{
+                AccessFragment dialog = new AccessFragment();
+                dialog.show(getSupportFragmentManager(),"this");
+            }
+        }
     }
 
 
-}
+
 

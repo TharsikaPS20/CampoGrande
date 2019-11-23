@@ -20,6 +20,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.core.view.GravityCompat;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -37,6 +38,7 @@ import android.view.Menu;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
@@ -46,9 +48,6 @@ import java.util.Calendar;
 
 public class Listings extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private static final String TAG = "Listings";
-
-    //private SectionsPageAdapter mSectionsPageAdapter;
-
     private ViewPager mViewPager;
     private String PropertyName, Address, Size, Price, Description, CurrentDate, CurrentTime, PropertyRandomKey, DownloadImageUrl;
     private Button AddNewPropertyButton;
@@ -59,6 +58,8 @@ public class Listings extends AppCompatActivity implements NavigationView.OnNavi
     private Uri ImageUri;
     private StorageReference PropertyImageRef;
     private DatabaseReference PropertiesRef;
+    private FirebaseAuth mAuth;
+    private FirebaseUser user;
 
 
 
@@ -68,6 +69,9 @@ public class Listings extends AppCompatActivity implements NavigationView.OnNavi
         setContentView(R.layout.activity_listings);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        mAuth=FirebaseAuth.getInstance();
+        user=mAuth.getCurrentUser();
+
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -281,27 +285,12 @@ public class Listings extends AppCompatActivity implements NavigationView.OnNavi
                         {
                             String message = task.getException().toString();
                             Toast.makeText(AddNewActivity.this, "Error: " + message, Toast.LENGTH_SHORT).show();
-                        }
+}
                     }
-                });*/
-    }
+                            });*/
+                            }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.home, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        int id = item.getItemId();
-        if(id==R.id.action_settings){
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 
 
     @Override
@@ -358,8 +347,15 @@ public class Listings extends AppCompatActivity implements NavigationView.OnNavi
     }
 
     private void openProfile() {
-        Intent intent = new Intent(Listings.this, UserProfile.class);
-        startActivity(intent);
+        user =mAuth.getCurrentUser();
+        if (user != null) {
+            Intent intent = new Intent(Listings.this, UserProfile.class);
+            startActivity(intent);
+        }
+        else{
+            AccessFragment dialog = new AccessFragment();
+            dialog.show(getSupportFragmentManager(),"this");
+        }
     }
 
     private void openHost() {

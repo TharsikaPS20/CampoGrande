@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.facebook.login.LoginManager;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import android.view.MenuItem;
 import android.view.View;
@@ -16,6 +14,7 @@ import androidx.core.view.GravityCompat;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -28,6 +27,8 @@ import android.widget.LinearLayout;
 public class About extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
     LinearLayout about, terms, faq, contact;
+    FirebaseAuth mAuth;
+    FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +46,9 @@ public class About extends AppCompatActivity implements NavigationView.OnNavigat
         faq.setOnClickListener(this);
         contact.setOnClickListener(this);
 
+        mAuth=FirebaseAuth.getInstance();
+        user=mAuth.getCurrentUser();
+
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -58,22 +62,7 @@ public class About extends AppCompatActivity implements NavigationView.OnNavigat
         navigationView.bringToFront();
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.home, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 
 
     @Override
@@ -110,8 +99,15 @@ public class About extends AppCompatActivity implements NavigationView.OnNavigat
     }
 
     private void openProfile() {
-        Intent intent = new Intent(About.this, UserProfile.class);
-        startActivity(intent);
+        user =mAuth.getCurrentUser();
+        if (user != null) {
+            Intent intent = new Intent(About.this, UserProfile.class);
+            startActivity(intent);
+        }
+        else{
+            AccessFragment dialog = new AccessFragment();
+            dialog.show(getSupportFragmentManager(),"this");
+        }
     }
 
     private void openHost() {

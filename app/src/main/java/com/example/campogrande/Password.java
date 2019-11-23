@@ -20,7 +20,6 @@ import com.google.firebase.auth.FirebaseAuth;
 public class Password extends AppCompatActivity {
     EditText email_password;
     Button get_password;
-    Toolbar toolbar;
     FirebaseAuth firebaseAuth;
     ProgressBar progressBar;
 

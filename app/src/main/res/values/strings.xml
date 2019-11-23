@@ -98,7 +98,12 @@
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_edit">Edit host profile</string>
+    <string name="action_delete">Delete host profile</string>
+    <string name="action_deleteAccount">Delete account</string>
+    <string name="create_user">"To access this content, please sign in or create an account"</string>
+    <string name="cancel">Cancel</string>
+    <string name="signinorcreate">Sign in/Create account</string>
 
     <string name="menu_discover">Discover</string>
     <string name="home">Home/string></string>
@@ -110,19 +115,26 @@
     <string name="host">Host profile</string>
     <string name="listings">Host - My listings</string>
     <string name="about">About Campo Grande</string>
-    <string name="signoutofapp">Sign out</string>
+    <string name="signoutofapp">Sign out/Leave</string>
     <string name="accountinfo">Profile information</string>
     <string name="title_activity_my_listings">My Listings</string>
     <string name="calendar_activity">Host - My bookings</string>
     <string name="listings_name">My listings</string>
     <string name="add_new">Host - Add new listing</string>
     <string name="latin">Lorem ipsum dolor sit amet, brute admodum invidunt in usu, ea cum quis omnis...</string>
+    <string name="latinlong">Lorem ipsum dolor sit amet, an duo amet discere persecuti. At modo vitae intellegebat pri, an usu mandamus voluptatum. Persius meliore scaevola has at, id saepe volumus eum, feugiat adipiscing at sea.</string>
+    <string name="latinmedium">Lorem ipsum dolor sit amet, an duo amet discere persecuti. At modo vitae intellegebat pri, an usu mandamus voluptatum.</string>
     <string name="email_contact"> <u>240249@via.dk</u></string>
     <string name="phone_contact"> +45 12 34 56 78</string>
-    <string name="hours_contact"> 9AM to 7PM (Monday to Sunday)</string>
+    <string name="hours_contact">  9AM to 7PM (Monday to Sunday)</string>
     <string name="address1"> Chr. M. Østergaardsvej 4</string>
     <string name="address2"> 8700 Horsens</string>
     <string name="address3"> Denmark</string>
+    <string name="contact_us">Contact us</string>
+    <string name="languages">Danish, English, German</string>
+    <string name="city_host">Horsens</string>
+
+
 
 
 </resources>

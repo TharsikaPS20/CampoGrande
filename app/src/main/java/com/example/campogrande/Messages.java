@@ -4,11 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.facebook.login.LoginManager;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import android.view.MenuItem;
-import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -16,6 +13,7 @@ import androidx.core.view.GravityCompat;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -26,6 +24,8 @@ import android.view.Menu;
 
     public class Messages extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+        FirebaseAuth mAuth;
+        FirebaseUser user;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +34,8 @@ import android.view.Menu;
             Toolbar toolbar = findViewById(R.id.toolbar);
             setSupportActionBar(toolbar);
 
+            mAuth=FirebaseAuth.getInstance();
+            user=mAuth.getCurrentUser();
 
             DrawerLayout drawer = findViewById(R.id.drawer_layout);
             ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -46,30 +48,6 @@ import android.view.Menu;
             navigationView.setNavigationItemSelectedListener(this);
             navigationView.bringToFront();
         }
-
-        @Override
-        public boolean onCreateOptionsMenu(Menu menu) {
-            // Inflate the menu; this adds items to the action bar if it is present.
-            getMenuInflater().inflate(R.menu.home, menu);
-            return true;
-        }
-
-        @Override
-        public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-            int id = item.getItemId();
-            if(id==R.id.action_settings){
-                return true;
-            }
-
-            return super.onOptionsItemSelected(item);
-        }
-
-  /*  @Override
-    public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        return NavigationUI.navigateUp(navController, mAppBarConfiguration)
-                || super.onSupportNavigateUp();
-    }*/
 
 
         @Override
@@ -126,8 +104,15 @@ import android.view.Menu;
         }
 
         private void openProfile() {
-            Intent intent = new Intent(Messages.this, UserProfile.class);
-            startActivity(intent);
+            user =mAuth.getCurrentUser();
+            if (user != null) {
+                Intent intent = new Intent(Messages.this, UserProfile.class);
+                startActivity(intent);
+            }
+            else{
+                AccessFragment dialog = new AccessFragment();
+                dialog.show(getSupportFragmentManager(),"this");
+            }
         }
 
         private void openHost() {
