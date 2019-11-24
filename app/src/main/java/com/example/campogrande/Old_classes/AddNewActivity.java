@@ -186,8 +186,9 @@ public class AddNewActivity extends AppCompatActivity {
     }
 
     private void SavePropertyInfoToDatabase() {
-        CampingProperties campingProperties = new CampingProperties(CurrentDate, CurrentTime, PropertyName, Address, Size, Price, Description, DownloadImageUrl);
-        PropertiesRef.push().setValue(campingProperties);
+        String PropertyId = PropertiesRef.push().getKey();
+        CampingProperties campingProperties = new CampingProperties(PropertyId, CurrentDate, CurrentTime, PropertyName, Address, Size, Price, Description, DownloadImageUrl);
+        PropertiesRef.child(PropertyId).setValue(campingProperties);
         SelectImage.setImageURI(Uri.parse(""));
         InputPropertyName.setText("");
         InputAddress.setText("");

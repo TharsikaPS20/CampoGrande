@@ -3,6 +3,7 @@ package com.example.campogrande;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.campogrande.Interface.ItemClickListener;
 import com.example.campogrande.Model.Properties;
 import com.example.campogrande.ViewHolder.PropertyViewHolder;
 import com.facebook.login.LoginManager;
@@ -38,6 +39,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 public class Discover extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
@@ -46,6 +48,7 @@ public class Discover extends AppCompatActivity implements NavigationView.OnNavi
     RecyclerView.LayoutManager layoutManager;
     FirebaseUser user;
     FirebaseAuth mAuth;
+    private Properties property;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -128,12 +131,21 @@ public class Discover extends AppCompatActivity implements NavigationView.OnNavi
         FirebaseRecyclerAdapter<Properties, PropertyViewHolder> adapter =
                 new FirebaseRecyclerAdapter<Properties, PropertyViewHolder>(options) {
                     @Override
-                    protected void onBindViewHolder(@NonNull PropertyViewHolder propertyViewHolder, int i, @NonNull Properties properties) {
+                    protected void onBindViewHolder(@NonNull PropertyViewHolder propertyViewHolder, final int i, final Properties properties) {
                         propertyViewHolder.txtPropertyName.setText(properties.getPropertyName());
                         propertyViewHolder.txtPropertyDescription.setText(properties.getDescription());
                         propertyViewHolder.txtPropertyPrice.setText("Price: " + properties.getPrice() + " DKK");
                         propertyViewHolder.txtPropertySize.setText("Size: " + properties.getSize() + " m²");
                         Picasso.get().load(properties.getImageUrl()).into(propertyViewHolder.imgPropertyImage);
+                        propertyViewHolder.root.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                //Toast.makeText(Discover.this, String.valueOf(i), Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(Discover.this, PropertyDetailsActivity.class);
+                                intent.putExtra("pid", properties.getPropRandomKey());
+                                startActivity(intent);
+                            }
+                        });
                     }
 
                     @NonNull
@@ -262,7 +274,14 @@ public class Discover extends AppCompatActivity implements NavigationView.OnNavi
                 dialog.show(getSupportFragmentManager(),"this");
             }
         }
-    }
+
+    /*@Override
+    public void OnPropertyListener(int position) {
+        Intent intent = new Intent(Discover.this, PropertyDetailsActivity.class);
+        //intent.putExtra("pid", property.getPropRandomKey());
+        startActivity(intent);
+    }*/
+}
 
 
 

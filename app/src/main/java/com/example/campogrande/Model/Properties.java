@@ -2,19 +2,28 @@ package com.example.campogrande.Model;
 
 public class Properties {
 
-    private String propertyName, description, price, size, imageUrl;
+    private String propRandomKey, propertyName, description, price, size, imageUrl;
 
     public Properties()
     {
 
     }
 
-    public Properties(String propertyName, String description, String price, String size, String imageUrl) {
+    public Properties(String propRandomKey, String propertyName, String description, String price, String size, String imageUrl) {
+        this.propRandomKey = propRandomKey;
         this.propertyName = propertyName;
         this.description = description;
         this.price = price;
         this.size = size;
         this.imageUrl = imageUrl;
+    }
+
+    public String getPropRandomKey() {
+        return propRandomKey;
+    }
+
+    public void setPropRandomKey(String propRandomKey) {
+        this.propRandomKey = propRandomKey;
     }
 
     public String getPropertyName() {
