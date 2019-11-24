@@ -59,7 +59,7 @@ public class HostListings extends AppCompatActivity {
                             propertyViewHolder.txtPropertyName.setText(properties.getPropertyName());
                             propertyViewHolder.txtPropertyDescription.setText(properties.getDescription());
                             propertyViewHolder.txtPropertyPrice.setText("Price: " + properties.getPrice() + " DKK");
-                            propertyViewHolder.txtPropertySize.setText("Size: " + properties.getSize() + " m2");
+                            propertyViewHolder.txtPropertySize.setText("Size: " + properties.getSize() + " m²");
                             Picasso.get().load(properties.getImageUrl()).into(propertyViewHolder.imgPropertyImage);
                         }
 

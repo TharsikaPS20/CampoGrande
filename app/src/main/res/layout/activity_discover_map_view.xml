@@ -8,14 +8,23 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:weightSum="12"
         android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="11"
+        android:weightSum="12">
 
     <fragment
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="0dp"
+        android:layout_weight="12"
         tools:context=".Controller.Item">
 
     <LinearLayout
@@ -54,6 +63,7 @@
         android:layout_width="match_parent"
         android:layout_height="120dp"
         android:orientation="horizontal"
+        android:layout_weight="1"
         android:weightSum="6"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/background2">
@@ -66,7 +76,7 @@
             android:id="@+id/caravanmap"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/caravanground4"/>
+            android:src="@drawable/caravanground3"/>
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="35dp"
@@ -93,7 +103,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0.7"
-                android:text="Holstebro"
+                android:text="Horsens"
                 android:textSize="12sp"
                 android:layout_marginStart="10dp"
                 android:drawableStart="@drawable/ic_listings"
@@ -132,7 +142,8 @@
     <RelativeLayout
         android:id="@+id/bnv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
 
         <RelativeLayout
@@ -153,4 +164,5 @@
             </com.google.android.material.bottomnavigation.BottomNavigationView>
         </RelativeLayout>
     </RelativeLayout>
+    </LinearLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
