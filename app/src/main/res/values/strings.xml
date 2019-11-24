@@ -133,6 +133,10 @@
     <string name="contact_us">Contact us</string>
     <string name="languages">Danish, English, German</string>
     <string name="city_host">Horsens</string>
+    <string name="title_activity_discover_map">Map</string>
+    <string name="normal">Normal</string>
+    <string name="satellite">Satellite</string>
+    <string name="hybrid">Hybrid</string>
 
 
 </resources>
