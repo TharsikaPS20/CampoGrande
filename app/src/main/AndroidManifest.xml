@@ -18,9 +18,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexWarning">
-        <activity android:name=".HostReviews"
+        <activity android:name=".ReservationsPrev"
+            android:parentActivityName=".Reservations"
+            android:label="Previous Reservations"/>
+        <activity
+            android:name=".HostReviews"
             android:label="Host Reviews"
-            android:parentActivityName=".Host"/>
+            android:parentActivityName=".Host" />
         <activity
             android:name=".Contact"
             android:label="@string/contact_us"
