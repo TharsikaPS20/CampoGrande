@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DiscoverMapView">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        tools:context=".Controller.Item">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal">
+
+
+        <Button
+            android:id="@+id/btn1"
+            android:layout_width="65dp"
+            android:layout_height="30dp"
+            android:text="@string/normal"
+            android:textSize="8sp" />
+
+        <Button
+            android:id="@+id/btn2"
+            android:layout_width="65dp"
+            android:layout_height="30dp"
+            android:text="@string/satellite"
+            android:textSize="8sp" />
+
+        <Button
+            android:id="@+id/btn3"
+            android:layout_width="65dp"
+            android:layout_height="30dp"
+            android:text="@string/hybrid"
+            android:textSize="8sp" />
+    </LinearLayout>
+    </fragment>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:orientation="horizontal"
+        android:weightSum="6"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/background2">
+
+<RelativeLayout
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:layout_weight="3">
+        <ImageView
+            android:id="@+id/caravanmap"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/caravanground4"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/messageuser3"
+            android:layout_alignBottom="@id/caravanmap"
+            android:layout_alignEnd="@id/caravanmap"/>
+</RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:orientation="vertical"
+            android:weightSum="3">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="Idyllic camp spot in nature"
+                android:layout_marginStart="10dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.7"
+                android:text="Holstebro"
+                android:textSize="12sp"
+                android:layout_marginStart="10dp"
+                android:drawableStart="@drawable/ic_listings"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="8dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:text="70 DKK/night"
+                android:textSize="12sp"
+                android:drawableStart="@drawable/ic_price"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="8dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:text="200 m²"
+                android:textSize="12sp"
+                android:drawableStart="@drawable/ic_zoom_out_map_black_24dp"
+                android:layout_marginStart="10dp" />
+
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:text="Nice place to camp, close to the center"
+            android:gravity="center_horizontal"
+            android:textSize="10sp"/>
+    </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/bnv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/bottomBar"
+            android:layout_alignParentBottom="true">
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/bottomNavView_Bar3"
+                android:background="@drawable/white_grey_border_top"
+                app:menu="@menu/bottom_navigation_menu4"
+                app:labelVisibilityMode="labeled">
+
+
+            </com.google.android.material.bottomnavigation.BottomNavigationView>
+        </RelativeLayout>
+    </RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

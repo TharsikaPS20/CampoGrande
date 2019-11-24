@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <item
+        android:id="@+id/res"
+        android:icon="@drawable/ic_reservation"
+        android:title="Future reservations"
+        />
+    <item
+        android:id="@+id/res_prev"
+        android:icon="@drawable/ic_reservations_prev"
+        android:title="Previous reservations"
+        />
+
+
+
+
+</menu>

@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ReservationsPrev"
+    android:background="@color/grey_100">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="10dp">
+
+
+        <LinearLayout
+            android:id="@+id/layout1"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <RelativeLayout
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/caravanground5"
+                    android:id="@+id/image_profile"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:contextClickable="true"/>
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/messageuser3"
+                    android:id="@+id/hostpic"
+                    android:textSize="10sp"
+                    android:layout_alignEnd="@id/image_profile"
+                    android:layout_alignBottom="@id/image_profile"
+                    android:clickable="true"
+                    android:contextClickable="true"
+                    android:focusable="true"/>
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/sendmessage_res"
+                    android:layout_alignEnd="@id/hostpic"
+                    android:layout_alignBottom="@id/hostpic"/>
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="vertical">
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:textSize="14sp"
+                    android:text="Family-friendly place near Legoland"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="12/04 - 18/4 - 2019"
+                    android:textStyle="italic"
+                    android:textSize="12sp"
+                    android:layout_marginBottom="5dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:text="Host: Nikolaj"
+                    android:drawableStart="@drawable/ic_host"
+                    android:gravity="center_vertical"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12dp"
+                    android:drawableStart="@drawable/ic_listings"
+                    android:text="Riis, Denmark"
+                    android:textStyle="italic"
+                    android:gravity="center_vertical"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout3"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:layout_marginTop="10dp">
+
+            <RelativeLayout
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/caravanground6"
+                    android:id="@+id/res1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:contextClickable="true"/>
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/messageuser"
+                    android:id="@+id/hostpic1"
+                    android:textSize="10sp"
+                    android:layout_alignEnd="@id/res1"
+                    android:layout_alignBottom="@id/res1"
+                    android:clickable="true"
+                    android:contextClickable="true"
+                    android:focusable="true"/>
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/sendmessage_res"
+                    android:layout_alignEnd="@id/hostpic1"
+                    android:layout_alignBottom="@id/hostpic1"/>
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="vertical">
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:textSize="14sp"
+                    android:text="Camp surrounded by pretty nature"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="10/03 - 12/03 - 2019"
+                    android:textStyle="italic"
+                    android:textSize="12sp"
+                    android:layout_marginBottom="5dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:text="Host: Meryl"
+                    android:drawableStart="@drawable/ic_host"
+                    android:gravity="center_vertical"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12dp"
+                    android:drawableStart="@drawable/ic_listings"
+                    android:text="Skagen, Denmark"
+                    android:textStyle="italic"
+                    android:gravity="center_vertical"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout2"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:layout_marginTop="10dp">
+
+            <RelativeLayout
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/caravanground7"
+                    android:id="@+id/res2"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:contextClickable="true"/>
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/messageuser4"
+                    android:id="@+id/hostpic2"
+                    android:textSize="10sp"
+                    android:layout_alignEnd="@id/res2"
+                    android:layout_alignBottom="@id/res2"
+                    android:clickable="true"
+                    android:contextClickable="true"
+                    android:focusable="true"/>
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/sendmessage_res"
+                    android:layout_alignEnd="@id/hostpic2"
+                    android:layout_alignBottom="@id/hostpic2"/>
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="vertical">
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:textSize="14sp"
+                    android:text="Slow down, relax and enjoy nature"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="05/09 - 10/09 - 2019"
+                    android:textStyle="italic"
+                    android:textSize="12sp"
+                    android:layout_marginBottom="5dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:text="Host: Pippi"
+                    android:drawableStart="@drawable/ic_host"
+                    android:gravity="center_vertical"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12dp"
+                    android:drawableStart="@drawable/ic_listings"
+                    android:text="Esbjerg, Denmark"
+                    android:textStyle="italic"
+                    android:gravity="center_vertical"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/bottomBar"
+            android:layout_alignParentBottom="true">
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/bottomNavView_Bar2"
+                android:background="@drawable/white_grey_border_top"
+                app:menu="@menu/bottom_navigation_menu3">
+
+
+            </com.google.android.material.bottomnavigation.BottomNavigationView>
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
