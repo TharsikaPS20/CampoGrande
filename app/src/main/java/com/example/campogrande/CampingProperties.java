@@ -3,7 +3,7 @@ package com.example.campogrande;
 import java.util.ArrayList;
 
 public class CampingProperties {
-    //private String propRandomKey;
+    private String propRandomKey;
     private String currentDate;
     private String currentTime;
     private String propertyName;
@@ -19,8 +19,8 @@ public class CampingProperties {
 
     }
 
-    public CampingProperties(/*String propRandomKey, */String currentDate, String currentTime, String propertyName, String address, String size, String price, String description, String imageUrl ) {
-        //this.propRandomKey = propRandomKey;
+    public CampingProperties(String propRandomKey, String currentDate, String currentTime, String propertyName, String address, String size, String price, String description, String imageUrl ) {
+        this.propRandomKey = propRandomKey;
         this.currentDate = currentDate;
         this.currentTime = currentTime;
         this.propertyName = propertyName;
@@ -31,13 +31,13 @@ public class CampingProperties {
         this.imageUrl = imageUrl;
     }
 
-   /* public String getPropRandomKey() {
+   public String getPropRandomKey() {
         return propRandomKey;
     }
 
     public void setPropRandomKey(String propRandomKey) {
         this.propRandomKey = propRandomKey;
-    }*/
+    }
 
     public String getCurrentDate() {
         return currentDate;
