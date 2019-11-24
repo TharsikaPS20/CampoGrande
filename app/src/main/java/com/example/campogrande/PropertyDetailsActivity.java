@@ -3,7 +3,12 @@ package com.example.campogrande;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.example.campogrande.Adapter.PropertyDetailsAdapter;
 import com.example.campogrande.Adapter.PropertyImagesAdapter;
@@ -19,6 +24,8 @@ public class PropertyDetailsActivity extends AppCompatActivity {
 
     private ViewPager propertyDetailsViewpager;
     private TabLayout propertyDetailsTablayout;
+
+    private LinearLayout rateNowLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,5 +65,29 @@ public class PropertyDetailsActivity extends AppCompatActivity {
 
             }
         });
+
+        rateNowLayout = findViewById(R.id.rate_now_container);
+        for (int x = 0; x < rateNowLayout.getChildCount(); x++)
+        {
+            final int starPosition = x;
+            rateNowLayout.getChildAt(x).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    setRating(starPosition);
+                }
+            });
+        }
+    }
+
+    public void setRating(int starPosition) {
+        for (int x = 0; x < rateNowLayout.getChildCount(); x++)
+        {
+            ImageView starBtn = (ImageView) rateNowLayout.getChildAt(x);
+            starBtn.setImageTintList(ColorStateList.valueOf(Color.parseColor("#BEBEBE")));
+            if (x <= starPosition)
+            {
+                starBtn.setImageTintList(ColorStateList.valueOf(Color.parseColor("#FFBB00")));
+            }
+        }
     }
 }
