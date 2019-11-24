@@ -6,7 +6,7 @@ public class ProfileInformation {
 
         private String userId;
         private String name;
-        private String age;
+        private String phone;
         private String city;
         private String intro;
         private String imageUrl;
@@ -17,10 +17,10 @@ public  ProfileInformation(){
 
 
 
-    public ProfileInformation (String userId, String name, String age, String city, String intro, String imageUrl) {
+    public ProfileInformation (String userId, String name, String phone, String city, String intro, String imageUrl) {
             this.userId = userId;
             this.name = name;
-            this.age = age;
+            this.phone = phone;
             this.city = city;
             this.intro = intro;
             this.imageUrl = imageUrl;
@@ -42,12 +42,12 @@ public  ProfileInformation(){
         this.name = name;
     }
 
-    public String getAge() {
-        return age;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setAge(String age) {
-        this.age = age;
+    public void setPhone(String age) {
+        this.phone = phone;
     }
 
     public String getCity() {

@@ -63,7 +63,9 @@
     android:hint="E-mail address"
     android:inputType="textEmailAddress"
     android:textSize="17sp"
-    android:textStyle="bold"/>
+    android:textStyle="bold"
+        android:drawableLeft="@drawable/ic_email"
+        />
 
     <EditText
         android:id="@+id/login_password_input"
@@ -78,7 +80,8 @@
         android:hint="Password"
         android:inputType="textPassword"
         android:textSize="17sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:drawableLeft="@drawable/ic_password"/>
 
     <LinearLayout
         android:id="@+id/linear_layout_1"

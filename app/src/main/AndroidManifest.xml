@@ -2,12 +2,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.campogrande">
-
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_PROFILE"/>
-    <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION"/>
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -17,7 +23,42 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexWarning">
-        <activity android:name=".ProfileActivity"/>
+        <activity android:name=".DiscoverMapView"
+            android:label="Discover"
+            android:parentActivityName=".Discover"/>
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+        <activity
+            android:name=".DiscoverMapFragment" />
+        <activity
+            android:name=".ReservationsPrev"
+            android:label="Previous Reservations"
+            android:parentActivityName=".Reservations" />
+        <activity
+            android:name=".HostReviews"
+            android:label="Host Reviews"
+            android:parentActivityName=".Host" />
+        <activity
+            android:name=".Contact"
+            android:label="@string/contact_us"
+            android:parentActivityName=".About" />
+        <activity
+            android:name=".HostListings"
+            android:label="@string/listings"
+            android:parentActivityName=".Listings" />
+        <activity
+            android:name=".HostBookings"
+            android:label="@string/calendar_activity"
+            android:parentActivityName=".Listings" />
         <activity
             android:name=".FacebookLoginActivity"
             android:label="Campo Grande - Facebook login" />
@@ -26,8 +67,12 @@
             android:label="Campo Grande - Google login" />
         <activity android:name=".BaseActivity" />
         <activity
+            android:name=".UserProfile"
+            android:label="@string/profile"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".Listings"
-            android:label="@string/listings"
+            android:label="@string/add_new"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Host"
@@ -50,8 +95,8 @@
             android:label="@string/about"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Home"
-            android:label="@string/title_activity_home"
+            android:name=".Discover"
+            android:label="@string/menu_discover"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Welcome" />
         <activity
@@ -75,25 +120,21 @@
         </activity>
         <activity
             android:name=".EditProfileActivity"
-            android:label="@string/profile"
+            android:label="@string/editprofile"
+            android:parentActivityName=".UserProfile"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".AddNewActivity">
-
-        </activity>
-        <activity android:name=".PropertyDetailsActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".ViewProperties" />
+        <activity android:name="$Old_classes.AddNewActivity" />
+        <activity android:name="$Old_classes.ViewProperties" />
         <activity
             android:name=".LoginActivity"
             android:windowSoftInputMode="adjustPan" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".Password" />
 
@@ -101,6 +142,9 @@
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id"
             tools:replace="android:value" />
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".UserProfile" />
     </application>
 
 </manifest>

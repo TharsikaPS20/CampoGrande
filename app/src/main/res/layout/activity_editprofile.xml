@@ -7,40 +7,76 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".EditProfileActivity">
 
-    <FrameLayout
-        android:id="@+id/screen_area"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
 
     <LinearLayout
+        android:id="@+id/pic_layout"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:orientation="vertical"
+        android:background="@drawable/edit_profile_background">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/AppTheme.PopupOverlay"/>
+
+        </com.google.android.material.appbar.AppBarLayout>
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:src="@drawable/defaultprofileimage"
+            android:layout_gravity="center"
+            android:id="@+id/image_profile"
+            android:layout_marginTop="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:contextClickable="true"/>
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/add_image"
+            android:layout_gravity="center"
+            android:id="@+id/photochange"
+            android:textSize="10sp"
+            android:layout_alignEnd="@id/image_profile"
+            android:layout_alignBottom="@id/image_profile"
+            android:clickable="true"
+            android:contextClickable="true"
+            android:focusable="true"/>
+</RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/text_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_marginLeft="10dp">
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:src="@drawable/profile_pic"
-            android:layout_gravity="center"
-            android:foregroundGravity="center_horizontal"
-            android:id="@+id/image_profile"
-            android:layout_margin="10dp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Change photo"
-            android:layout_gravity="center"
-            android:id="@+id/text_change_photo1"
-            android:textColor="@color/colorPrimary"
-            android:textSize="16sp"/>
+        android:layout_below="@id/pic_layout">
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/fullname"
             android:hint="Full name"
-            android:layout_marginTop="20dp"
+            android:inputType="textPersonName"
+            android:layout_marginTop="5dp"
             app:met_floatingLabel="normal"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:drawableLeft="@drawable/ic_username"
+            android:drawableTint="@android:color/holo_blue_light"
             />
 
         <com.rengwuxian.materialedittext.MaterialEditText
@@ -48,26 +84,55 @@
             android:layout_height="wrap_content"
             android:id="@+id/city"
             android:hint="City"
-            android:layout_marginTop="20dp"
+            android:inputType="text"
+            android:layout_marginTop="10dp"
             app:met_floatingLabel="normal"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:drawableLeft="@drawable/ic_city"
+            android:drawableTint="@android:color/holo_blue_light"
             />
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/age"
-            android:hint="Age"
-            android:layout_marginTop="20dp"
-            app:met_floatingLabel="normal"/>
+            android:id="@+id/phone"
+            android:hint="Phone number"
+            android:inputType="phone"
+            android:layout_marginTop="5dp"
+            app:met_floatingLabel="normal"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:drawableStart="@drawable/ic_phone"
+            android:drawableTint="@android:color/holo_blue_light"
+            />
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/profiletext"
-            android:hint="Introduce yourself"
-            android:layout_marginTop="20dp"
+            android:inputType="textMultiLine"
+            android:hint="Introduce yourself: What are your hobbies? How do you travel? With motorcaravan or caravan? With whom? How often? Etc."
+            android:text=""
+            android:layout_marginTop="5dp"
             app:met_floatingLabel="normal"
-            />
+            android:layout_marginBottom="80dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+             />
+
     </LinearLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin"
+        android:backgroundTint="@android:color/holo_blue_light"
+        app:srcCompat="@drawable/save"
+        android:tint="@color/md_white_1000"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"/>
+
+
 
 </RelativeLayout>

@@ -120,6 +120,8 @@
                android:text="  Continue with Facebook"
                android:layout_marginStart="10dp"
                android:layout_marginEnd="10dp"
+               android:textColor="@color/md_white_1000"
+               android:background="@drawable/button_facebook"
               />
 
 
@@ -136,15 +138,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:weightSum="4">
+        android:weightSum="4"
+        android:layout_marginTop="10dp">
 
 
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_weight="1"
-            android:layout_marginTop="10dp">
+            android:layout_height="50dp"
+            android:layout_weight="1">
 
 
             <Button
@@ -155,7 +157,9 @@
                 android:layout_marginEnd="10dp"
                 android:drawableLeft="@drawable/google_icon"
                 android:layout_centerInParent="true"
-                android:text="Continue with Google"/>
+                android:text="Continue with Google"
+                android:background="@drawable/button_google"
+                android:textColor="@color/md_white_1000"/>
 
 
         </RelativeLayout>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,113 +10,210 @@
     tools:context=".Listings">
 
 
-
-
-
-    <LinearLayout
-        android:id="@+id/pic_layout"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="220dp"
-        android:orientation="vertical"
-        android:background="@android:color/holo_blue_dark">
+        android:layout_height="match_parent">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="170dp"
-            android:layout_height="170dp"
-            android:src="@drawable/profile_pic"
-            android:layout_gravity="center"
-            android:id="@+id/image_profile_display"
-            android:layout_marginTop="10dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:contextClickable="true"/>
 
-    </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/text_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_below="@id/pic_layout">
-
-        <TextView
+        <RelativeLayout
+            android:layout_below="@+id/topBar"
+            android:layout_above="@+id/bottomBar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/fullname"
-            android:text="Full name"
-            android:textSize="20sp"
-            android:layout_marginTop="10dp"
-            app:met_floatingLabel="normal"
-            />
-        <TextView
+            android:layout_height="match_parent"
+            >
+
+            <androidx.viewpager.widget.ViewPager
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/container"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            </androidx.viewpager.widget.ViewPager>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:id="@+id/select_image"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_marginLeft="45dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:cropToPadding="false"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/add_image"
+                    />
+                <ImageButton
+                    android:id="@+id/select_image1"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_toEndOf="@+id/select_image"
+                    android:layout_marginTop="10dp"
+                    android:cropToPadding="false"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/add_image"
+                    />
+                <ImageButton
+                    android:id="@+id/select_image2"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_toEndOf="@+id/select_image1"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="45dp"
+                    android:layout_marginTop="10dp"
+                    android:cropToPadding="false"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/add_image"
+                    />
+
+                <EditText
+                    android:id="@+id/property_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/select_image"
+                    android:inputType="textMultiLine"
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp"
+                    android:hint="@string/property_name"
+                    android:layout_marginLeft="45dp"
+                    android:layout_marginRight="45dp"
+                    android:background="@drawable/inputs"
+                    />
+
+                <EditText
+                    android:id="@+id/address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/property_name"
+                    android:inputType="textPostalAddress"
+                    android:layout_marginTop="5dp"
+                    android:padding="10dp"
+                    android:hint="@string/address"
+                    android:layout_marginLeft="45dp"
+                    android:layout_marginRight="45dp"
+                    android:background="@drawable/inputs"
+                    />
+
+                <EditText
+                    android:id="@+id/size"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/address"
+                    android:inputType="numberDecimal"
+                    android:layout_marginTop="5dp"
+                    android:padding="10dp"
+                    android:hint="@string/size"
+                    android:layout_marginLeft="45dp"
+                    android:layout_marginRight="45dp"
+                    android:background="@drawable/inputs"
+                    />
+
+                <EditText
+                    android:id="@+id/price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/size"
+                    android:inputType="number"
+                    android:layout_marginTop="5dp"
+                    android:padding="10dp"
+                    android:hint="@string/price"
+                    android:layout_marginLeft="45dp"
+                    android:layout_marginRight="45dp"
+                    android:background="@drawable/inputs"
+                    />
+
+                <EditText
+                    android:id="@+id/description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/price"
+                    android:inputType="textMultiLine"
+                    android:layout_marginTop="5dp"
+                    android:padding="10dp"
+                    android:hint="@string/description"
+                    android:layout_marginLeft="45dp"
+                    android:layout_marginRight="45dp"
+                    android:background="@drawable/inputs"
+                    />
+                <TextView
+                    android:id="@+id/facilities"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/description"
+                    android:text="@string/facilities"
+                    android:layout_marginTop="5dp"
+                    android:padding="2dp"
+                    android:layout_marginLeft="45dp"
+                    android:layout_marginRight="45dp"
+                    />
+
+                <RadioButton
+                    android:id="@+id/radioWater"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:padding="2dp"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_below="@+id/facilities"
+                    android:text="@string/water"
+                    />
+                <RadioButton
+                    android:id="@+id/radioElectricity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:padding="2dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="45dp"
+                    android:layout_below="@+id/facilities"
+                    android:layout_toEndOf="@+id/radioWater"
+                    android:text="@string/electricity"
+                    />
+
+                <Button
+                    android:id="@+id/AddButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/radioWater"
+                    android:text="@string/add"
+                    android:layout_marginLeft="45dp"
+                    android:layout_marginRight="45dp"
+                    android:padding="10dp"
+                    android:layout_marginTop="20dp"
+                    android:textSize="18sp"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/buttons"
+                    />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/fullnameRead"
-            android:padding="10dp"
-            android:textSize="20sp"
-            app:met_floatingLabel="normal"
-            />
+            android:layout_height="50dp"
+            android:id="@+id/bottomBar"
+            android:layout_alignParentBottom="true">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/city"
-            android:text="City"
-            android:textSize="20sp"
-            android:layout_marginTop="10dp"
-            app:met_floatingLabel="normal"
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/cityRead"
-            android:textSize="20sp"
-            app:met_floatingLabel="normal"
-            android:padding="10dp"
-            />
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/bottomNavView_Bar"
+                android:background="@drawable/white_grey_border_top"
+                app:menu="@menu/bottom_navigation_menu"
+                app:labelVisibilityMode="labeled">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/age"
-            android:text="Age"
-            android:textSize="20sp"
-            android:layout_marginTop="10dp"
-            app:met_floatingLabel="normal"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/ageRead"
-            android:textSize="20sp"
-            android:layout_margin="10dp"
-            app:met_floatingLabel="normal"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/profiletext"
-            android:text="Introduce yourself"
-            android:layout_marginTop="20dp"
-            android:textSize="20sp"
-            app:met_floatingLabel="normal"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/profiletextRead"
-            android:layout_margin="10dp"
-            android:textSize="20sp"
-            app:met_floatingLabel="normal"
-            android:layout_marginBottom="80dp"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/idDisplay"/>
+            </com.google.android.material.bottomnavigation.BottomNavigationView>
+        </RelativeLayout>
 
 
 
-    </LinearLayout>
-</RelativeLayout>
+    </RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

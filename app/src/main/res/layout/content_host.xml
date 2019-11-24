@@ -1,89 +1,311 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:showIn="@layout/activity_host"
+
     tools:context=".Host">
 
-<ListView
-    android:id="@+id/listView"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"/>
-    <LinearLayout
-        android:id="@+id/pic_layout"
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="220dp"
-        android:orientation="vertical"
-        android:background="@android:color/holo_blue_dark">
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/pic_layout"
+            android:layout_width="match_parent"
+            android:weightSum="2"
+            android:layout_height="180dp"
+            android:orientation="horizontal"
+            android:background="@drawable/hostbackground"
+            android:layout_centerHorizontal="true">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="170dp"
-            android:layout_height="170dp"
-            android:src="@drawable/profile_pic"
-            android:layout_gravity="center"
-            android:id="@+id/image_profile"
-            android:layout_marginTop="10dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:contextClickable="true"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Change photo"
-            android:layout_gravity="center"
-            android:id="@+id/photochange"
-            android:textSize="10sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/text_layout"
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="170dp"
+                android:src="@drawable/messageuser"
+                android:layout_gravity="center_vertical"
+                android:id="@+id/image_profile_display"
+                android:clickable="true"
+                android:focusable="true"/>
+<LinearLayout
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:orientation="vertical"
+    android:gravity="center_vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/hostname"
+                android:textSize="28sp"
+                android:textStyle="italic|bold"
+                android:text="Meryl Streep"
+                android:textColor="@color/md_white_1000"
+                android:layout_marginBottom="6dp"/>
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_below="@id/pic_layout">
+        android:layout_height="wrap_content"
+        android:id="@+id/hostexperience"
+        android:textSize="18sp"
+        android:textStyle="italic|bold"
+        android:text="Experience: Advanced"
+        android:textColor="@color/md_white_1000"
+        android:layout_marginBottom="6dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/hostauthenticated"
+        android:textSize="18sp"
+        android:textStyle="italic|bold"
+        android:text="Authenticated"
+        android:drawableLeft="@drawable/ic_verified_host"
+        android:drawableTint="@color/md_green_600"
+        android:textColor="@color/md_white_1000"
+        android:layout_marginBottom="6dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/fullnameRead"
+        android:textSize="18sp"
+        android:textStyle="italic|bold"
+        android:text="4/5 - 3 reviews"
+        android:drawableStart="@drawable/ic_star_black_24dp"
+        android:drawableTint="@color/md_yellow_A200"
+        android:textColor="@color/md_white_1000"/>
+        </LinearLayout>
 
-        <com.rengwuxian.materialedittext.MaterialEditText
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/fullname"
-            android:hint="Full name"
-            android:layout_marginTop="10dp"
-            app:met_floatingLabel="normal"
-            />
+            android:layout_height="500dp"
+            android:weightSum="7"
+            android:orientation="vertical"
+            android:layout_below="@id/pic_layout"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp">
 
-        <com.rengwuxian.materialedittext.MaterialEditText
+
+            <LinearLayout
+                android:id="@+id/text_layout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Introduction"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/latinlong" />
+
+
+            </LinearLayout>
+        <LinearLayout
+            android:id="@+id/basicinfo"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/city"
-            android:hint="City"
-            android:layout_marginTop="10dp"
-            app:met_floatingLabel="normal"
-            />
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:layout_weight="2">
 
-        <com.rengwuxian.materialedittext.MaterialEditText
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/md_red_800"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Basic Info"
+                android:textSize="18sp"
+                android:layout_marginTop="8dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lives in:"
+                android:textStyle="bold"
+                android:drawableStart="@drawable/ic_home"
+                android:drawableTint="@color/primary"
+                android:textSize="16sp"
+                android:layout_marginBottom="15dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Languages:"
+                    android:textStyle="bold"
+                    android:drawableStart="@drawable/ic_languages"
+                    android:drawableTint="@color/primary"
+                    android:textSize="16sp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="8dp"
+                android:layout_weight="2">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/city_host"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="17dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/languages"
+                    android:textSize="16sp" />
+            </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/preferences"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/age"
-            android:hint="Age"
-            android:layout_marginTop="10dp"
-            app:met_floatingLabel="normal"/>
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:layout_weight="2">
 
-        <com.rengwuxian.materialedittext.MaterialEditText
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/md_red_800"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Additional info"
+                android:textSize="18sp"
+                android:layout_marginTop="8dp"
+                android:textStyle="bold"/>
+
+            <LinearLayout
+                android:id="@+id/addition_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/localguide2"
+                    android:padding="6dp"
+                    android:background="@drawable/inputs"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="10dp"/>
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/social1"
+                    android:padding="6dp"
+                    android:background="@drawable/inputs"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="10dp"/>
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/animallover"
+                    android:background="@drawable/inputs"
+                    android:padding="4dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="10dp"/>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal"
+                >
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_height="wrap_content"
+                    android:text="Local guide"
+                    android:textSize="8sp"
+                    android:gravity="center_horizontal"/>
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:text="Social"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginStart="15dp"
+                    android:textSize="8sp"
+                    android:gravity="center_horizontal"/>
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:text="Animal lover"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginStart="15dp"
+                    android:textSize="8sp"
+                    android:gravity="center_horizontal"/>
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+        </LinearLayout>
+
+
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/profiletext"
-            android:hint="Introduce yourself"
-            android:layout_marginTop="20dp"
-            app:met_floatingLabel="normal"
-            android:layout_marginBottom="80dp"
-            />
+            android:layout_height="50dp"
+            android:id="@+id/bottomBar"
+            android:layout_alignParentBottom="true">
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/bottomNavView_Bar1"
+                android:background="@drawable/white_grey_border_top"
+                app:menu="@menu/bottom_navigation_menu2"
+                app:labelVisibilityMode="labeled">
+
+
+            </com.google.android.material.bottomnavigation.BottomNavigationView>
+        </RelativeLayout>
+        </RelativeLayout>
 
 
 
-    </LinearLayout>
-
-
-</RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

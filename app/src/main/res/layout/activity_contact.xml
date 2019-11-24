@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Contact">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="220dp"
+        android:layout_margin="15dp"
+        android:src="@drawable/cg_logo_trans" />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/profile_background"
+    android:orientation="vertical">
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:id="@+id/email_contact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_email"
+        android:drawableTint="@color/md_white_1000"
+        android:textColor="@color/md_white_1000"
+        android:textStyle="bold"
+        android:text="@string/email_contact"
+        android:textSize="18sp"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="serif"/>
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:id="@+id/phone_contact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_phone"
+        android:drawableTint="@color/md_white_1000"
+        android:textColor="@color/md_white_1000"
+        android:text="@string/phone_contact"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:fontFamily="serif"
+        android:clickable="true"
+        android:focusable="true"/>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:id="@+id/hours_contact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_access_time_black_24dp"
+        android:drawableTint="@color/md_white_1000"
+        android:textColor="@color/md_white_1000"
+        android:text="@string/hours_contact"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:fontFamily="serif"/>
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:id="@+id/address_contact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_adress"
+        android:drawableTint="@color/md_white_1000"
+        android:textColor="@color/md_white_1000"
+        android:text="@string/address1"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:fontFamily="serif"/>
+    <TextView
+        android:layout_marginStart="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/md_white_1000"
+        android:text="@string/address2"
+        android:drawableStart="@drawable/ic_adress"
+        android:drawableTint="@color/fui_transparent"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:fontFamily="serif"/>
+    <TextView
+        android:layout_marginStart="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/md_white_1000"
+        android:text="@string/address3"
+        android:drawableLeft="@drawable/ic_adress"
+        android:drawableTint="@color/fui_transparent"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:fontFamily="serif"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="30dp">
+        <ImageView
+            android:id="@+id/facebook_contact"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/facebook_contact"
+            android:layout_marginEnd="6dp"
+            android:clickable="true"
+            android:focusable="true"/>
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/websiteicon"
+            android:layout_marginEnd="6dp"/>
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/instagram_contact"
+            android:layout_marginEnd="6dp"/>
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/linkedin_contact"/>
+
+
+    </LinearLayout>
+</LinearLayout>
+
+
+</LinearLayout>

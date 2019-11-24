@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.facebook.login.LoginManager;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -84,6 +85,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                             "You have been successfully registered and will receive a verification email!",
                             Toast.LENGTH_LONG).show();
                     sendEmailVerification();
+                    SignOut();
                     startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                 } else {
 
@@ -99,6 +101,16 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         });
 
     }
+
+    private void SignOut() {
+            FirebaseAuth.getInstance().signOut();
+            LoginManager.getInstance().logOut();
+            Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+
+        }
+
 
     private void sendEmailVerification() {
         // Disable button

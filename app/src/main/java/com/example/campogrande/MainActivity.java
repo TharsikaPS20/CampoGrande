@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
         if(mAuth.getCurrentUser()!=null){
             finish();
-            startActivity(new Intent(this,Listings.class));
+            startActivity(new Intent(this,Discover.class));
         }
     }
 }
