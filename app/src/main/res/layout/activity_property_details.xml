@@ -25,6 +25,8 @@
             <include layout="@layout/rewards_layout"/>
 
             <include layout="@layout/property_description_layout"/>
+
+            <include layout="@layout/ratings_layout"/>
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

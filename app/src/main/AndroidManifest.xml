@@ -77,18 +77,23 @@
             android:name=".EditProfileActivity"
             android:label="@string/profile"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".AddNewActivity" />
+        <activity android:name=".AddNewActivity">
+
+        </activity>
+        <activity android:name=".PropertyDetailsActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".ViewProperties" />
         <activity
             android:name=".LoginActivity"
             android:windowSoftInputMode="adjustPan" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".Password" />
 
