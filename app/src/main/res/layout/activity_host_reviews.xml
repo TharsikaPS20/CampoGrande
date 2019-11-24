@@ -236,9 +236,9 @@
             <com.google.android.material.bottomnavigation.BottomNavigationView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/bottomNavView_Bar2"
+                android:id="@+id/bottomNavView_Bar1"
                 android:background="@drawable/white_grey_border_top"
-                app:menu="@menu/bottom_navigation_menu3">
+                app:menu="@menu/bottom_navigation_menu2">
 
 
             </com.google.android.material.bottomnavigation.BottomNavigationView>

@@ -17,7 +17,9 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.bottomnavigation.LabelVisibilityMode;
@@ -80,15 +82,28 @@ public class DiscoverMapView extends AppCompatActivity implements OnMapReadyCall
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        LatLng Location = new LatLng(55.51475, 9.50124);
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(Location));
-        mMap.setMinZoomPreference(7);
-        mMap.addMarker(new MarkerOptions().position(Location).title("Location"));
+
+        LatLng skagen = new LatLng(57.710699, 10.497555);
+        mMap.addMarker(new MarkerOptions().position(skagen).title("Campspot Skagen"));
+        mMap.setMinZoomPreference(5);
+
+        LatLng horsens = new LatLng(55.876730, 9.875022);
+        mMap.addMarker(new MarkerOptions().position(horsens).title("Idyllic camp spot in nature").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(horsens));
+
+        LatLng billund = new LatLng(55.787039, 9.170591);
+        mMap.addMarker(new MarkerOptions().position(billund).title("Campspot Billund"));
+
+        LatLng assens = new LatLng(55.257640, 9.918387);
+        mMap.addMarker(new MarkerOptions().position(assens).title("Campspot Assens"));
+
+        LatLng rudsvedby = new LatLng(55.569038, 11.325805);
+        mMap.addMarker(new MarkerOptions().position(rudsvedby).title("Campspot Assens"));
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavView_Bar3);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
         Menu menu = bottomNavigationView.getMenu();
-        MenuItem menuItem = menu.getItem(0);
+        MenuItem menuItem = menu.getItem(1);
         menuItem.setChecked(true);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
