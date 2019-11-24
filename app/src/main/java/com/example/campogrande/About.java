@@ -152,10 +152,21 @@ public class About extends AppCompatActivity implements NavigationView.OnNavigat
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.about_layout:
+                Intent i = new Intent(About.this,AboutUs.class);
+                startActivity(i);
                 break;
             case R.id.contact_layout:
-                Intent i = new Intent(About.this,Contact.class);
-                startActivity(i);
+                Intent i1 = new Intent(About.this,Contact.class);
+                startActivity(i1);
+                break;
+            case R.id.faq_layout:
+                Intent i2 = new Intent(About.this, FrequentlyAskedQuestions.class);
+                startActivity(i2);
+                break;
+            case R.id.terms_layout:
+                Intent i3 = new Intent(About.this,TermsAndConditions.class);
+                startActivity(i3);
+                break;
         }
     }
 }

@@ -37,7 +37,7 @@ public class HostReviews extends AppCompatActivity {
                         Intent i = new Intent(HostReviews.this, Host.class);
                         startActivity(i);
                 }
-                
+
                 return false;
             }
         });

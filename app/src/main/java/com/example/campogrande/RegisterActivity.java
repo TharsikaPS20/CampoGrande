@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -27,6 +28,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     ProgressBar progressBar;
     EditText editTextEmail, editTextPassword;
     Button register;
+    TextView seeTerms;
 
     private FirebaseAuth mAuth;
 
@@ -39,10 +41,12 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         editTextEmail = findViewById(R.id.register_email_input);
         editTextPassword = findViewById(R.id.register_password_input);
         progressBar = findViewById(R.id.progressbar);
+        seeTerms = findViewById(R.id.agreetoterms);
+        seeTerms.setOnClickListener(this);
 
         mAuth = FirebaseAuth.getInstance();
 
-        findViewById(R.id.register_btn).setOnClickListener(this);
+        register.setOnClickListener(this);
         findViewById(R.id.already_user_btn).setOnClickListener(this);
     }
 
@@ -152,6 +156,10 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             case R.id.already_user_btn:
                 finish();
                 startActivity(new Intent(this, LoginActivity.class));
+                break;
+
+            case R.id.agreetoterms:
+                startActivity(new Intent(this,TermsAndConditionsStart.class));
                 break;
         }
     }

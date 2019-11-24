@@ -69,10 +69,25 @@
         android:textColor="@android:color/black"/>
 
     <TextView
+        android:id="@+id/agreetoterms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/agreetoterms"
+        android:layout_below="@id/register_btn"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:clickable="true"
+        android:padding="16dp"
+        android:textAllCaps="false"
+        android:textSize="12sp"
+        android:textAlignment="center"
+        android:textColor="@color/md_black_1000"/>
+    <TextView
         android:id="@+id/already_user_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/register_btn"
+        android:layout_below="@+id/agreetoterms"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
@@ -82,7 +97,7 @@
         android:textAllCaps="false"
         android:textSize="15sp"
         android:textAlignment="center"
-        android:text="Already have an account? Log in here!"
+        android:text="@string/alreadyuser"
         android:textColor="@color/colorPrimaryDark"
         />
 

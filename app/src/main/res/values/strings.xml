@@ -138,5 +138,34 @@
     <string name="satellite">Satellite</string>
     <string name="hybrid">Hybrid</string>
 
+    <string name="visitor_faq">Visitor</string>
+    <string name="host_faq">Host</string>
+    <string name="collaboration">Collaboration</string>
+    <string name="touch_faq">How do I get in touch with my host?</string>
+    <string name="pay_faq">When do I pay and to whom?</string>
+    <string name="payment_faq">What payment options are available?</string>
+    <string name="check_in_faq">When can I check in?</string>
+    <string name="password_reset_faq">How do I reset my password?</string>
+    <string name="cancelreservation_faq">How do I cancel my reservation?</string>
+    <string name="becomehost_faq">How do I become a host?</string>
+    <string name="property_faq">Can I offer more than one property?</string>
+    <string name="touchvisitor_faq">How do I get in touch with visitors?</string>
+    <string name="meeting_faq">How do I set up a meeting with you?</string>
+    <string name="touchcg_faq">How do I get in touch with you?</string>
+
+    <string name="terms_tac">Terms and Conditions for using Campo Grande</string>
+    <string name="intro_tac"><u>Introduction</u></string>
+    <string name="IPR_tac"><u>Intellectural Property Rights</u></string>
+    <string name="restrictions_tac"><u>Restrictions</u></string>
+    <string name="yourcontent_tac"><u>Your Content</u></string>
+    <string name="yourprivacy"><u>Your Privacy</u></string>
+    <string name="limitation_tac"><u>Limitation of liability</u></string>
+    <string name="agreetoterms"><u>By clicking "Register", you automatically agree to the terms and conditions of Campo Grande.</u></string>
+    <string name="alreadyuser"><u>Already have an account? Log in here!</u></string>
+    <string name="aboutcg">About Campo Grande</string>
+    <string name="story">Our story</string>
+    <string name="team">Our team</string>
+    <string name="concept">Our concept</string>
+    <string name="vision">Our vision</string>
 
 </resources>
