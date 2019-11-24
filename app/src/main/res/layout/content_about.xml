@@ -42,7 +42,7 @@
             <ImageView
             android:layout_width="match_parent"
             android:layout_height="120dp"
-                android:src="@drawable/cg_logo_trans"
+                android:src="@drawable/campogrande_logo"
                 android:paddingBottom="10dp"/>
         </LinearLayout>
         <LinearLayout

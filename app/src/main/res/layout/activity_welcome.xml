@@ -20,7 +20,7 @@
         android:id="@+id/cglogo"
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:src="@drawable/cg_logo_trans"
+        android:src="@drawable/campogrande_logo"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
