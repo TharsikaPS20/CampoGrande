@@ -95,13 +95,6 @@ public class HostListings extends AppCompatActivity {
                         Intent intent1 = new Intent(HostListings.this, HostBookings.class);
                         startActivity(intent1);
                         break;
-
-                    //case R.id.listings:
-
-                      //  break;
-
-
-
                 }
 
 

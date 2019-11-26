@@ -79,7 +79,6 @@ public class UserProfile extends AppCompatActivity implements NavigationView.OnN
                 String phone = dataSnapshot.child("phone").getValue().toString();
                 String intro = dataSnapshot.child("intro").getValue().toString();
                 String img = dataSnapshot.child("imageUrl").getValue(String.class);
-                // displayImg.setImageURI(Uri.parse(image));
                 nameD.setText(name);
                 cityD.setText(city);
                 phoneD.setText(phone);
@@ -129,7 +128,6 @@ public class UserProfile extends AppCompatActivity implements NavigationView.OnN
 
         @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.userprofile, menu);
         return true;
     }

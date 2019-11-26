@@ -51,7 +51,7 @@ public class Host extends AppCompatActivity implements NavigationView.OnNavigati
         navigationView.bringToFront();
 
 
-        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavView_Bar1);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavView_Bar1);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
         Menu menu = bottomNavigationView.getMenu();
         MenuItem menuItem = menu.getItem(0);

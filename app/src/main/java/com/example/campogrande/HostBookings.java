@@ -58,7 +58,6 @@ public class HostBookings extends AppCompatActivity {
         calendarPickerView.setOnDateSelectedListener(new CalendarPickerView.OnDateSelectedListener() {
             @Override
             public void onDateSelected(Date date) {
-                //String chosenDate = DateFormat.getDateInstance(DateFormat.FULL).format(date);
 
                 Calendar calendar = Calendar.getInstance();
                 calendar.setTime(date);

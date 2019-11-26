@@ -32,9 +32,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
     private TextView mStatusTextView;
     private TextView mDetailTextView;
 
-    // private CheckBox rememberMe;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,16 +47,13 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
         forgot_password.setOnClickListener(this);
         mStatusTextView = findViewById(R.id.status);
         mDetailTextView = findViewById(R.id.detail);
-
         mAuth = FirebaseAuth.getInstance();
 
-        //rememberMe = findViewById(R.id.remember_me);
         }
 
     @Override
     public void onStart() {
         super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
         updateUI(currentUser);
     }
@@ -71,13 +65,11 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
         }
         showProgressDialog();
 
-        // [START sign_in_with_email]
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
                             FirebaseUser user = mAuth.getCurrentUser();
                             if(user.isEmailVerified())
                             {Log.d(TAG, "signInWithEmail:success");
@@ -90,14 +82,12 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
                                 Toast.makeText(LoginActivity.this,getString(R.string.verifyemail), Toast.LENGTH_LONG).show();
                             }
                         } else {
-                            // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
                             Toast.makeText(LoginActivity.this, getString(R.string.authfailed),
                                     Toast.LENGTH_SHORT).show();
                             updateUI(null);
                         }
 
-                        // [START_EXCLUDE]
                         if (!task.isSuccessful()) {
                             Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_LONG).show();
                         }

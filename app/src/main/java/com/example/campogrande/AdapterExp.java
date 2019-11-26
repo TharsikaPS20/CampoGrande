@@ -39,7 +39,7 @@ public class AdapterExp extends BaseExpandableListAdapter {
 
     @Override
     public Object getChild(int i, int i1) {
-        return hashMapList.get(listHeader.get(i)).get(i1); // i = Group Item , i1 = ChildItem
+        return hashMapList.get(listHeader.get(i)).get(i1);
     }
 
     @Override
@@ -80,7 +80,7 @@ public class AdapterExp extends BaseExpandableListAdapter {
             view = inflater.inflate(R.layout.item_exp,null);
         }
 
-        TextView txtListChild = (TextView)view.findViewById(R.id.lblListItem);
+        TextView txtListChild = view.findViewById(R.id.lblListItem);
         txtListChild.setText(childText);
         return view;
     }
