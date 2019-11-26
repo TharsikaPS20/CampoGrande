@@ -15,7 +15,7 @@ public class AccessFragment extends DialogFragment {
         builder.setMessage(R.string.create_user)
                 .setPositiveButton(R.string.signinorcreate, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        Intent i = new Intent(getContext(),MainActivity.class);
+                        Intent i = new Intent(getContext(), MainActivity.class);
                         startActivity(i);
                     }
                 })

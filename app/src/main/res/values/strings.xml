@@ -15,54 +15,23 @@
 
     <string name="or">or</string>
 
-    <string name="label_google_sign_in">Firebase + Google Sign In</string>
-    <string name="desc_google_sign_in">Sign in to Campo Grande with your Google account.</string>
-
-    <string name="label_facebook_login">Firebase + Facebook Login</string>
-    <string name="desc_facebook_login">Sign in to Campo Grande with your Facebook account.</string>
-
-    <string name="label_emailpassword">Email/Password Authentication</string>
-    <string name="desc_emailpassword">Use an email and password to authenticate with Firebase.</string>
-
-
-    <string name="hint_user_id">User ID</string>
-    <string name="sign_in">Sign In</string>
-
     <string name="sign_out">Sign out</string>
-    <string name="verify_email">Verify Email</string>
     <string name="disconnect">Disconnect</string>
     <string name="loading">Loading…</string>
-    <string name="signed_in">Signed In</string>
     <string name="signed_out">Signed Out</string>
-    <string name="token_null">Token: null</string>
     <string name="hint_email">Email</string>
     <string name="hint_password">Password</string>
-    <string name="auth_failed">Authentication failed</string>
-    <string name="hint_phone_number">Phone Number</string>
-    <string name="hint_verification_code">Verification Code</string>
     <string name="firebase_status_fmt">Firebase User: %s</string>
 
     <string name="google_status_fmt">Google User: %s</string>
-    <string name="google_title_text">Google Sign In</string>
 
     <string name="facebook_status_fmt">Facebook User: %s</string>
-    <string name="facebook_title_text">Facebook Login</string>
 
     <string name="emailpassword_status_fmt">Email User: %1$s (verified: %2$b)</string>
-    <string name="emailpassword_title_text">Email and Password</string>
-
-    <string name="firebaseui_status_fmt">Firebase User: %s</string>
-    <string name="firebaseui_title_text">FirebaseUI Auth</string>
-
-    <string name="id_fmt">User ID: %s</string>
-    <string name="email_fmt">Email: %s</string>
 
     <string name="continue_as_guest"><u>Want to explore first? Continue as guest</u></string>
-    <string name="title_activity_home">Home</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_edit">Edit host profile</string>
     <string name="action_delete">Delete host profile</string>
@@ -72,7 +41,6 @@
     <string name="signinorcreate">Sign in/Create account</string>
 
     <string name="menu_discover">Discover</string>
-    <string name="home">Home></string>
     <string name="profile">Profile</string>
     <string name="editprofile">Edit profile</string>
     <string name="reservations">My reservations</string>
@@ -83,9 +51,7 @@
     <string name="about">About Campo Grande</string>
     <string name="signoutofapp">Sign out/Leave</string>
     <string name="accountinfo">Profile information</string>
-    <string name="title_activity_my_listings">My Listings</string>
     <string name="calendar_activity">Host - My bookings</string>
-    <string name="listings_name">My listings</string>
     <string name="add_new">Host - Add new listing</string>
     <string name="latin">Lorem ipsum dolor sit amet, brute admodum invidunt in usu, ea cum quis omnis...</string>
     <string name="latinlong">Lorem ipsum dolor sit amet, an duo amet discere persecuti. At modo vitae intellegebat pri, an usu mandamus voluptatum. Persius meliore scaevola has at, id saepe volumus eum, feugiat adipiscing at sea.</string>
@@ -99,7 +65,6 @@
     <string name="contact_us">Contact us</string>
     <string name="languages">Danish, English, German</string>
     <string name="city_host">Horsens</string>
-    <string name="title_activity_discover_map">Map</string>
     <string name="normal">Normal</string>
     <string name="satellite">Satellite</string>
     <string name="hybrid">Hybrid</string>
@@ -118,7 +83,6 @@
     <string name="touchvisitor_faq">How do I get in touch with visitors?</string>
     <string name="meeting_faq">How do I set up a meeting with you?</string>
     <string name="touchcg_faq">How do I get in touch with you?</string>
-    <string name="faq_activity">Frequently Asked Questions</string>
 
     <string name="terms_tac">Terms and Conditions for using Campo Grande</string>
     <string name="intro_tac"><u>Introduction</u></string>
@@ -154,7 +118,6 @@
     <string name="averagerating">Average rating:</string>
     <string name="noofreviews">Number of reviews: 3</string>
     <string name="rev1">Lovely property and amazing host!</string>
-    <string name="revmonth1">November 2019</string>
     <string name="rev2">Great experience!</string>
     <string name="revmonth2">April 2019</string>
     <string name="rev3">Will definitely come back!</string>

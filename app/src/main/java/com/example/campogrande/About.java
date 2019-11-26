@@ -2,27 +2,21 @@ package com.example.campogrande;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import com.facebook.login.LoginManager;
-
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.facebook.login.LoginManager;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-
-import androidx.drawerlayout.widget.DrawerLayout;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
-import android.view.Menu;
-import android.widget.LinearLayout;
 
 public class About extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
@@ -46,8 +40,8 @@ public class About extends AppCompatActivity implements NavigationView.OnNavigat
         faq.setOnClickListener(this);
         contact.setOnClickListener(this);
 
-        mAuth=FirebaseAuth.getInstance();
-        user=mAuth.getCurrentUser();
+        mAuth = FirebaseAuth.getInstance();
+        user = mAuth.getCurrentUser();
 
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -61,8 +55,6 @@ public class About extends AppCompatActivity implements NavigationView.OnNavigat
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.bringToFront();
     }
-
-
 
 
     @Override
@@ -99,14 +91,13 @@ public class About extends AppCompatActivity implements NavigationView.OnNavigat
     }
 
     private void openProfile() {
-        user =mAuth.getCurrentUser();
+        user = mAuth.getCurrentUser();
         if (user != null) {
             Intent intent = new Intent(About.this, UserProfile.class);
             startActivity(intent);
-        }
-        else{
+        } else {
             AccessFragment dialog = new AccessFragment();
-            dialog.show(getSupportFragmentManager(),"this");
+            dialog.show(getSupportFragmentManager(), "this");
         }
     }
 
@@ -152,11 +143,11 @@ public class About extends AppCompatActivity implements NavigationView.OnNavigat
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.about_layout:
-                Intent i = new Intent(About.this,AboutUs.class);
+                Intent i = new Intent(About.this, AboutUs.class);
                 startActivity(i);
                 break;
             case R.id.contact_layout:
-                Intent i1 = new Intent(About.this,Contact.class);
+                Intent i1 = new Intent(About.this, Contact.class);
                 startActivity(i1);
                 break;
             case R.id.faq_layout:
@@ -164,7 +155,7 @@ public class About extends AppCompatActivity implements NavigationView.OnNavigat
                 startActivity(i2);
                 break;
             case R.id.terms_layout:
-                Intent i3 = new Intent(About.this,TermsAndConditions.class);
+                Intent i3 = new Intent(About.this, TermsAndConditions.class);
                 startActivity(i3);
                 break;
         }
