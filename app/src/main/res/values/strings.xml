@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CampoGrande</string>
+    <string name="app_name">Campo Grande</string>
     <string name="property_name">Property Name...</string>
     <string name="address">Address...</string>
     <string name="size">Size...</string>
@@ -30,9 +30,9 @@
     <string name="emailpassword_status_fmt">Email User: %1$s (verified: %2$b)</string>
 
     <string name="continue_as_guest"><u>Want to explore first? Continue as guest</u></string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_desc">Navigation header</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="nav_header_desc" translatable="false">Navigation header</string>
     <string name="action_edit">Edit host profile</string>
     <string name="action_delete">Delete host profile</string>
     <string name="action_deleteAccount">Delete account</string>
@@ -53,19 +53,19 @@
     <string name="accountinfo">Profile information</string>
     <string name="calendar_activity">Host - My bookings</string>
     <string name="add_new">Host - Add new listing</string>
-    <string name="latin">Lorem ipsum dolor sit amet, brute admodum invidunt in usu, ea cum quis omnis...</string>
-    <string name="latinlong">Lorem ipsum dolor sit amet, an duo amet discere persecuti. At modo vitae intellegebat pri, an usu mandamus voluptatum. Persius meliore scaevola has at, id saepe volumus eum, feugiat adipiscing at sea.</string>
-    <string name="latinmedium">Lorem ipsum dolor sit amet, an duo amet discere persecuti. At modo vitae intellegebat pri, an usu mandamus voluptatum.</string>
-    <string name="email_contact"> <u>240249@via.dk</u></string>
-    <string name="phone_contact"> +45 12 34 56 78</string>
+    <string name="latin" translatable="false">Lorem ipsum dolor sit amet, brute admodum invidunt in usu, ea cum quis omnis...</string>
+    <string name="latinlong" translatable="false">Lorem ipsum dolor sit amet, an duo amet discere persecuti. At modo vitae intellegebat pri, an usu mandamus voluptatum. Persius meliore scaevola has at, id saepe volumus eum, feugiat adipiscing at sea.</string>
+    <string name="latinmedium" translatable="false">Lorem ipsum dolor sit amet, an duo amet discere persecuti. At modo vitae intellegebat pri, an usu mandamus voluptatum.</string>
+    <string name="email_contact" translatable="false"> <u>240249@via.dk</u></string>
+    <string name="phone_contact" translatable="false"> +45 12 34 56 78</string>
     <string name="hours_contact">  9AM to 7PM (Monday to Sunday)</string>
     <string name="address1"> Chr. M. Østergaardsvej 4</string>
-    <string name="address2"> 8700 Horsens</string>
+    <string name="address2" translatable="false"> 8700 Horsens</string>
     <string name="address3"> Denmark</string>
     <string name="contact_us">Contact us</string>
     <string name="languages">Danish, English, German</string>
     <string name="city_host">Horsens</string>
-    <string name="normal">Normal</string>
+    <string name="normal" translatable="false">Normal</string>
     <string name="satellite">Satellite</string>
     <string name="hybrid">Hybrid</string>
 
@@ -86,7 +86,7 @@
 
     <string name="terms_tac">Terms and Conditions for using Campo Grande</string>
     <string name="intro_tac"><u>Introduction</u></string>
-    <string name="IPR_tac"><u>Intellectural Property Rights</u></string>
+    <string name="IPR_tac"><u>Intellectual Property Rights</u></string>
     <string name="restrictions_tac"><u>Restrictions</u></string>
     <string name="yourcontent_tac"><u>Your Content</u></string>
     <string name="yourprivacy"><u>Your Privacy</u></string>
@@ -123,21 +123,21 @@
     <string name="rev3">Will definitely come back!</string>
     <string name="revmonth3">March 2019</string>
     <string name="forgotpassword">I forgot my password"</string>
-    <string name="slogan">Here we can write our slogan!</string>
+    <string name="slogan" translatable="false">Here we can write our slogan!</string>
     <string name="joinnow">Join now!</string>
     <string name="facebook_continue">Continue with Facebook</string>
     <string name="continuegoogle">Continue with Google</string>
     <string name="resetpassword">Reset my password</string>
     <string name="desc">Family-friendly place</string>
-    <string name="dates1">12/04 - 18/04 - 2019</string>
+    <string name="dates1" translatable="false">12/04 - 18/04 - 2019</string>
     <string name="prevreshost">Host: Nikolaj</string>
     <string name="loc_res1">Riis, Denmark</string>
     <string name="desc2">Camp surrounded by pretty nature</string>
-    <string name="dates2">10/03 - 12/03 - 2019</string>
+    <string name="dates2" translatable="false">10/03 - 12/03 - 2019</string>
     <string name="prevrevhost1">Host: Meryl</string>
     <string name="loc_res2">Horsens, Denmark</string>
     <string name="desc3">Slow down, relax and enjoy nature</string>
-    <string name="dates3">05/09 - 10/09 - 2019</string>
+    <string name="dates3" translatable="false">10/01 - 12/01 - 2019</string>
     <string name="prevrevhost2">Host: Pippi</string>
     <string name="loc_res3">Esbjerg, Denmark</string>
     <string name="welcome">Welcome to:</string>
@@ -149,7 +149,7 @@
     <string name="hostfav2">Host: Meryl</string>
     <string name="descfav3">Camp near Legoland</string>
     <string name="hostfav3">Host: Pippi</string>
-    <string name="host1">Meryl Streep</string>
+    <string name="host1" translatable="false">Meryl Streep</string>
     <string name="experience">Experience: Advanced</string>
     <string name="authenticated">Authenticated</string>
     <string name="reviews">4/5 - 3 reviews</string>
@@ -161,11 +161,11 @@
     <string name="localguide">Local guide</string>
     <string name="social">Social</string>
     <string name="animallover">Animal lover</string>
-    <string name="mes_us1">Harry Potter</string>
-    <string name="mes_us2">Meryl Streep</string>
-    <string name="mes_us3">James Bond</string>
-    <string name="mes_us4">Pippi Langstrømpe</string>
-    <string name="mes_us5">Nikolaj Coster-Waldau</string>
+    <string name="mes_us1" translatable="false">Harry Potter</string>
+    <string name="mes_us2" translatable="false">Meryl Streep</string>
+    <string name="mes_us3" translatable="false">James Bond</string>
+    <string name="mes_us4" translatable="false">Pippi Langstrømpe</string>
+    <string name="mes_us5" translatable="false">Nikolaj Coster-Waldau</string>
     <string name="mes_time1">Wed 20/11/2019, 05:30 PM</string>
     <string name="mes_time2">Fri 12/07/2019, 11:22 AM</string>
     <string name="mes_time3">Sat 06/05/2019, 07:54 AM</string>
@@ -176,16 +176,16 @@
     <string name="res_desc2">Camp surrounded by pretty nature</string>
     <string name="res_desc3">Slow down, relax and enjoy nature</string>
 
-    <string name="dates_res1">20/05 - 22/05 - 2020</string>
-    <string name="dates_res2">15/04 - 21/04 - 2020</string>
-    <string name="dates_res3">05/03 - 10/03 - 2020</string>
+    <string name="dates_res1" translatable="false">20/05 - 22/05 - 2020</string>
+    <string name="dates_res2" translatable="false">15/04 - 21/04 - 2020</string>
+    <string name="dates_res3" translatable="false">05/03 - 10/03 - 2020</string>
 
     <string name="host_res1">Host: Harry</string>
     <string name="host_res2">Host: James</string>
     <string name="host_res3">Host: Pippi</string>
     <string name="confirmed">Confirmed</string>
     <string name="awaiting">Awaiting host confirmation</string>
-    <string name="city_user">Awaiting host confirmation</string>
+    <string name="city_user">City</string>
     <string name="aboutme">About me</string>
     <string name="description_prop">Description</string>
     <string name="facilities1">Facilities</string>
@@ -193,10 +193,10 @@
     <string name="facilityname">Facility name</string>
     <string name="facilityvalue">Facility value</string>
     <string name="propertytitle">Property Title</string>
-    <string name="rating">4.5</string>
+    <string name="rating" translatable="false">4.5</string>
     <string name="totalratings">total ratings</string>
-    <string name="price_prop">499 DKK</string>
-    <string name="pricecut">599 DKK</string>
+    <string name="price_prop" translatable="false">499 DKK</string>
+    <string name="pricecut" translatable="false">599 DKK</string>
     <string name="coupon">Check price after coupen redemption</string>
     <string name="redeem">Redeem</string>
     <string name="propname">Property name</string>
@@ -206,7 +206,7 @@
     <string name="propertydesc">Property Description</string>
     <string name="ratings">Ratings</string>
     <string name="ratingsno">80 ratings</string>
-    <string name="yourratings">Your ratings</string>
+    <string name="yourratings">Your rating</string>
     <string name="addnew">Add new</string>
     <string name="calendar">Calendar</string>
     <string name="mylistings">My listings</string>
@@ -234,7 +234,7 @@
     <string name="desc_listings">Please give a description!</string>
     <string name="img_result">Got the Property image Url successfully... </string>
     <string name="verifyemail">Please verify your email by clicking the link that was sent to your email.</string>
-    <string name="authfailed">Authentication failed.</string>
+    <string name="authfailed">Authentication failed</string>
     <string name="emailerror">"Email is required"</string>
     <string name="emailvalid">Please enter a valid email</string>
     <string name="password_req">Password is required</string>
@@ -243,12 +243,12 @@
     <string name="playground">Playground</string>
     <string name="shower">Shower</string>
     <string name="registertext">You have been successfully registered and will receive a verification email!</string>
-    <string name="alreadyreg">You are already registered</string>
+    <string name="alreadyreg">This email is already registered</string>
     <string name="veri_to">Verification email sent to</string>
-    <string name="veri_fail">Failed to send verification email. Please try again</string>
+    <string name="veri_fail">Failed to send verification email. Please try again.</string>
     <string name="campogrande_logo">Campo Grande Logo</string>
     <string name="reward">Rewards</string>
-    <string name="horsens_city">Horsens</string>
+    <string name="horsens_city" translatable="false">Horsens</string>
     <string name="pricepernight">70 DKK/night</string>
 
 </resources>

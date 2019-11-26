@@ -30,11 +30,11 @@
             <item
                 android:id="@+id/nav_host"
                 android:icon="@drawable/ic_host"
-                android:title="@string/host" />
+                android:title="@string/host_faq" />
             <item
                 android:id="@+id/nav_listings"
                 android:icon="@drawable/ic_home"
-                android:title="@string/listings" />
+                android:title="@string/mylistings" />
 
         </menu>
     </item>

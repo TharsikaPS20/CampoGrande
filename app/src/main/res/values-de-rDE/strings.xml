@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Campo Grande</string>
+    <string name="campogrande">Campo Grande</string>
+    <string name="address1">" Chr. M. Østergaardsvej 4"</string>
+    <string name="address3">Dänemark</string>
+    <string name="address">Adresse...</string>
+    <string name="campogrande_logo">Campo Grande Logo</string>
+    <string name="city_host">Horsens</string>
+</resources>
