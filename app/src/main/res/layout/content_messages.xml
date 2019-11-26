@@ -31,14 +31,14 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="Harry Potter"
+            android:text="@string/mes_us1"
             android:textStyle="bold"
             android:textSize="17sp"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0.5"
-                android:text="Wed 20/11/2019, 05:30 PM"
+                android:text="@string/mes_time1"
                 android:textSize="10sp"
                 android:textStyle="italic"/>
             <TextView
@@ -76,14 +76,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="Meryl Streep"
+                android:text="@string/mes_us2"
                 android:textStyle="bold"
                 android:textSize="17sp"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0.5"
-                android:text="Fri 12/07/2019, 11:22 AM"
+                android:text="@string/mes_time2"
                 android:textSize="10sp"
                 android:textStyle="italic"/>
             <TextView
@@ -120,14 +120,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="James Bond"
+                android:text="@string/mes_us3"
                 android:textStyle="bold"
                 android:textSize="17sp"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0.5"
-                android:text="Sat 06/05/2019, 07:54 AM"
+                android:text="@string/mes_time3"
                 android:textSize="10sp"
                 android:textStyle="italic"/>
             <TextView
@@ -164,14 +164,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="Pippi Langstrømpe"
+                android:text="@string/mes_us4"
                 android:textStyle="bold"
                 android:textSize="17sp"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0.5"
-                android:text="Mon 29/04/2019, 03:07 PM"
+                android:text="@string/mes_time4"
                 android:textSize="10sp"
                 android:textStyle="italic"/>
             <TextView
@@ -208,14 +208,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="Nikolaj Coster-Waldau"
+                android:text="@string/mes_us5"
                 android:textStyle="bold"
                 android:textSize="17sp"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0.5"
-                android:text="Sun 16/12/2018, 11:40 PM"
+                android:text="@string/mes_time5"
                 android:textSize="10sp"
                 android:textStyle="italic"/>
             <TextView

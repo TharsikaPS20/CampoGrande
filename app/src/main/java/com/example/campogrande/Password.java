@@ -43,7 +43,7 @@ public class Password extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
-                            Toast.makeText(Password.this, "Your password was reset. Check your email!", Toast.LENGTH_LONG).show();
+                            Toast.makeText(Password.this, getString(R.string.pw_reset), Toast.LENGTH_LONG).show();
                             Intent intent = new Intent(Password.this,LoginActivity.class);
                             startActivity(intent);
                         } else {

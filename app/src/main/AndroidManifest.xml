@@ -22,10 +22,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexWarning">
-        <activity android:name=".AboutUs"
-            android:parentActivityName=".About"/>
+        <activity
+            android:name=".AboutUs"
+            android:parentActivityName=".About" />
         <activity
             android:name=".TermsAndConditions"
+            android:label="@string/tac"
             android:parentActivityName=".About" />
         <activity
             android:name=".TermsAndConditionsStart"
@@ -33,11 +35,11 @@
         <activity android:name=".AdapterExp" />
         <activity
             android:name=".FrequentlyAskedQuestions"
-            android:label="Frequently asked questions"
+            android:label="string/faq_activity"
             android:parentActivityName=".About" />
         <activity
             android:name=".DiscoverMapView"
-            android:label="Discover"
+            android:label="@string/discover"
             android:parentActivityName=".Discover" />
 
         <meta-data
@@ -47,11 +49,11 @@
         <activity android:name=".DiscoverMapFragment" />
         <activity
             android:name=".ReservationsPrev"
-            android:label="Previous Reservations"
+            android:label="@string/res_prev"
             android:parentActivityName=".Reservations" />
         <activity
             android:name=".HostReviews"
-            android:label="Host Reviews"
+            android:label="@string/hostrev"
             android:parentActivityName=".Host" />
         <activity
             android:name=".Contact"
@@ -67,10 +69,10 @@
             android:parentActivityName=".Listings" />
         <activity
             android:name=".FacebookLoginActivity"
-            android:label="Campo Grande - Facebook login" />
+            android:label="@string/fblogin" />
         <activity
             android:name=".GoogleSignInActivity"
-            android:label="Campo Grande - Google login" />
+            android:label="@string/googlelogin" />
         <activity android:name=".BaseActivity" />
         <activity
             android:name=".UserProfile"
@@ -110,8 +112,7 @@
             android:theme="@style/Base.Theme.AppCompat" />
         <activity
             android:name="com.facebook.FacebookActivity"
-            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
-            android:label="@string/app_name" />
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation" />
         <activity
             android:name="com.facebook.CustomTabActivity"
             android:exported="true">
@@ -129,13 +130,17 @@
             android:label="@string/editprofile"
             android:parentActivityName=".UserProfile"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="$Old_classes.AddNewActivity" />
-        <activity android:name="$Old_classes.ViewProperties" />
+
         <activity
             android:name=".LoginActivity"
+            android:label="@string/signin"
             android:windowSoftInputMode="adjustPan" />
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".RegisterActivity"
+            android:label="@string/register" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/campogrande">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -143,7 +148,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".Password" />
-        <activity android:name=".PropertyDetailsActivity" />
+        <activity
+            android:name=".PropertyDetailsActivity"
+            android:label="@string/property"
+            android:parentActivityName=".Discover" />
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"

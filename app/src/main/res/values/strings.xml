@@ -13,7 +13,6 @@
     <string name="facebook_app_id" translatable="false">706307326546017</string>
     <string name="fb_login_protocol_scheme" translatable="false">fb706307326546017</string>
 
-
     <string name="or">or</string>
 
     <string name="label_google_sign_in">Firebase + Google Sign In</string>
@@ -25,45 +24,23 @@
     <string name="label_emailpassword">Email/Password Authentication</string>
     <string name="desc_emailpassword">Use an email and password to authenticate with Firebase.</string>
 
-    <string name="label_custom_auth">Custom Authentication</string>
-    <string name="desc_custom_auth">Use a custom token signed by your own server to authenticate with Firebase.</string>
-
-    <string name="label_firebase_ui">FirebaseUI Auth</string>
-    <string name="desc_firebase_ui">Use the FirebaseUI-Android library to authenticate with Firebase.</string>
-
-    <!--   <string name="label_generic_idp">Generic IDP Auth</string>
-    <string name="desc_generic_idp">Use a generic identity provider, like Microsoft or Yahoo, to authenticate with Firebase.</string>-->
 
     <string name="hint_user_id">User ID</string>
-    <string name="get_custom_token">Get Token</string>
     <string name="sign_in">Sign In</string>
-    <string name="create_account">Create Account</string>
-    <string name="send_link">Send Link</string>
+
     <string name="sign_out">Sign out</string>
     <string name="verify_email">Verify Email</string>
     <string name="disconnect">Disconnect</string>
     <string name="loading">Loading…</string>
-    <string name="custom_token">Custom Token</string>
     <string name="signed_in">Signed In</string>
     <string name="signed_out">Signed Out</string>
     <string name="token_null">Token: null</string>
     <string name="hint_email">Email</string>
     <string name="hint_password">Password</string>
-    <string name="desc_firebase_lockup">Firebase logo and name</string>
     <string name="auth_failed">Authentication failed</string>
-    <string name="start_phone_auth">Start</string>
-    <string name="verify_phone_auth">Verify</string>
-    <string name="resend_phone_auth">Resend</string>
     <string name="hint_phone_number">Phone Number</string>
     <string name="hint_verification_code">Verification Code</string>
-    <string name="status_code_sent">Code Sent</string>
-    <string name="status_verification_failed">Verification failed</string>
-    <string name="status_verification_succeeded">Verification succeeded</string>
-    <string name="status_sign_in_failed">Sign-in failed</string>
-    <string name="instant_validation">(instant validation)</string>
-
     <string name="firebase_status_fmt">Firebase User: %s</string>
-    <string name="firebase_user_management">Firebase User Management</string>
 
     <string name="google_status_fmt">Google User: %s</string>
     <string name="google_title_text">Google Sign In</string>
@@ -74,22 +51,11 @@
     <string name="emailpassword_status_fmt">Email User: %1$s (verified: %2$b)</string>
     <string name="emailpassword_title_text">Email and Password</string>
 
-    <string name="passwordless_status_fmt">Email User: %1$s (verified: %2$b)</string>
-    <!--<string name="status_email_not_sent">Send link to your email to get started.</string>
-    <string name="status_email_sent">Link sent, check your email to continue.</string>
-    <string name="status_link_found">Link received, enter email to sign in.</string>-->
-
     <string name="firebaseui_status_fmt">Firebase User: %s</string>
     <string name="firebaseui_title_text">FirebaseUI Auth</string>
 
-    <!-- <string name="generic_title_text">Generic IDP Sign In\nwith Microsoft</string>
-    <string name="msft_status_fmt">Microsoft User: %s</string>-->
-
     <string name="id_fmt">User ID: %s</string>
     <string name="email_fmt">Email: %s</string>
-
-    <string name="custom_auth_signin_status_user">User ID: %s</string>
-    <string name="custom_auth_signin_status_failed">Error: sign in failed</string>
 
     <string name="continue_as_guest"><u>Want to explore first? Continue as guest</u></string>
     <string name="title_activity_home">Home</string>
@@ -106,7 +72,7 @@
     <string name="signinorcreate">Sign in/Create account</string>
 
     <string name="menu_discover">Discover</string>
-    <string name="home">Home/string></string>
+    <string name="home">Home></string>
     <string name="profile">Profile</string>
     <string name="editprofile">Edit profile</string>
     <string name="reservations">My reservations</string>
@@ -152,6 +118,7 @@
     <string name="touchvisitor_faq">How do I get in touch with visitors?</string>
     <string name="meeting_faq">How do I set up a meeting with you?</string>
     <string name="touchcg_faq">How do I get in touch with you?</string>
+    <string name="faq_activity">Frequently Asked Questions</string>
 
     <string name="terms_tac">Terms and Conditions for using Campo Grande</string>
     <string name="intro_tac"><u>Introduction</u></string>
@@ -167,5 +134,158 @@
     <string name="team">Our team</string>
     <string name="concept">Our concept</string>
     <string name="vision">Our vision</string>
+    <string name="tac">Terms and Conditions</string>
+    <string name="res_prev">Previous reservations</string>
+    <string name="hostrev">Host Reviews</string>
+    <string name="fblogin">Campo Grande - Facebook login</string>
+    <string name="googlelogin">Campo Grande - Google login</string>
+    <string name="signin">Sign in</string>
+    <string name="register">Register</string>
+    <string name="campogrande">Campo Grande</string>
+    <string name="discover">Discover</string>
+    <string name="property">Property details</string>
+    <string name="prop_desc">Nice place to camp, close to the center</string>
+    <string name="fullname">Full name</string>
+    <string name="city">City</string>
+    <string name="phone">"Phone number</string>
+    <string name="intro">Introduce yourself: What are your hobbies? How do you travel? With motorcaravan or caravan? With whom? How often? Etc.</string>
+    <string name="firebaseuserid">Firebase User ID: 123456789abc</string>
+    <string name="categories">Categories</string>
+    <string name="averagerating">Average rating:</string>
+    <string name="noofreviews">Number of reviews: 3</string>
+    <string name="rev1">Lovely property and amazing host!</string>
+    <string name="revmonth1">November 2019</string>
+    <string name="rev2">Great experience!</string>
+    <string name="revmonth2">April 2019</string>
+    <string name="rev3">Will definitely come back!</string>
+    <string name="revmonth3">March 2019</string>
+    <string name="forgotpassword">I forgot my password"</string>
+    <string name="slogan">Here we can write our slogan!</string>
+    <string name="joinnow">Join now!</string>
+    <string name="facebook_continue">Continue with Facebook</string>
+    <string name="continuegoogle">Continue with Google</string>
+    <string name="resetpassword">Reset my password</string>
+    <string name="desc">Family-friendly place</string>
+    <string name="dates1">12/04 - 18/04 - 2019</string>
+    <string name="prevreshost">Host: Nikolaj</string>
+    <string name="loc_res1">Riis, Denmark</string>
+    <string name="desc2">Camp surrounded by pretty nature</string>
+    <string name="dates2">10/03 - 12/03 - 2019</string>
+    <string name="prevrevhost1">Host: Meryl</string>
+    <string name="loc_res2">Horsens, Denmark</string>
+    <string name="desc3">Slow down, relax and enjoy nature</string>
+    <string name="dates3">05/09 - 10/09 - 2019</string>
+    <string name="prevrevhost2">Host: Pippi</string>
+    <string name="loc_res3">Esbjerg, Denmark</string>
+    <string name="welcome">Welcome to:</string>
+    <string name="getstarted">Get started!</string>
+    <string name="faq">FAQ</string>
+    <string name="descfav1">Family-friendly place</string>
+    <string name="hostfav">Host: Nikolaj</string>
+    <string name="descfav2">Idyllic, peaceful campspot</string>
+    <string name="hostfav2">Host: Meryl</string>
+    <string name="descfav3">Camp near Legoland</string>
+    <string name="hostfav3">Host: Pippi</string>
+    <string name="host1">Meryl Streep</string>
+    <string name="experience">Experience: Advanced</string>
+    <string name="authenticated">Authenticated</string>
+    <string name="reviews">4/5 - 3 reviews</string>
+    <string name="introduction">Introduction</string>
+    <string name="basicinfo">Basic Info</string>
+    <string name="livesin">Lives in:</string>
+    <string name="language">Languages:</string>
+    <string name="additional">Additional info</string>
+    <string name="localguide">Local guide</string>
+    <string name="social">Social</string>
+    <string name="animallover">Animal lover</string>
+    <string name="mes_us1">Harry Potter</string>
+    <string name="mes_us2">Meryl Streep</string>
+    <string name="mes_us3">James Bond</string>
+    <string name="mes_us4">Pippi Langstrømpe</string>
+    <string name="mes_us5">Nikolaj Coster-Waldau</string>
+    <string name="mes_time1">Wed 20/11/2019, 05:30 PM</string>
+    <string name="mes_time2">Fri 12/07/2019, 11:22 AM</string>
+    <string name="mes_time3">Sat 06/05/2019, 07:54 AM</string>
+    <string name="mes_time4">Mon 29/04/2019, 03:07 PM</string>
+    <string name="mes_time5">Sun 16/12/2018, 11:40 PM</string>
+
+    <string name="res_desc1">Family-friendly place near Legoland</string>
+    <string name="res_desc2">Camp surrounded by pretty nature</string>
+    <string name="res_desc3">Slow down, relax and enjoy nature</string>
+
+    <string name="dates_res1">20/05 - 22/05 - 2020</string>
+    <string name="dates_res2">15/04 - 21/04 - 2020</string>
+    <string name="dates_res3">05/03 - 10/03 - 2020</string>
+
+    <string name="host_res1">Host: Harry</string>
+    <string name="host_res2">Host: James</string>
+    <string name="host_res3">Host: Pippi</string>
+    <string name="confirmed">Confirmed</string>
+    <string name="awaiting">Awaiting host confirmation</string>
+    <string name="city_user">Awaiting host confirmation</string>
+    <string name="aboutme">About me</string>
+    <string name="description_prop">Description</string>
+    <string name="facilities1">Facilities</string>
+    <string name="abouthost">About the host</string>
+    <string name="facilityname">Facility name</string>
+    <string name="facilityvalue">Facility value</string>
+    <string name="propertytitle">Property Title</string>
+    <string name="rating">4.5</string>
+    <string name="totalratings">total ratings</string>
+    <string name="price_prop">499 DKK</string>
+    <string name="pricecut">599 DKK</string>
+    <string name="coupon">Check price after coupen redemption</string>
+    <string name="redeem">Redeem</string>
+    <string name="propname">Property name</string>
+    <string name="propertyprice">Property price</string>
+    <string name="propertysize">Property size</string>
+    <string name="loc_res4">Skagen, Denmark</string>
+    <string name="propertydesc">Property Description</string>
+    <string name="ratings">Ratings</string>
+    <string name="ratingsno">80 ratings</string>
+    <string name="yourratings">Your ratings</string>
+    <string name="addnew">Add new</string>
+    <string name="calendar">Calendar</string>
+    <string name="mylistings">My listings</string>
+    <string name="hostprofile">Host profile</string>
+    <string name="reviewsnav">Reviews</string>
+    <string name="futurereservations">Future reservations</string>
+    <string name="prevres">Previous reservations</string>
+    <string name="viewonlist">View on list</string>
+    <string name="viewonmap">View on map</string>
+    <string name="filter">Filter</string>
+    <string name="search">Search</string>
+    <string name="customersupport">"Campo Grande: Customer Support"</string>
+    <string name="price_d">Price</string>
+    <string name="size_d">Size</string>
+    <string name="skagen">Campspot Skagen</string>
+    <string name="horsens">Idyllic camp spot in nature</string>
+    <string name="billund">Campspot Billund</string>
+    <string name="assens">Campspot Assens</string>
+    <string name="rudsvedby">Campspot Rudsvedby</string>
+    <string name="img_listings">Property image is mandatory...</string>
+    <string name="name_listings">Please write a name for the property!</string>
+    <string name="addr_listings">Please enter the address!</string>
+    <string name="size_listings">Please define the size!</string>
+    <string name="price_listings">Please define a price!</string>
+    <string name="desc_listings">Please give a description!</string>
+    <string name="img_result">Got the Property image Url successfully... </string>
+    <string name="verifyemail">Please verify your email by clicking the link that was sent to your email.</string>
+    <string name="authfailed">Authentication failed.</string>
+    <string name="emailerror">"Email is required"</string>
+    <string name="emailvalid">Please enter a valid email</string>
+    <string name="password_req">Password is required</string>
+    <string name="password_no">The password must contain minimum 6 characters</string>
+    <string name="pw_reset">Your password was reset. Check your email!</string>
+    <string name="playground">Playground</string>
+    <string name="shower">Shower</string>
+    <string name="registertext">You have been successfully registered and will receive a verification email!</string>
+    <string name="alreadyreg">You are already registered</string>
+    <string name="veri_to">Verification email sent to</string>
+    <string name="veri_fail">Failed to send verification email. Please try again</string>
+    <string name="campogrande_logo">Campo Grande Logo</string>
+    <string name="reward">Rewards</string>
+    <string name="horsens_city">Horsens</string>
+    <string name="pricepernight">70 DKK/night</string>
 
 </resources>

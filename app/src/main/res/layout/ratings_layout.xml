@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:background="#FFFFFF"
     android:layout_marginTop="8dp"
     android:layout_marginBottom="8dp"
@@ -15,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="Ratings"
+        android:text="@string/ratings"
         android:textSize="18sp"
         android:textColor="#000000"
         android:textStyle="bold"
@@ -40,7 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="4.5"
+            android:text="@string/rating"
             android:textColor="#000000"
             android:textSize="36sp"
             android:textStyle="bold" />
@@ -51,7 +50,8 @@
             android:layout_height="30dp"
             android:layout_margin="8dp"
             android:layout_weight="1"
-            app:srcCompat="@drawable/ic_star_black_24dp" />
+            app:srcCompat="@drawable/ic_star_black_24dp"
+            android:contentDescription="@string/rating"/>
     </LinearLayout>
 
     <TextView
@@ -61,7 +61,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:text="80 ratings"
+        android:text="@string/ratingsno"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -170,7 +170,8 @@
                 android:layout_width="10dp"
                 android:layout_height="10dp"
                 android:layout_marginStart="4dp"
-                app:srcCompat="@drawable/ic_star_black_24dp" />
+                app:srcCompat="@drawable/ic_star_black_24dp"
+                android:contentDescription="@string/rating"/>
 
         </LinearLayout>
 
@@ -195,7 +196,8 @@
                 android:layout_width="10dp"
                 android:layout_height="10dp"
                 android:layout_marginStart="4dp"
-                app:srcCompat="@drawable/ic_star_black_24dp" />
+                app:srcCompat="@drawable/ic_star_black_24dp"
+                android:contentDescription="@string/rating"/>
 
         </LinearLayout>
 
@@ -359,7 +361,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:text="Your Ratings"
+        android:text="@string/yourratings"
         android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"

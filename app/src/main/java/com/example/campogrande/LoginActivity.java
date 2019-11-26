@@ -87,12 +87,12 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
                             startActivity(i);}
 
                             else{
-                                Toast.makeText(LoginActivity.this,"Please verify your email by clicking the link that was sent to your email.", Toast.LENGTH_LONG).show();
+                                Toast.makeText(LoginActivity.this,getString(R.string.verifyemail), Toast.LENGTH_LONG).show();
                             }
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
-                            Toast.makeText(LoginActivity.this, "Authentication failed.",
+                            Toast.makeText(LoginActivity.this, getString(R.string.authfailed),
                                     Toast.LENGTH_SHORT).show();
                             updateUI(null);
                         }
@@ -113,25 +113,25 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
         final String password = InputPassword.getText().toString();
 
         if (email.isEmpty()) {
-            InputEmail.setError("Email is required");
+            InputEmail.setError(getString(R.string.emailerror));
             InputEmail.requestFocus();
             validation = false;
         }
 
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            InputEmail.setError("Please enter a valid email");
+            InputEmail.setError(getString(R.string.emailvalid));
             InputEmail.requestFocus();
             validation = false;
         }
 
         if (password.isEmpty()) {
-            InputPassword.setError("Password is required");
+            InputPassword.setError(getString(R.string.password_req));
             InputPassword.requestFocus();
             validation = false;
         }
 
         if (password.length() < 6) {
-            InputPassword.setError("The password must contain minimum 6 characters");
+            InputPassword.setError(getString(R.string.password_no));
             InputPassword.requestFocus();
             validation = false;
         }

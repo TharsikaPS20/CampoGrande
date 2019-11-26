@@ -43,7 +43,7 @@
                 android:id="@+id/hostname"
                 android:textSize="28sp"
                 android:textStyle="italic|bold"
-                android:text="Meryl Streep"
+                android:text="@string/host1"
                 android:textColor="@color/md_white_1000"
                 android:layout_marginBottom="6dp"/>
     <TextView
@@ -52,7 +52,7 @@
         android:id="@+id/hostexperience"
         android:textSize="18sp"
         android:textStyle="italic|bold"
-        android:text="Experience: Advanced"
+        android:text="@string/experience"
         android:textColor="@color/md_white_1000"
         android:layout_marginBottom="6dp"/>
     <TextView
@@ -61,8 +61,8 @@
         android:id="@+id/hostauthenticated"
         android:textSize="18sp"
         android:textStyle="italic|bold"
-        android:text="Authenticated"
-        android:drawableLeft="@drawable/ic_verified_host"
+        android:text="@string/authenticated"
+        android:drawableStart="@drawable/ic_verified_host"
         android:drawableTint="@color/md_green_600"
         android:textColor="@color/md_white_1000"
         android:layout_marginBottom="6dp"/>
@@ -72,7 +72,7 @@
         android:id="@+id/fullnameRead"
         android:textSize="18sp"
         android:textStyle="italic|bold"
-        android:text="4/5 - 3 reviews"
+        android:text="@string/reviews"
         android:drawableStart="@drawable/ic_star_black_24dp"
         android:drawableTint="@color/md_yellow_A200"
         android:textColor="@color/md_white_1000"/>
@@ -102,7 +102,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Introduction"
+                    android:text="@string/introduction"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -129,7 +129,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Basic Info"
+                android:text="@string/basicinfo"
                 android:textSize="18sp"
                 android:layout_marginTop="8dp"
                 android:textStyle="bold" />
@@ -149,7 +149,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Lives in:"
+                android:text="@string/livesin"
                 android:textStyle="bold"
                 android:drawableStart="@drawable/ic_home"
                 android:drawableTint="@color/primary"
@@ -158,7 +158,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Languages:"
+                    android:text="@string/language"
                     android:textStyle="bold"
                     android:drawableStart="@drawable/ic_languages"
                     android:drawableTint="@color/primary"
@@ -206,7 +206,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Additional info"
+                android:text="@string/additional"
                 android:textSize="18sp"
                 android:layout_marginTop="8dp"
                 android:textStyle="bold"/>
@@ -259,13 +259,13 @@
                     android:layout_marginEnd="15dp"
                     android:layout_marginStart="15dp"
                     android:layout_height="wrap_content"
-                    android:text="Local guide"
+                    android:text="@string/localguide"
                     android:textSize="8sp"
                     android:gravity="center_horizontal"/>
                 <TextView
                     android:layout_width="50dp"
                     android:layout_height="wrap_content"
-                    android:text="Social"
+                    android:text="@string/social"
                     android:layout_marginEnd="15dp"
                     android:layout_marginStart="15dp"
                     android:textSize="8sp"
@@ -273,7 +273,7 @@
                 <TextView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:text="Animal lover"
+                    android:text="@string/animallover"
                     android:layout_marginEnd="15dp"
                     android:layout_marginStart="15dp"
                     android:textSize="8sp"

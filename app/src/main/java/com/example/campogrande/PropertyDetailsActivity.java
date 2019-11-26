@@ -42,6 +42,7 @@ public class PropertyDetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_property_details);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         propertyID = getIntent().getStringExtra("pid");
         propertyImagesViewPager = findViewById(R.id.property_images_viewpager);

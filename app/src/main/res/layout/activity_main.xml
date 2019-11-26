@@ -14,7 +14,8 @@
         android:layout_height="150dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:src="@drawable/campogrande_logo"/>
+        android:src="@drawable/campogrande_logo"
+        android:contentDescription="@string/campogrande_logo"/>
 
     <TextView
         android:id="@+id/slogan"
@@ -25,7 +26,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="200dp"
         android:layout_centerHorizontal="true"
-        android:text="Here we can write our slogan!"
+        android:text="@string/slogan"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
         android:textSize="20sp"
@@ -42,7 +43,7 @@
         android:padding="15dp"
         android:textAllCaps="false"
         android:textSize="17sp"
-        android:text="Join now!"
+        android:text="@string/joinnow"
         android:textColor="@android:color/black"/>
     <Button
     android:id="@+id/login"
@@ -57,7 +58,7 @@
     android:padding="15dp"
     android:textAllCaps="false"
     android:textSize="17sp"
-    android:text="Already have an account? Log in here!"
+    android:text="@string/alreadyuser"
     android:textColor="@android:color/black"/>
 
     <LinearLayout
@@ -106,7 +107,7 @@
     android:id="@+id/google_layout_2">
 
         <RelativeLayout
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
             android:layout_gravity="center_horizontal"
@@ -116,8 +117,8 @@
                android:id="@+id/continue_facebook"
                android:layout_width="match_parent"
                android:layout_height="match_parent"
-               android:drawableLeft="@drawable/facebook_icon"
-               android:text="  Continue with Facebook"
+               android:drawableStart="@drawable/facebook_icon"
+               android:text="@string/facebook_continue"
                android:layout_marginStart="10dp"
                android:layout_marginEnd="10dp"
                android:textColor="@color/md_white_1000"
@@ -155,9 +156,9 @@
                 android:layout_height="50dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
-                android:drawableLeft="@drawable/google_icon"
+                android:drawableStart="@drawable/google_icon"
                 android:layout_centerInParent="true"
-                android:text="Continue with Google"
+                android:text="@string/continuegoogle"
                 android:background="@drawable/button_google"
                 android:textColor="@color/md_white_1000"/>
 
@@ -169,6 +170,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clickable="true"
+            android:focusable="true"
             android:text="@string/continue_as_guest"
             android:gravity="center_horizontal"
             android:textStyle="bold"

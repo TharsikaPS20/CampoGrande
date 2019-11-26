@@ -43,10 +43,10 @@ public class PropertyFacilitiesFragment extends Fragment {
         propertyFacilitiesRecyclerView.setLayoutManager(linearLayoutManager);
 
         List<PropertyFacilityModel> propertyFacilityModelList = new ArrayList<>();
-        propertyFacilityModelList.add(new PropertyFacilityModel("Electricity", "100 DKK"));
-        propertyFacilityModelList.add(new PropertyFacilityModel("Water", "50 DKK"));
-        propertyFacilityModelList.add(new PropertyFacilityModel("Playground", "0 DKK"));
-        propertyFacilityModelList.add(new PropertyFacilityModel("Bath", "100 DKK"));
+        propertyFacilityModelList.add(new PropertyFacilityModel(getString(R.string.electricity), "100 DKK"));
+        propertyFacilityModelList.add(new PropertyFacilityModel(getString(R.string.water), "50 DKK"));
+        propertyFacilityModelList.add(new PropertyFacilityModel(getString(R.string.playground), "0 DKK"));
+        propertyFacilityModelList.add(new PropertyFacilityModel(getString(R.string.shower), "100 DKK"));
 
         PropertyFacilitiesAdapter propertyFacilitiesAdapter = new PropertyFacilitiesAdapter(propertyFacilityModelList);
         propertyFacilitiesRecyclerView.setAdapter(propertyFacilitiesAdapter);

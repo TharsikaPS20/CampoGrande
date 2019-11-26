@@ -24,19 +24,20 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:text="Average rating:"
+            android:text="@string/averagerating"
             android:textSize="20sp"/>
 
         <ImageView
             android:layout_width="110dp"
             android:layout_height="25dp"
-            android:src="@drawable/starsfour"/>
+            android:src="@drawable/starsfour"
+            android:contentDescription="@string/rating"/>
 
     </LinearLayout>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Number of reviews: 3"
+        android:text="@string/noofreviews"
         android:textSize="20sp"
         android:layout_gravity="center_horizontal"/>
 
@@ -67,7 +68,8 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="15dp"
-            android:src="@drawable/starsfive"/>
+            android:src="@drawable/starsfive"
+            android:contentDescription="@string/rating"/>
         </LinearLayout>
 
 
@@ -82,18 +84,18 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
-                android:text="Lovely property and amazing host!"
+                android:text="@string/rev1"
                 android:textStyle="bold"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="12dp"
-                android:text="November 2019"
+                android:textSize="12sp"
+                android:text=""
                 android:textStyle="italic"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="12dp"
+                android:textSize="12sp"
                 android:text="@string/latinmedium"/>
 
         </LinearLayout>
@@ -126,7 +128,8 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="15dp"
-                android:src="@drawable/starsthree"/>
+                android:src="@drawable/starsthree"
+                android:contentDescription="@string/rating"/>
         </LinearLayout>
 
 
@@ -141,18 +144,18 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
-                android:text="Great experience!"
+                android:text="@string/rev2"
                 android:textStyle="bold"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="12dp"
-                android:text="April 2019"
+                android:textSize="12sp"
+                android:text="@string/revmonth2"
                 android:textStyle="italic"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="12dp"
+                android:textSize="12sp"
                 android:text="@string/latin"/>
 
         </LinearLayout>
@@ -185,7 +188,8 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="15dp"
-                android:src="@drawable/starsfour"/>
+                android:src="@drawable/starsfour"
+                android:contentDescription="@string/rating"/>
         </LinearLayout>
 
 
@@ -200,18 +204,18 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
-                android:text="Will definitely come back!"
+                android:text="@string/rev3"
                 android:textStyle="bold"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="12dp"
-                android:text="March 2019"
+                android:textSize="12sp"
+                android:text="@string/revmonth3"
                 android:textStyle="italic"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="12dp"
+                android:textSize="12sp"
                 android:text="@string/latinmedium"/>
 
         </LinearLayout>

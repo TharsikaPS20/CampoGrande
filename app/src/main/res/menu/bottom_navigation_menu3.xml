@@ -5,12 +5,12 @@
     <item
         android:id="@+id/res"
         android:icon="@drawable/ic_reservation"
-        android:title="Future reservations"
+        android:title="@string/futurereservations"
         />
     <item
         android:id="@+id/res_prev"
         android:icon="@drawable/ic_reservations_prev"
-        android:title="Previous reservations"
+        android:title="@string/prevres"
         />
 
 

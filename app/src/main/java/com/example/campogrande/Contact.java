@@ -35,7 +35,7 @@ public class Contact extends AppCompatActivity implements View.OnClickListener {
             intent.setType("text/plain");
             intent.setType("message/rfc822");
             intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"240249@via.dk"});
-            intent.putExtra(Intent.EXTRA_SUBJECT, "Campo Grande: Customer Support");
+            intent.putExtra(Intent.EXTRA_SUBJECT, R.string.customersupport);
             if (intent.resolveActivity(getPackageManager()) != null) {
                 startActivity(intent);
             }

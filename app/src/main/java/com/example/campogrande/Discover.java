@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.StringRes;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.core.view.GravityCompat;
 import androidx.navigation.NavController;
@@ -132,10 +133,12 @@ public class Discover extends AppCompatActivity implements NavigationView.OnNavi
                 new FirebaseRecyclerAdapter<Properties, PropertyViewHolder>(options) {
                     @Override
                     protected void onBindViewHolder(@NonNull PropertyViewHolder propertyViewHolder, final int i, final Properties properties) {
+                        String price = getString(R.string.price_d);
+                        String size = getString(R.string.size_d);
                         propertyViewHolder.txtPropertyName.setText(properties.getPropertyName());
                         propertyViewHolder.txtPropertyDescription.setText(properties.getDescription());
-                        propertyViewHolder.txtPropertyPrice.setText("Price: " + properties.getPrice() + " DKK");
-                        propertyViewHolder.txtPropertySize.setText("Size: " + properties.getSize() + " m²");
+                        propertyViewHolder.txtPropertyPrice.setText(price + ": " + properties.getPrice() + " DKK");
+                        propertyViewHolder.txtPropertySize.setText(size + ": " + properties.getSize() + " m²");
                         Picasso.get().load(properties.getImageUrl()).into(propertyViewHolder.imgPropertyImage);
                         propertyViewHolder.root.setOnClickListener(new View.OnClickListener() {
                             @Override
@@ -162,14 +165,6 @@ public class Discover extends AppCompatActivity implements NavigationView.OnNavi
 
     }
 
-
-  /*@Override
-    public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_home);
-      AppBarConfiguration mAppBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
-      return NavigationUI.navigateUp(navController, mAppBarConfiguration)
-                || super.onSupportNavigateUp();
-    }*/
 
 
     @Override

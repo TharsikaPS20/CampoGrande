@@ -44,8 +44,7 @@
                     android:src="@drawable/caravanground5"
                     android:id="@+id/image_profile"
                     android:clickable="true"
-                    android:focusable="true"
-                    android:contextClickable="true"/>
+                    android:focusable="true"/>
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="40dp"
@@ -56,7 +55,6 @@
                     android:layout_alignEnd="@id/image_profile"
                     android:layout_alignBottom="@id/image_profile"
                     android:clickable="true"
-                    android:contextClickable="true"
                     android:focusable="true"/>
                 <ImageView
                     android:layout_width="15dp"
@@ -78,21 +76,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="20dp"
                     android:textSize="14sp"
-                    android:text="Family-friendly place"
+                    android:text="@string/descfav1"
                     android:textStyle="bold"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="12sp"
-                    android:text="Host: Nikolaj"
+                    android:text="@string/hostfav"
                     android:drawableStart="@drawable/ic_host"
                     android:gravity="center_vertical"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="12dp"
+                    android:textSize="12sp"
                     android:drawableStart="@drawable/ic_listings"
-                    android:text="Riis, Denmark"
+                    android:text="@string/loc_res1"
                     android:textStyle="italic"
                     android:gravity="center_vertical"/>
 
@@ -130,8 +128,7 @@
                     android:src="@drawable/caravanground6"
                     android:id="@+id/res1"
                     android:clickable="true"
-                    android:focusable="true"
-                    android:contextClickable="true"/>
+                    android:focusable="true"/>
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="40dp"
@@ -142,7 +139,6 @@
                     android:layout_alignEnd="@id/res1"
                     android:layout_alignBottom="@id/res1"
                     android:clickable="true"
-                    android:contextClickable="true"
                     android:focusable="true"/>
                 <ImageView
                     android:layout_width="15dp"
@@ -164,22 +160,22 @@
                     android:layout_width="wrap_content"
                     android:layout_height="20dp"
                     android:textSize="14sp"
-                    android:text="Idyllic, peaceful campspot"
+                    android:text="@string/descfav2"
                     android:textStyle="bold"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="12sp"
-                    android:text="Host: Meryl"
+                    android:text="@string/hostfav2"
                     android:drawableStart="@drawable/ic_host"
                     android:gravity="center_vertical"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="12dp"
+                    android:textSize="12sp"
                     android:drawableStart="@drawable/ic_listings"
-                    android:text="Skagen, Denmark"
+                    android:text="@string/loc_res2"
                     android:textStyle="italic"
                     android:gravity="center_vertical"/>
 
@@ -218,8 +214,7 @@
                     android:src="@drawable/caravanground7"
                     android:id="@+id/res2"
                     android:clickable="true"
-                    android:focusable="true"
-                    android:contextClickable="true"/>
+                    android:focusable="true"/>
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="40dp"
@@ -230,7 +225,6 @@
                     android:layout_alignEnd="@id/res2"
                     android:layout_alignBottom="@id/res2"
                     android:clickable="true"
-                    android:contextClickable="true"
                     android:focusable="true"/>
                 <ImageView
                     android:layout_width="15dp"
@@ -254,13 +248,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="20dp"
                     android:textSize="14sp"
-                    android:text="Camp near Legoland"
+                    android:text="@string/descfav3"
                     android:textStyle="bold"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="12sp"
-                    android:text="Host: Pippi"
+                    android:text="@string/hostfav3"
                     android:drawableStart="@drawable/ic_host"
                     android:gravity="center_vertical"/>
                 <TextView
@@ -268,7 +262,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="12dp"
                     android:drawableStart="@drawable/ic_listings"
-                    android:text="Esbjerg, Denmark"
+                    android:text="@string/loc_res3"
                     android:textStyle="italic"
                     android:gravity="center_vertical"/>
 

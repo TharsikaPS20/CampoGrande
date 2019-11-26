@@ -69,13 +69,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/fullname"
-            android:hint="Full name"
+            android:hint="@string/fullname"
             android:inputType="textPersonName"
             android:layout_marginTop="5dp"
             app:met_floatingLabel="normal"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
-            android:drawableLeft="@drawable/ic_username"
+            android:drawableStart="@drawable/ic_username"
             android:drawableTint="@android:color/holo_blue_light"
             />
 
@@ -83,13 +83,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/city"
-            android:hint="City"
+            android:hint="@string/city"
             android:inputType="text"
             android:layout_marginTop="10dp"
             app:met_floatingLabel="normal"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
-            android:drawableLeft="@drawable/ic_city"
+            android:drawableStart="@drawable/ic_city"
             android:drawableTint="@android:color/holo_blue_light"
             />
 
@@ -97,7 +97,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/phone"
-            android:hint="Phone number"
+            android:hint="@string/phone"
             android:inputType="phone"
             android:layout_marginTop="5dp"
             app:met_floatingLabel="normal"
@@ -112,8 +112,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/profiletext"
             android:inputType="textMultiLine"
-            android:hint="Introduce yourself: What are your hobbies? How do you travel? With motorcaravan or caravan? With whom? How often? Etc."
-            android:text=""
+            android:hint="@string/intro"
             android:layout_marginTop="5dp"
             app:met_floatingLabel="normal"
             android:layout_marginBottom="80dp"
@@ -131,7 +130,7 @@
         app:srcCompat="@drawable/save"
         android:tint="@color/md_white_1000"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"/>
+        android:layout_alignParentEnd="true"/>
 
 
 

@@ -58,8 +58,8 @@ public class HostListings extends AppCompatActivity {
                         protected void onBindViewHolder(@NonNull PropertyViewHolder propertyViewHolder, int i, @NonNull Properties properties) {
                             propertyViewHolder.txtPropertyName.setText(properties.getPropertyName());
                             propertyViewHolder.txtPropertyDescription.setText(properties.getDescription());
-                            propertyViewHolder.txtPropertyPrice.setText("Price: " + properties.getPrice() + " DKK");
-                            propertyViewHolder.txtPropertySize.setText("Size: " + properties.getSize() + " m²");
+                            propertyViewHolder.txtPropertyPrice.setText(getString(R.string.price_d) + ": " + properties.getPrice() + " DKK");
+                            propertyViewHolder.txtPropertySize.setText(getString(R.string.size_d) + ": " + properties.getSize() + " m²");
                             Picasso.get().load(properties.getImageUrl()).into(propertyViewHolder.imgPropertyImage);
                         }
 
@@ -76,7 +76,7 @@ public class HostListings extends AppCompatActivity {
             adapter.startListening();
 
 
-        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavView_Bar);
+        BottomNavigationView bottomNavigationView =  findViewById(R.id.bottomNavView_Bar);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
         Menu menu = bottomNavigationView.getMenu();
         MenuItem menuItem = menu.getItem(2);

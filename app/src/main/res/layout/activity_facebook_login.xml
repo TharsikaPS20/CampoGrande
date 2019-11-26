@@ -34,7 +34,7 @@
         <TextView
             android:id="@+id/detail"
             style="@style/ThemeOverlay.MyTextDetail"
-            tools:text="Firebase User ID: 123456789abc" />
+            tools:text="@string/firebaseuserid" />
 
     </LinearLayout>
 

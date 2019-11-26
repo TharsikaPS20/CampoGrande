@@ -76,7 +76,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/city"
-            android:text="City"
+            android:text="@string/city_user"
             android:textSize="20sp"
             app:met_floatingLabel="normal"
                 android:textStyle="bold"
@@ -113,7 +113,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/phone"
-            android:text="Phone number"
+            android:text="@string/phone"
             android:textSize="20sp"
             app:met_floatingLabel="normal"
             android:textStyle="bold"/>
@@ -150,7 +150,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/profiletext"
-            android:text="About me"
+            android:text="@string/aboutme"
             android:textSize="20sp"
             app:met_floatingLabel="normal"
             android:textStyle="bold"/>

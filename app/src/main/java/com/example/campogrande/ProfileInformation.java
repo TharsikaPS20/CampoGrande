@@ -1,7 +1,5 @@
 package com.example.campogrande;
 
-import com.google.firebase.auth.FirebaseUser;
-
 public class ProfileInformation {
 
         private String userId;
@@ -14,8 +12,6 @@ public class ProfileInformation {
 public  ProfileInformation(){
 
     }
-
-
 
     public ProfileInformation (String userId, String name, String phone, String city, String intro, String imageUrl) {
             this.userId = userId;
@@ -46,7 +42,7 @@ public  ProfileInformation(){
         return phone;
     }
 
-    public void setPhone(String age) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 

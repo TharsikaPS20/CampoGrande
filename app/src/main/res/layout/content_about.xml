@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:showIn="@layout/activity_about"
+
     tools:context=".About">
 
     <LinearLayout
@@ -34,7 +34,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="About Campo Grande"
+            android:text="@string/aboutcg"
             android:textSize="16sp"
             android:gravity="center"
             android:textAlignment="center"
@@ -43,7 +43,8 @@
             android:layout_width="match_parent"
             android:layout_height="120dp"
                 android:src="@drawable/campogrande_logo"
-                android:paddingBottom="10dp"/>
+                android:paddingBottom="10dp"
+                android:contentDescription="@string/campogrande_logo"/>
         </LinearLayout>
         <LinearLayout
             android:id="@+id/terms_layout"
@@ -62,7 +63,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:id="@+id/tv2"
-                android:text="Terms and Conditions"
+                android:text="@string/tac"
                 android:textSize="16sp"
                 android:textAlignment="center"
                 android:textStyle="bold"
@@ -71,7 +72,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:paddingBottom="10dp"
-                android:src="@drawable/tandc"/>
+                android:src="@drawable/tandc"
+                android:contentDescription="@string/terms_tac"/>
         </LinearLayout>
 
 
@@ -98,7 +100,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:text="FAQ"
+                    android:text="@string/faq"
                     android:textSize="16sp"
                     android:textAlignment="center"
                     android:textStyle="bold"
@@ -107,7 +109,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="120dp"
                     android:src="@drawable/faq_trans"
-                    android:paddingBottom="10dp"/>
+                    android:paddingBottom="10dp"
+                    android:contentDescription="@string/faq"/>
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/contact_layout"
@@ -125,7 +128,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:text="Contact us"
+                    android:text="@string/contact_us"
                     android:textAlignment="center"
                     android:textStyle="bold"
                     android:textSize="16sp"
@@ -134,7 +137,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="120dp"
                     android:src="@drawable/contact"
-                    android:paddingBottom="10dp"/>
+                    android:paddingBottom="10dp"
+                    android:contentDescription="@string/contact_us"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

@@ -84,21 +84,21 @@ public class DiscoverMapView extends AppCompatActivity implements OnMapReadyCall
         mMap = googleMap;
 
         LatLng skagen = new LatLng(57.710699, 10.497555);
-        mMap.addMarker(new MarkerOptions().position(skagen).title("Campspot Skagen"));
+        mMap.addMarker(new MarkerOptions().position(skagen).title(getString(R.string.skagen)));
         mMap.setMinZoomPreference(5);
 
         LatLng horsens = new LatLng(55.876730, 9.875022);
-        mMap.addMarker(new MarkerOptions().position(horsens).title("Idyllic camp spot in nature").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+        mMap.addMarker(new MarkerOptions().position(horsens).title(getString(R.string.horsens)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(horsens));
 
         LatLng billund = new LatLng(55.787039, 9.170591);
-        mMap.addMarker(new MarkerOptions().position(billund).title("Campspot Billund"));
+        mMap.addMarker(new MarkerOptions().position(billund).title(getString(R.string.billund)));
 
         LatLng assens = new LatLng(55.257640, 9.918387);
-        mMap.addMarker(new MarkerOptions().position(assens).title("Campspot Assens"));
+        mMap.addMarker(new MarkerOptions().position(assens).title(getString(R.string.assens)));
 
         LatLng rudsvedby = new LatLng(55.569038, 11.325805);
-        mMap.addMarker(new MarkerOptions().position(rudsvedby).title("Campspot Assens"));
+        mMap.addMarker(new MarkerOptions().position(rudsvedby).title(getString(R.string.rudsvedby)));
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavView_Bar3);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);

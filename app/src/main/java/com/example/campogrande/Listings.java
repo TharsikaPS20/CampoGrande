@@ -84,10 +84,10 @@ public class Listings extends AppCompatActivity implements NavigationView.OnNavi
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.bringToFront();
 
-        mViewPager = (ViewPager) findViewById(R.id.container);
+        mViewPager = findViewById(R.id.container);
 
 
-        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavView_Bar);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavView_Bar);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
         Menu menu = bottomNavigationView.getMenu();
         MenuItem menuItem = menu.getItem(0);
@@ -117,17 +117,17 @@ public class Listings extends AppCompatActivity implements NavigationView.OnNavi
 
         PropertyImageRef = FirebaseStorage.getInstance().getReference().child("Property Images");
         PropertiesRef = FirebaseDatabase.getInstance().getReference().child("Properties");
-        AddNewPropertyButton = (Button) findViewById(R.id.AddButton);
-        InputPropertyName = (EditText) findViewById(R.id.property_name);
-        InputAddress = (EditText) findViewById(R.id.address);
-        InputSize = (EditText) findViewById(R.id.size);
-        InputPrice = (EditText) findViewById(R.id.price);
-        InputDescription = (EditText) findViewById(R.id.description);
-        SelectImage = (ImageButton) findViewById(R.id.select_image);
-        SelectImage1 = (ImageButton) findViewById(R.id.select_image1);
-        SelectImage2 = (ImageButton) findViewById(R.id.select_image2);
-        RadioWater = (RadioButton) findViewById(R.id.radioWater);
-        RadioElectricity = (RadioButton) findViewById(R.id.radioElectricity);
+        AddNewPropertyButton =findViewById(R.id.AddButton);
+        InputPropertyName = findViewById(R.id.property_name);
+        InputAddress = findViewById(R.id.address);
+        InputSize = findViewById(R.id.size);
+        InputPrice = findViewById(R.id.price);
+        InputDescription = findViewById(R.id.description);
+        SelectImage = findViewById(R.id.select_image);
+        SelectImage1 = findViewById(R.id.select_image1);
+        SelectImage2 = findViewById(R.id.select_image2);
+        RadioWater = findViewById(R.id.radioWater);
+        RadioElectricity = findViewById(R.id.radioElectricity);
 
         SelectImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -172,27 +172,27 @@ public class Listings extends AppCompatActivity implements NavigationView.OnNavi
 
         if (ImageUri == null)
         {
-            Toast.makeText(this, "Property image is mandatory...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.img_listings), Toast.LENGTH_SHORT).show();
         }
         else if (TextUtils.isEmpty(PropertyName))
         {
-            Toast.makeText(this, "Please write a name for the property!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.name_listings), Toast.LENGTH_SHORT).show();
         }
         else if (TextUtils.isEmpty(Address))
         {
-            Toast.makeText(this, "Please mention the address!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.addr_listings), Toast.LENGTH_SHORT).show();
         }
         else if (TextUtils.isEmpty(Size))
         {
-            Toast.makeText(this, "Please define the size!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.size_listings), Toast.LENGTH_SHORT).show();
         }
         else if (TextUtils.isEmpty(Price))
         {
-            Toast.makeText(this, "Please define a price!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.price_listings), Toast.LENGTH_SHORT).show();
         }
         else if (TextUtils.isEmpty(Description))
         {
-            Toast.makeText(this, "Please give a description!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.desc_listings), Toast.LENGTH_SHORT).show();
         }
         else
         {
@@ -243,7 +243,7 @@ public class Listings extends AppCompatActivity implements NavigationView.OnNavi
                         if (task.isSuccessful())
                         {
                             DownloadImageUrl = task.getResult().toString();
-                            Toast.makeText(Listings.this, "Got the Property image Url successfully... ", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Listings.this, getString(R.string.img_result), Toast.LENGTH_SHORT).show();
 
                             SavePropertyInfoToDatabase();
                         }

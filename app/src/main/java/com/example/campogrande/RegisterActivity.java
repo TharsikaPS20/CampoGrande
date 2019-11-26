@@ -55,25 +55,25 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         String password = editTextPassword.getText().toString().trim();
 
         if (email.isEmpty()) {
-            editTextEmail.setError("Email is required");
+            editTextEmail.setError(getString(R.string.emailerror));
             editTextEmail.requestFocus();
             return;
         }
 
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            editTextEmail.setError("Please enter a valid email");
+            editTextEmail.setError(getString(R.string.emailvalid));
             editTextEmail.requestFocus();
             return;
         }
 
         if (password.isEmpty()) {
-            editTextPassword.setError("Password is required");
+            editTextPassword.setError(getString(R.string.password_req));
             editTextPassword.requestFocus();
             return;
         }
 
         if (password.length() < 6) {
-            editTextPassword.setError("The password must contain minimum 6 characters");
+            editTextPassword.setError(getString(R.string.password_no));
             editTextPassword.requestFocus();
             return;
         }
@@ -86,7 +86,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 progressBar.setVisibility(View.GONE);
                 if (task.isSuccessful()) {
                     Toast.makeText(RegisterActivity.this,
-                            "You have been successfully registered and will receive a verification email!",
+                            getString(R.string.registertext),
                             Toast.LENGTH_LONG).show();
                     sendEmailVerification();
                     SignOut();
@@ -94,7 +94,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 } else {
 
                     if (task.getException() instanceof FirebaseAuthUserCollisionException) {
-                        Toast.makeText(getApplicationContext(), "You are already registered", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), getString(R.string.alreadyreg), Toast.LENGTH_LONG).show();
 
                     } else {
                         Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
@@ -120,8 +120,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         // Disable button
         findViewById(R.id.register_btn).setEnabled(false);
 
-        // Send verification email
-        // [START send_email_verification]
         final FirebaseUser user = mAuth.getCurrentUser();
         user.sendEmailVerification()
                 .addOnCompleteListener(this, new OnCompleteListener<Void>() {
@@ -131,7 +129,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
                         if (task.isSuccessful()) {
                             Toast.makeText(RegisterActivity.this,
-                                    "Verification email sent to " + user.getEmail(),
+                                    getString(R.string.veri_to) + " " + user.getEmail(),
                                     Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
                             startActivity(intent);
@@ -139,7 +137,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                         } else {
                             Log.e(TAG, "sendEmailVerification", task.getException());
                             Toast.makeText(RegisterActivity.this,
-                                    "Failed to send verification email.",
+                                    getString(R.string.veri_fail),
                                     Toast.LENGTH_SHORT).show();
                         }
                     }

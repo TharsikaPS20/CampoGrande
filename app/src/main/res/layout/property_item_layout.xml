@@ -18,9 +18,9 @@
             android:id="@+id/property_name1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Property Name"
+            android:text="@string/propname"
             android:textAlignment="center"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:textStyle="bold"
             android:textColor="@color/colorPrimary"/>
 
@@ -37,9 +37,9 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/property_image"
-            android:text="Property price"
+            android:text="@string/propertyprice"
             android:textAlignment="center"
-            android:textSize="18dp"
+            android:textSize="18sp"
             android:textColor="@color/colorPrimaryDark"/>
 
         <TextView
@@ -48,9 +48,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/property_image"
             android:layout_toEndOf="@id/property_price"
-            android:text="Property size"
+            android:text="@string/propertysize"
             android:textAlignment="center"
-            android:textSize="18dp"
+            android:textSize="18sp"
             android:textColor="@color/colorPrimaryDark"/>
 
         <TextView
@@ -58,10 +58,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/property_price"
-            android:text="Property Description"
+            android:text="@string/propertydesc"
             android:layout_marginTop="2dp"
             android:textAlignment="center"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:textColor="@color/colorPrimaryDark"/>
 
 

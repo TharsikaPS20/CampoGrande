@@ -39,21 +39,24 @@
             android:layout_width="65dp"
             android:layout_height="30dp"
             android:text="@string/normal"
-            android:textSize="8sp" />
+            android:textSize="8sp"
+            android:theme="@style/ThemeOverlay.MyDarkButton"/>
 
         <Button
             android:id="@+id/btn2"
             android:layout_width="65dp"
             android:layout_height="30dp"
             android:text="@string/satellite"
-            android:textSize="8sp" />
+            android:textSize="8sp"
+            android:theme="@style/ThemeOverlay.MyDarkButton"/>
 
         <Button
             android:id="@+id/btn3"
             android:layout_width="65dp"
             android:layout_height="30dp"
             android:text="@string/hybrid"
-            android:textSize="8sp" />
+            android:textSize="8sp"
+            android:theme="@style/ThemeOverlay.MyDarkButton"/>
     </LinearLayout>
     </fragment>
 
@@ -96,14 +99,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="Idyllic camp spot in nature"
+                android:text="@string/horsens"
                 android:layout_marginStart="10dp"
                 android:textStyle="bold"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0.7"
-                android:text="Horsens"
+                android:text="@string/horsens_city"
                 android:textSize="12sp"
                 android:layout_marginStart="10dp"
                 android:drawableStart="@drawable/ic_listings"
@@ -114,7 +117,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0.5"
-                android:text="70 DKK/night"
+                android:text="@string/pricepernight"
                 android:textSize="12sp"
                 android:drawableStart="@drawable/ic_price"
                 android:drawableTint="@color/md_green_800"
@@ -136,7 +139,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.5"
-            android:text="Nice place to camp, close to the center"
+            android:text="@string/prop_desc"
             android:gravity="center_horizontal"
             android:textSize="10sp"/>
     </LinearLayout>

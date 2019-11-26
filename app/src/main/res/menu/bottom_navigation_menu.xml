@@ -5,17 +5,17 @@
     <item
         android:id="@+id/add_new"
         android:icon="@drawable/ic_add"
-        android:title="Add new"
+        android:title="@string/addnew"
         />
     <item
         android:id="@+id/calendar"
         android:icon="@drawable/ic_calendar"
-        android:title="Calendar"
+        android:title="@string/calendar"
         />
     <item
         android:id="@+id/listings"
         android:icon="@drawable/ic_home"
-        android:title="My listings"
+        android:title="@string/mylistings"
         />
 
 
