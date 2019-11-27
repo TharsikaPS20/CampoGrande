@@ -77,7 +77,8 @@
         <activity
             android:name=".Listings"
             android:label="@string/add_new"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
         <activity
             android:name=".Host"
             android:label="@string/host"
