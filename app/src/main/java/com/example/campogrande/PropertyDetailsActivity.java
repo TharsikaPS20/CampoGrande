@@ -2,6 +2,7 @@ package com.example.campogrande;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
@@ -16,6 +17,7 @@ import android.widget.TextView;
 
 import com.example.campogrande.Adapter.PropertyDetailsAdapter;
 import com.example.campogrande.Adapter.PropertyImagesAdapter;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -25,6 +27,10 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import io.paperdb.Book;
+
+import static android.view.View.*;
 
 public class PropertyDetailsActivity extends AppCompatActivity {
 
@@ -41,10 +47,13 @@ public class PropertyDetailsActivity extends AppCompatActivity {
     private LinearLayout rateNowLayout;
     private List<String> propertyImages = new ArrayList<>();
 
+    FloatingActionButton fabBtn, fab2;
+    boolean flag = true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_property_details);
+        setContentView(R.layout.floatingaction_property_details);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         propertyID = getIntent().getStringExtra("pid");
@@ -65,11 +74,42 @@ public class PropertyDetailsActivity extends AppCompatActivity {
         propertyImages.add(R.drawable.caravanground3);
         propertyImages.add(R.drawable.caravanground4);*/
 
-        checkButton.setOnClickListener(new View.OnClickListener() {
+        checkButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent1 = new Intent(PropertyDetailsActivity.this, Availability.class);
                 startActivity(intent1);
+            }
+        });
+
+
+
+        fabBtn = findViewById(R.id.fab);
+        fabBtn.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(PropertyDetailsActivity.this, BookingActivity.class);
+                startActivity(i);
+            }
+        });
+
+        fab2 = findViewById(R.id.fab2);
+        fab2.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(flag){
+
+                    fab2.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_heartfull));
+                    flag = false;
+
+                }else if(!flag){
+
+                    fab2.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_heartborder));
+                    flag = true;
+
+                }
+
             }
         });
 
@@ -97,7 +137,7 @@ public class PropertyDetailsActivity extends AppCompatActivity {
         for (int x = 0; x < rateNowLayout.getChildCount(); x++)
         {
             final int starPosition = x;
-            rateNowLayout.getChildAt(x).setOnClickListener(new View.OnClickListener() {
+            rateNowLayout.getChildAt(x).setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     setRating(starPosition);

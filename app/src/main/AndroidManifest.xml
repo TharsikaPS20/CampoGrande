@@ -25,6 +25,8 @@
             android:name=".TermsAndConditions"
             android:label="@string/tac"
             android:parentActivityName=".About" />
+        <activity android:name=".BookingActivity"
+            android:parentActivityName=".PropertyDetailsActivity"/>
         <activity
             android:name=".TermsAndConditionsStart"
             android:parentActivityName=".RegisterActivity" />

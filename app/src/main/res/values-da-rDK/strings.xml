@@ -219,4 +219,5 @@
     <string name="hostgreeting">Hils på din vært</string>
     <string name="servicefee">Servicegebyr:</string>
     <string name="sum">Total pris (DKK)</string>
+    <string name="book">Reservér</string>
 </resources>
