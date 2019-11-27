@@ -4,7 +4,7 @@
     android:background="#FFFFFF"
     android:elevation="3dp"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/property_details_tablayout"
@@ -37,7 +37,7 @@
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/property_details_viewpager"
         android:layout_width="0dp"
-        android:layout_height="400dp"
+        android:layout_height="200dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/property_details_tablayout" />

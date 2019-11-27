@@ -60,6 +60,8 @@ public class Listings extends AppCompatActivity implements NavigationView.OnNavi
     private DatabaseReference PropertiesRef;
     private FirebaseAuth mAuth;
     private FirebaseUser user;
+    private Boolean checked;
+    private Boolean checked1;
 
 
 
@@ -124,8 +126,6 @@ public class Listings extends AppCompatActivity implements NavigationView.OnNavi
         InputPrice = findViewById(R.id.price);
         InputDescription = findViewById(R.id.description);
         SelectImage = findViewById(R.id.select_image);
-        SelectImage1 = findViewById(R.id.select_image1);
-        SelectImage2 = findViewById(R.id.select_image2);
         RadioWater = findViewById(R.id.radioWater);
         RadioElectricity = findViewById(R.id.radioElectricity);
 
@@ -136,6 +136,47 @@ public class Listings extends AppCompatActivity implements NavigationView.OnNavi
             }
         });
 
+        checked = RadioWater.isChecked();
+
+        RadioWater.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                if(checked)
+                {
+                    RadioWater.setChecked(false);
+                    checked = RadioWater.isChecked();
+                }
+
+                else
+                {
+                    RadioWater.setChecked(true);
+                    checked = RadioWater.isChecked();
+                }
+
+
+            }
+        });
+
+        checked1 = RadioElectricity.isChecked();
+        RadioElectricity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(checked1)
+                {
+                    RadioElectricity.setChecked(false);
+                    checked1 = RadioElectricity.isChecked();
+                }
+
+                else
+                {
+                    RadioElectricity.setChecked(true);
+                    checked1 = RadioElectricity.isChecked();
+                }
+
+            }
+        });
         AddNewPropertyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -263,6 +304,8 @@ public class Listings extends AppCompatActivity implements NavigationView.OnNavi
         InputSize.setText("");
         InputPrice.setText("");
         InputDescription.setText("");
+        RadioWater.setChecked(false);
+        RadioElectricity.setChecked(false);
 
         /*HashMap<String, Object> propertyMap = new HashMap<>();
         propertyMap.put("pid", PropertyRandomKey.toString());
@@ -289,7 +332,7 @@ public class Listings extends AppCompatActivity implements NavigationView.OnNavi
 }
                     }
                             });*/
-                            }
+    }
 
 
 
@@ -398,8 +441,3 @@ public class Listings extends AppCompatActivity implements NavigationView.OnNavi
 
 
 }
-
-
-
-
-

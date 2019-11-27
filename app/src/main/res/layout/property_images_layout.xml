@@ -134,11 +134,12 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/coupon"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF" />
+            android:textAlignment="textStart"
+            android:textColor="#FFFFFF"
+            android:paddingLeft="10dp"/>
 
         <Button
-            android:id="@+id/redeem_btn"
+            android:id="@+id/check_btn"
             android:layout_width="75dp"
             android:layout_height="30dp"
             android:background="@drawable/border_background"

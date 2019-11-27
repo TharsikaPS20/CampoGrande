@@ -2,7 +2,6 @@ package com.example.campogrande;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
@@ -10,13 +9,13 @@ import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.campogrande.Adapter.PropertyDetailsAdapter;
 import com.example.campogrande.Adapter.PropertyImagesAdapter;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -32,6 +31,7 @@ public class PropertyDetailsActivity extends AppCompatActivity {
     private ViewPager propertyImagesViewPager;
     private TabLayout viewpagerIndicator;
 
+    private Button checkButton;
     private ViewPager propertyDetailsViewpager;
     private TabLayout propertyDetailsTablayout;
     private TextView propertyTitle;
@@ -44,7 +44,7 @@ public class PropertyDetailsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.floatingaction_property_details);
+        setContentView(R.layout.activity_property_details);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         propertyID = getIntent().getStringExtra("pid");
@@ -54,6 +54,7 @@ public class PropertyDetailsActivity extends AppCompatActivity {
         propertyDetailsTablayout = findViewById(R.id.property_details_tablayout);
         propertyTitle = findViewById(R.id.property_title);
         propertyPrice = findViewById(R.id.property_price_detailview);
+        checkButton = findViewById(R.id.check_btn);
 
         getPropertyDetails(propertyID);
 
@@ -64,37 +65,13 @@ public class PropertyDetailsActivity extends AppCompatActivity {
         propertyImages.add(R.drawable.caravanground3);
         propertyImages.add(R.drawable.caravanground4);*/
 
-        final FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        checkButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(PropertyDetailsActivity.this, BookingActivity.class);
-                startActivity(intent);
+            public void onClick(View v) {
+                Intent intent1 = new Intent(PropertyDetailsActivity.this, Availability.class);
+                startActivity(intent1);
             }
         });
-        final FloatingActionButton fab2 = findViewById(R.id.fab2);
-
-        fab2.setOnClickListener(new View.OnClickListener() {
-            boolean flag = true;
-            @Override
-            public void onClick(View view) {
-
-                if(flag){
-
-                    fab2.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_heartfull));
-                    flag = false;
-
-                }else if(!flag){
-
-                    fab2.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_heartborder));
-                    flag = true;
-
-                }
-            }
-
-
-        });
-
 
 
         propertyDetailsViewpager.setAdapter(new PropertyDetailsAdapter(getSupportFragmentManager(), propertyDetailsTablayout.getTabCount()));

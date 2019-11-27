@@ -101,4 +101,3 @@ public class CampingProperties {
         this.imageUrl = imageUrl;
     }
 }
-

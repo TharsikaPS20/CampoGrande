@@ -18,8 +18,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexWarning">
-        <activity android:name=".BookingActivity"
-            android:parentActivityName=".PropertyDetailsActivity"/>
         <activity
             android:name=".AboutUs"
             android:parentActivityName=".About" />
@@ -67,12 +65,10 @@
             android:parentActivityName=".Listings" />
         <activity
             android:name=".FacebookLoginActivity"
-            android:label="@string/fblogin"
-            android:parentActivityName=".MainActivity"/>
+            android:label="@string/fblogin" />
         <activity
             android:name=".GoogleSignInActivity"
-            android:label="@string/googlelogin"
-            android:parentActivityName=".MainActivity"/>
+            android:label="@string/googlelogin" />
         <activity android:name=".BaseActivity" />
         <activity
             android:name=".UserProfile"
@@ -118,6 +114,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
@@ -129,14 +126,13 @@
             android:label="@string/editprofile"
             android:parentActivityName=".UserProfile"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name=".LoginActivity"
             android:label="@string/signin"
-            android:parentActivityName=".MainActivity"
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".RegisterActivity"
-            android:parentActivityName=".MainActivity"
             android:label="@string/register" />
         <activity
             android:name=".MainActivity"

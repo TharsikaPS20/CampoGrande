@@ -36,37 +36,17 @@
 
                 <ImageButton
                     android:id="@+id/select_image"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:layout_marginStart="45dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginTop="30dp"
                     android:cropToPadding="false"
                     android:scaleType="centerCrop"
                     android:background="@drawable/add_image"
+                    android:layout_centerHorizontal="true"
                     />
-                <ImageButton
-                    android:id="@+id/select_image1"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
-                    android:layout_toEndOf="@+id/select_image"
-                    android:layout_marginTop="10dp"
-                    android:cropToPadding="false"
-                    android:scaleType="centerCrop"
-                    android:background="@drawable/add_image"
-                    />
-                <ImageButton
-                    android:id="@+id/select_image2"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
-                    android:layout_toEndOf="@+id/select_image1"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="45dp"
-                    android:layout_marginTop="10dp"
-                    android:cropToPadding="false"
-                    android:scaleType="centerCrop"
-                    android:background="@drawable/add_image"
-                    />
+
 
                 <EditText
                     android:id="@+id/property_name"
@@ -147,6 +127,7 @@
                     android:padding="2dp"
                     android:layout_marginLeft="45dp"
                     android:layout_marginRight="45dp"
+                    android:textColor="#000000"
                     />
 
                 <RadioButton
@@ -159,6 +140,7 @@
                     android:layout_marginEnd="5dp"
                     android:layout_below="@+id/facilities"
                     android:text="@string/water"
+                    android:buttonTint="@color/primary"
                     />
                 <RadioButton
                     android:id="@+id/radioElectricity"
@@ -171,6 +153,7 @@
                     android:layout_below="@+id/facilities"
                     android:layout_toEndOf="@+id/radioWater"
                     android:text="@string/electricity"
+                    android:buttonTint="@color/primary"
                     />
 
                 <Button

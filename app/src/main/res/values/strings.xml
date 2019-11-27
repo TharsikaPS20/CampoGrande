@@ -197,8 +197,8 @@
     <string name="totalratings">total ratings</string>
     <string name="price_prop" translatable="false">499 DKK</string>
     <string name="pricecut" translatable="false">599 DKK</string>
-    <string name="coupon">Check price after coupen redemption</string>
-    <string name="redeem">Redeem</string>
+    <string name="coupon">Check availability</string>
+    <string name="redeem">CHECK</string>
     <string name="propname">Property name</string>
     <string name="propertyprice">Property price</string>
     <string name="propertysize">Property size</string>
