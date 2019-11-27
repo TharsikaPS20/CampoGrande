@@ -47,7 +47,7 @@
     <string name="contact_us">Kontakt os</string>
     <string name="continue_as_guest"><u>Vil du prøve appen først? Fortsæt som gæst</u></string>
     <string name="continuegoogle">Fortsæt med Google</string>
-    <string name="coupon">Tjek prisen efter brug af rabatkupon</string>
+    <string name="coupon">Tjek tilgængelighed</string>
     <string name="create_user">For at se dette indhold, venligst log ind eller opret en konto</string>
     <string name="customersupport">Campo Grande: Kundeservice</string>
     <string name="desc">Familievenligt sted</string>
@@ -157,7 +157,7 @@
     <string name="pw_reset">Dit kodeord er nulstillet. Tjek din indbakkel!</string>
     <string name="ratings">Bedømmelser</string>
     <string name="ratingsno">80 bedømmelser</string>
-    <string name="redeem">Indløs</string>
+    <string name="redeem">TJEK</string>
     <string name="register">Registrér</string>
     <string name="registertext">Din registrering var vellykket og du modtager straks en bekræftelsesmail.</string>
     <string name="res_desc1">Familievenligt sted nær Legoland</string>

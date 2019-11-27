@@ -1,6 +1,5 @@
 package com.example.campogrande;
 
-import android.content.ClipData;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -39,13 +38,11 @@ import android.view.Menu;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 
 
@@ -55,7 +52,7 @@ public class Listings extends AppCompatActivity implements NavigationView.OnNavi
     private String PropertyName, Address, Size, Price, Description, CurrentDate, CurrentTime, PropertyRandomKey, DownloadImageUrl;
     private Button AddNewPropertyButton;
     private EditText InputPropertyName,InputAddress,InputSize,InputPrice,InputDescription;
-    private ImageView SelectImage;
+    private ImageButton SelectImage,SelectImage1,SelectImage2;
     private RadioButton RadioWater, RadioElectricity;
     private static final int GalleryPick = 1;
     private Uri ImageUri;
@@ -63,8 +60,8 @@ public class Listings extends AppCompatActivity implements NavigationView.OnNavi
     private DatabaseReference PropertiesRef;
     private FirebaseAuth mAuth;
     private FirebaseUser user;
-    private ArrayList<Uri> uris = new ArrayList();
-    private ArrayList<String> DownloadImageURLs = new ArrayList<String>();
+    private Boolean checked;
+    private Boolean checked1;
 
 
 
@@ -139,6 +136,47 @@ public class Listings extends AppCompatActivity implements NavigationView.OnNavi
             }
         });
 
+        checked = RadioWater.isChecked();
+
+        RadioWater.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                if(checked)
+                {
+                    RadioWater.setChecked(false);
+                    checked = RadioWater.isChecked();
+                }
+
+                else
+                {
+                    RadioWater.setChecked(true);
+                    checked = RadioWater.isChecked();
+                }
+
+
+            }
+        });
+
+        checked1 = RadioElectricity.isChecked();
+        RadioElectricity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(checked1)
+                {
+                    RadioElectricity.setChecked(false);
+                    checked1 = RadioElectricity.isChecked();
+                }
+
+                else
+                {
+                    RadioElectricity.setChecked(true);
+                    checked1 = RadioElectricity.isChecked();
+                }
+
+            }
+        });
         AddNewPropertyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -150,9 +188,8 @@ public class Listings extends AppCompatActivity implements NavigationView.OnNavi
 
     private void OpenGallery() {
         Intent galleryIntent = new Intent();
-        galleryIntent.setType("image/*");
-        galleryIntent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
         galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
+        galleryIntent.setType("image/*");
         startActivityForResult(galleryIntent, GalleryPick);
     }
 
@@ -162,15 +199,8 @@ public class Listings extends AppCompatActivity implements NavigationView.OnNavi
 
         if (requestCode==GalleryPick && resultCode==RESULT_OK && data!=null)
         {
-            ClipData clipData = data.getClipData();
-
-            for (int i = 0 ; i < clipData.getItemCount() ; i++ ){
-                ImageUri = clipData.getItemAt(i).getUri();
-                uris.add(ImageUri);
-            }
-
-            SelectImage.setImageURI(uris.get(0));
-            Toast.makeText(this, uris.size() + " pictures selected!", Toast.LENGTH_SHORT).show();
+            ImageUri = data.getData();
+            SelectImage.setImageURI(ImageUri);
         }
     }
 
@@ -222,57 +252,51 @@ public class Listings extends AppCompatActivity implements NavigationView.OnNavi
 
         PropertyRandomKey = CurrentDate + CurrentTime;
 
-        for(int i = 0; i <= uris.size(); i++)
-        {
-            final StorageReference filePath = PropertyImageRef.child(uris.get(i).getLastPathSegment() + PropertyRandomKey + ".jpg");
+        final StorageReference filePath = PropertyImageRef.child(ImageUri.getLastPathSegment() + PropertyRandomKey + ".jpg");
 
-            final UploadTask uploadTask = filePath.putFile(uris.get(i));
+        final UploadTask uploadTask = filePath.putFile(ImageUri);
 
-            uploadTask.addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    String message = e.toString();
-                    Toast.makeText(Listings.this, "Error: " + message, Toast.LENGTH_SHORT).show();
-                }
-            }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                @Override
-                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    Toast.makeText(Listings.this, "Image uploaded successfully... ", Toast.LENGTH_SHORT).show();
+        uploadTask.addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                String message = e.toString();
+                Toast.makeText(Listings.this, "Error: " + message, Toast.LENGTH_SHORT).show();
+            }
+        }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                Toast.makeText(Listings.this, "Image uploaded successfully... ", Toast.LENGTH_SHORT).show();
 
-                    Task<Uri> UrlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
-                        @Override
-                        public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
-                            if (!task.isSuccessful())
-                            {
-                                throw task.getException();
-                            }
-
-                            DownloadImageUrl = filePath.getDownloadUrl().toString();
-                            return filePath.getDownloadUrl();
+                Task<Uri> UrlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
+                    @Override
+                    public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+                        if (!task.isSuccessful())
+                        {
+                            throw task.getException();
                         }
-                    }).addOnCompleteListener(new OnCompleteListener<Uri>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Uri> task) {
-                            if (task.isSuccessful())
-                            {
-                                DownloadImageUrl = task.getResult().toString();
-                                DownloadImageURLs.add(DownloadImageUrl);
-                                Toast.makeText(Listings.this, getString(R.string.img_result), Toast.LENGTH_SHORT).show();
 
+                        DownloadImageUrl = filePath.getDownloadUrl().toString();
+                        return filePath.getDownloadUrl();
+                    }
+                }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Uri> task) {
+                        if (task.isSuccessful())
+                        {
+                            DownloadImageUrl = task.getResult().toString();
+                            Toast.makeText(Listings.this, getString(R.string.img_result), Toast.LENGTH_SHORT).show();
 
-                            }
+                            SavePropertyInfoToDatabase();
                         }
-                    });
-                }
-            });
-            SavePropertyInfoToDatabase();
-        }
-
+                    }
+                });
+            }
+        });
     }
 
     private void SavePropertyInfoToDatabase() {
         String PropertyId = PropertiesRef.push().getKey();
-        CampingProperties campingProperties = new CampingProperties(PropertyId, CurrentDate, CurrentTime, PropertyName, Address, Size, Price, Description, DownloadImageURLs);
+        CampingProperties campingProperties = new CampingProperties(PropertyId, CurrentDate, CurrentTime, PropertyName, Address, Size, Price, Description, DownloadImageUrl);
         PropertiesRef.child(PropertyId).setValue(campingProperties);
         SelectImage.setImageURI(Uri.parse(""));
         InputPropertyName.setText("");
@@ -280,6 +304,8 @@ public class Listings extends AppCompatActivity implements NavigationView.OnNavi
         InputSize.setText("");
         InputPrice.setText("");
         InputDescription.setText("");
+        RadioWater.setChecked(false);
+        RadioElectricity.setChecked(false);
 
         /*HashMap<String, Object> propertyMap = new HashMap<>();
         propertyMap.put("pid", PropertyRandomKey.toString());
@@ -306,7 +332,7 @@ public class Listings extends AppCompatActivity implements NavigationView.OnNavi
 }
                     }
                             });*/
-                            }
+    }
 
 
 
@@ -415,8 +441,3 @@ public class Listings extends AppCompatActivity implements NavigationView.OnNavi
 
 
 }
-
-
-
-
-

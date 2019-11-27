@@ -46,7 +46,7 @@
     <string name="contact_us">Kontaktieren Sie uns</string>
     <string name="continue_as_guest"><u>Wollen Sie zuerst erkunden? Als Gast fortsetzen</u></string>
     <string name="continuegoogle">Mit Google fortsetzen</string>
-    <string name="coupon">Preis nach Einlösung des Gutscheins überprüfen</string>
+    <string name="coupon">Verfügbarkeit prüfen</string>
     <string name="create_user">Um diesen Inhalt zu sehen, bitte einloggen oder Konto erstellen</string>
     <string name="customersupport">Campo Grande: Kundenservice</string>
     <string name="desc">Familienfreundlicher Ort</string>
@@ -155,7 +155,7 @@
     <string name="pw_reset">Ihr Kennwort wurde zurückgesetzt. Kontrollieren Sie ihr Email.</string>
     <string name="ratings">Bewertungen</string>
     <string name="ratingsno">80 Bewertungen</string>
-    <string name="redeem">Einlösen</string>
+    <string name="redeem">PRÜFEN</string>
     <string name="register">Registrieren</string>
     <string name="registertext">Sie wurden erfolgreich registriert und werden in Kürze ein Email erhalten.</string>
     <string name="res_desc1">Familienfreundlicher Platz in der Nähe von Legoland</string>

@@ -1,7 +1,5 @@
 package com.example.campogrande;
 
-import java.util.ArrayList;
-
 public class CampingProperties {
     private String propRandomKey;
     private String currentDate;
@@ -11,7 +9,7 @@ public class CampingProperties {
     private String size;
     private String price;
     private String description;
-    private ArrayList<String> imageUrl;
+    private String imageUrl;
 
     // private String id;
 
@@ -19,7 +17,7 @@ public class CampingProperties {
 
     }
 
-    public CampingProperties(String propRandomKey, String currentDate, String currentTime, String propertyName, String address, String size, String price, String description, ArrayList<String> imageUrl) {
+    public CampingProperties(String propRandomKey, String currentDate, String currentTime, String propertyName, String address, String size, String price, String description, String imageUrl) {
         this.propRandomKey = propRandomKey;
         this.currentDate = currentDate;
         this.currentTime = currentTime;
@@ -95,12 +93,11 @@ public class CampingProperties {
         this.description = description;
     }
 
-    public ArrayList<String> getImageUrl() {
+    public String getImageUrl() {
         return imageUrl;
     }
 
-    public void setImageUrl(ArrayList<String> imageUrl) {
+    public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
 }
-

@@ -19,8 +19,7 @@
         android:tint="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_card_giftcard_black_24dp"
-        android:contentDescription="@string/redeem"/>
+        app:srcCompat="@drawable/ic_card_giftcard_black_24dp"/>
 
     <TextView
         android:id="@+id/reward_title"
@@ -43,7 +42,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:text="@string/latin"
+        android:text="@string/latinmedium"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

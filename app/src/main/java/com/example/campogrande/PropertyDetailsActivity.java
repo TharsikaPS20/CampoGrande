@@ -4,10 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -29,6 +31,7 @@ public class PropertyDetailsActivity extends AppCompatActivity {
     private ViewPager propertyImagesViewPager;
     private TabLayout viewpagerIndicator;
 
+    private Button checkButton;
     private ViewPager propertyDetailsViewpager;
     private TabLayout propertyDetailsTablayout;
     private TextView propertyTitle;
@@ -51,6 +54,7 @@ public class PropertyDetailsActivity extends AppCompatActivity {
         propertyDetailsTablayout = findViewById(R.id.property_details_tablayout);
         propertyTitle = findViewById(R.id.property_title);
         propertyPrice = findViewById(R.id.property_price_detailview);
+        checkButton = findViewById(R.id.check_btn);
 
         getPropertyDetails(propertyID);
 
@@ -61,6 +65,13 @@ public class PropertyDetailsActivity extends AppCompatActivity {
         propertyImages.add(R.drawable.caravanground3);
         propertyImages.add(R.drawable.caravanground4);*/
 
+        checkButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(PropertyDetailsActivity.this, Availability.class);
+                startActivity(intent1);
+            }
+        });
 
 
         propertyDetailsViewpager.setAdapter(new PropertyDetailsAdapter(getSupportFragmentManager(), propertyDetailsTablayout.getTabCount()));

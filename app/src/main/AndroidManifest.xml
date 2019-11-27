@@ -18,6 +18,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexWarning">
+        <activity android:name=".Availability"></activity>
         <activity
             android:name=".AboutUs"
             android:parentActivityName=".About" />
@@ -77,8 +78,7 @@
         <activity
             android:name=".Listings"
             android:label="@string/add_new"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".Host"
             android:label="@string/host"
@@ -127,7 +127,6 @@
             android:label="@string/editprofile"
             android:parentActivityName=".UserProfile"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".LoginActivity"
             android:label="@string/signin"
