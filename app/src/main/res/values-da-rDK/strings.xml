@@ -75,7 +75,7 @@
     <string name="facilityvalue">Facilitetsværdi</string>
     <string name="faq">Ofte stillede spørgsmål</string>
     <string name="favourites">Mine favoritter</string>
-    <string name="fblogin">Campo Grande - Log ind med Facebook</string>
+    <string name="fblogin">Log ind med Facebook</string>
     <string name="filter">Filtrér</string>
     <string name="firebase_status_fmt">Firebasebruger %s</string>
     <string name="firebaseuserid">Firebase brugerid: 123456789abc</string>
@@ -84,7 +84,7 @@
     <string name="futurereservations">Fremtidige reservationer</string>
     <string name="getstarted">Kom i gang!</string>
     <string name="google_status_fmt">Google bruger: %s</string>
-    <string name="googlelogin">Campo Grande - Log ind med Google</string>
+    <string name="googlelogin">Log ind med Google</string>
     <string name="hint_email">Email</string>
     <string name="hint_password">Kodeord</string>
     <string name="horsens">Idyllisk sted i naturen</string>
@@ -209,4 +209,14 @@
     <string name="yourcontent_tac"><u>Dit indhold</u></string>
     <string name="yourprivacy"><u>Dit privatliv</u></string>
     <string name="yourratings">Din bedømmelse</string>
+    <string name="price1">70 DKK x 5 nætter</string>
+    <string name="pricepernight1">80DKK/nat</string>
+    <string name="arrivaldate">Ankomstdato</string>
+    <string name="arrivaltime">Ankomsttid</string>
+    <string name="departuredate">Afgangsdato</string>
+    <string name="orderdetails">Detaljer:</string>
+    <string name="paymentmethod">Betalingsmetode:</string>
+    <string name="hostgreeting">Hils på din vært</string>
+    <string name="servicefee">Servicegebyr:</string>
+    <string name="sum">Total pris (DKK)</string>
 </resources>

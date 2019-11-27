@@ -28,7 +28,7 @@ public class HostBookings extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_one);
+        setContentView(R.layout.activity_host_bookings);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Date today = new Date();

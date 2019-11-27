@@ -36,6 +36,7 @@ public class GoogleSignInActivity extends BaseActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_google_sign_in);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mStatusTextView = findViewById(R.id.status);
         mDetailTextView = findViewById(R.id.detail);

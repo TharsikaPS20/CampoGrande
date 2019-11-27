@@ -101,8 +101,8 @@
     <string name="tac">Terms and Conditions</string>
     <string name="res_prev">Previous reservations</string>
     <string name="hostrev">Host Reviews</string>
-    <string name="fblogin">Campo Grande - Facebook login</string>
-    <string name="googlelogin">Campo Grande - Google login</string>
+    <string name="fblogin">Sign in with Facebook</string>
+    <string name="googlelogin">Sign in with Google</string>
     <string name="signin">Sign in</string>
     <string name="register">Register</string>
     <string name="campogrande">Campo Grande</string>
@@ -250,5 +250,21 @@
     <string name="reward">Rewards</string>
     <string name="horsens_city" translatable="false">Horsens</string>
     <string name="pricepernight">70 DKK/night</string>
+    <string name="arrivaldate">Arrival date</string>
+    <string name="departuredate">Departure date</string>
+    <string name="arrivaltime">Arrival time</string>
+    <string name="hostgreeting">Say hi to your host</string>
+    <string name="pricepernight1">80DKK/night</string>
+    <string name="book">BOOK</string>
+    <string name="orderdetails">Order details:</string>
+    <string name="price1">70 DKK x 5 nights</string>
+    <string name="totalprice1" translatable="false">350 DKK</string>
+    <string name="pricediscount">10% discount:</string>
+    <string name="totaldiscount" translatable="false">-35 DKK</string>
+    <string name="servicefee">Service fee:</string>
+    <string name="servicefeetotal" translatable="false">70 DKK</string>
+    <string name="sum">Total amount(DKK)</string>
+    <string name="sumnumber" translatable="false">385 DKK</string>
+    <string name="paymentmethod">Payment method:</string>
 
 </resources>

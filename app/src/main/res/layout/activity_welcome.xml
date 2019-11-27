@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Welcome">
+    tools:context=".Welcome"
+    android:background="@drawable/naturebg2">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -13,7 +14,8 @@
         app:layout_constraintBottom_toTopOf="@+id/cglogo"
         android:text="@string/welcome"
         android:layout_marginBottom="50dp"
-        android:textStyle="italic"
+        android:textStyle="italic|bold"
+        android:textColor="@color/md_black_1000"
         android:textSize="20sp"/>
 
     <ImageView
@@ -35,6 +37,7 @@
         app:layout_constraintTop_toBottomOf="@id/cglogo"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:background="@drawable/buttons" />
+        android:background="@drawable/buttons"
+        android:textColor="@color/md_white_1000"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

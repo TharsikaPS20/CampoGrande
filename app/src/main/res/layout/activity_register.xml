@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RegisterActivity"
-    android:background="@drawable/backgroundgreen">
+    android:background="@color/md_green_100">
 
     <ImageView
         android:id="@+id/register_appLogo"
@@ -12,7 +12,7 @@
         android:layout_height="150dp"
         android:src="@drawable/campogrande_logo"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="20dp"
         android:contentDescription="@string/campogrande_logo">
     </ImageView>
 
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/register_appLogo"
         android:background="@drawable/inputs"
-        android:padding="16dp"
+        android:padding="10dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginTop="10dp"
@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/register_email_input"
         android:background="@drawable/inputs"
-        android:padding="16dp"
+        android:padding="10dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginTop="6dp"
@@ -61,7 +61,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:background="@drawable/buttons"
-        android:padding="16dp"
+        android:padding="10dp"
         android:textAllCaps="false"
         android:textSize="15sp"
         android:text="@string/register"
@@ -78,29 +78,33 @@
         android:layout_marginRight="15dp"
         android:clickable="true"
         android:focusable="true"
-        android:padding="16dp"
+        android:padding="5dp"
         android:textAllCaps="false"
         android:textSize="12sp"
-        android:textAlignment="center"
         android:textColor="@color/md_black_1000"/>
     <TextView
         android:id="@+id/already_user_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/agreetoterms"
-        android:layout_marginTop="5dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:clickable="true"
         android:focusable="true"
         android:textStyle="bold"
-        android:padding="16dp"
+        android:padding="5dp"
         android:textAllCaps="false"
         android:textSize="15sp"
         android:textAlignment="center"
         android:text="@string/alreadyuser"
         android:textColor="@color/colorPrimaryDark"
         />
+
+    <ImageView
+        android:layout_below="@id/already_user_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/caravanbg5"/>
 
 
     <ProgressBar

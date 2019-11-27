@@ -29,7 +29,6 @@ public class FacebookLoginActivity extends BaseActivity implements
         View.OnClickListener {
 
     private static final String TAG = "FacebookLogin";
-
     private TextView mStatusTextView;
     private TextView mDetailTextView;
     private FirebaseAuth mAuth;
@@ -39,6 +38,7 @@ public class FacebookLoginActivity extends BaseActivity implements
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_facebook_login);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
        mStatusTextView = findViewById(R.id.status);
         mDetailTextView = findViewById(R.id.detail);

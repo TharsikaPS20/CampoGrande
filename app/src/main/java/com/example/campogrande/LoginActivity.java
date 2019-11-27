@@ -30,7 +30,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
     private Button signInBtn, signOutBtn;
     private TextView forgot_password;
     private TextView mStatusTextView;
-    private TextView mDetailTextView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +46,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
         forgot_password=findViewById(R.id.forgotpassword);
         forgot_password.setOnClickListener(this);
         mStatusTextView = findViewById(R.id.status);
-        mDetailTextView = findViewById(R.id.detail);
         mAuth = FirebaseAuth.getInstance();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         }
 
@@ -133,7 +133,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
         if (user != null) {
             mStatusTextView.setText(getString(R.string.emailpassword_status_fmt,
                     user.getEmail(), user.isEmailVerified()));
-            mDetailTextView.setText(getString(R.string.firebase_status_fmt, user.getUid()));
+            //mDetailTextView.setText(getString(R.string.firebase_status_fmt, user.getUid()));
 
             findViewById(R.id.login_email_input).setVisibility(View.GONE);
             findViewById(R.id.login_password_input).setVisibility(View.GONE);
@@ -141,7 +141,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
 
         } else {
             mStatusTextView.setText(R.string.signed_out);
-            mDetailTextView.setText(null);
+            //mDetailTextView.setText(null);
 
             findViewById(R.id.login_email_input).setVisibility(View.VISIBLE);
             findViewById(R.id.login_password_input).setVisibility(View.VISIBLE);

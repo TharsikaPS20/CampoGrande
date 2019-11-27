@@ -74,7 +74,7 @@
     <string name="facilityvalue">Ausstattungswert</string>
     <string name="faq">Häufig gestellte Fragen</string>
     <string name="favourites">Meine Favoriten</string>
-    <string name="fblogin">Campo Grande - Mit Facebook einloggen</string>
+    <string name="fblogin">Mit Facebook einloggen</string>
     <string name="filter">Filtrieren</string>
     <string name="firebase_status_fmt">Firebasebenutzer: %s</string>
     <string name="firebaseuserid">Firebase Benutzerid : 123456789abc</string>
@@ -83,7 +83,7 @@
     <string name="futurereservations">Zukünftige Reservationen</string>
     <string name="getstarted">Loslegen!</string>
     <string name="google_status_fmt">Googlebenutzer: %s</string>
-    <string name="googlelogin">Campo Grande - Mit Google einloggen</string>
+    <string name="googlelogin">Mit Google einloggen</string>
     <string name="hint_email">Email</string>
     <string name="hint_password">Kennwort</string>
     <string name="horsens">Idillischer Campingplatz in der Natur</string>
