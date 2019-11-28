@@ -55,7 +55,7 @@
     <string name="desc3">Kom ned i tempo og nyd naturen</string>
     <string name="desc_listings">Venligst tilføj en beskrivelse</string>
     <string name="descfav1">Familievenligt sted</string>
-    <string name="descfav2">Idyllisk, fredfyldt campingsted</string>
+    <string name="descfav2">Idyllisk, fredfyldt sted</string>
     <string name="descfav3">Campér nær Legoland</string>
     <string name="description">Beskrivelse...</string>
     <string name="description_prop">Beskrivelse</string>
@@ -213,11 +213,26 @@
     <string name="pricepernight1">80DKK/nat</string>
     <string name="arrivaldate">Ankomstdato</string>
     <string name="arrivaltime">Ankomsttid</string>
-    <string name="departuredate">Afgangsdato</string>
-    <string name="orderdetails">Detaljer:</string>
+    <string name="departuredate">Afrejsedato</string>
+    <string name="orderdetails">Bestillingsdetaljer:</string>
     <string name="paymentmethod">Betalingsmetode:</string>
     <string name="hostgreeting">Hils på din vært</string>
     <string name="servicefee">Servicegebyr:</string>
     <string name="sum">Total pris (DKK)</string>
     <string name="book">Reservér</string>
+    <string name="creditcardno">Kortnummer:</string>
+    <string name="creditcardno1">Kortnummer</string>
+    <string name="cvv">CVV</string>
+    <string name="cvvcode">CVV kode:</string>
+    <string name="error_dep">Din afrejsedato skal være senere end din ankomstdato</string>
+    <string name="error_fillarr">Venligst angiv din ankomstdato</string>
+    <string name="error_filldep">Venligst angiv din afrejsedato</string>
+    <string name="error_invalid_cardno">Venligst indtast et gyldigt kortnummer</string>
+    <string name="error_invalid_cvc">Venligst indtast en gyldig CVV kode</string>
+    <string name="error_invalid_expdate">Venligst indtast en gyldig udløbsdato</string>
+    <string name="error_msg">Sig hej til værten!</string>
+    <string name="error_time">Venligst angiv din forventede ankomsttid</string>
+    <string name="expirydate">Udløbsdato:</string>
+    <string name="pricediscount">10% rabat:</string>
+    <string name="savedetails">Gem kortoplysninger</string>
 </resources>

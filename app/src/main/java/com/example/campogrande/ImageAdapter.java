@@ -11,7 +11,7 @@ import androidx.viewpager.widget.PagerAdapter;
 public class ImageAdapter extends PagerAdapter {
 
     private Context mContext;
-    private int[] mImageIds = new int[] {R.drawable.caravanground1, R.drawable.caravanground2, R.drawable.caravanground3};
+    private int[] mImageIds = new int[] {R.drawable.campspot1, R.drawable.campspot2, R.drawable.campspot3};
 
     ImageAdapter(Context context){
 

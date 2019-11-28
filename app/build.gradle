@@ -45,14 +45,13 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'com.github.rey5137:material:1.2.5'
     implementation 'androidx.cardview:cardview:1.0.0'
-    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'com.facebook.android:facebook-android-sdk:5.9.0'
     implementation 'de.hdodenhof:circleimageview:3.0.1'
     implementation 'com.github.bumptech.glide:glide:4.10.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.10.0'
     implementation 'io.paperdb:paperdb:2.6'
-    implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.+'
     implementation 'com.rengwuxian.materialedittext:library:2.1.4'
     implementation "com.mikepenz:materialdrawer:6.1.2"
     implementation 'com.firebaseui:firebase-ui-database:6.0.2'
@@ -60,5 +59,6 @@ dependencies {
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'com.squareup:android-times-square:1.6.5@aar'
     implementation 'com.ms-square:expandableTextView:0.1.4'
+
 }
 apply plugin: 'com.google.gms.google-services'

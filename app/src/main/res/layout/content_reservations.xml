@@ -39,7 +39,7 @@
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/messageuser5"
+                    android:src="@drawable/messageuser4"
                     android:id="@+id/hostpic"
                     android:textSize="10sp"
                     android:layout_alignEnd="@id/res"
@@ -66,7 +66,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="20dp"
                     android:textSize="14sp"
-                    android:text="@string/res_desc1"
+                    android:text="@string/horsens"
                     android:textStyle="bold"/>
                 <TextView
                     android:layout_width="match_parent"
@@ -79,7 +79,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="12sp"
-                    android:text="@string/host_res1"
+                    android:text="@string/host_res3"
                     android:drawableStart="@drawable/ic_host"
                     android:gravity="center_vertical"/>
                 <TextView
@@ -94,8 +94,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="12sp"
-                    android:text="@string/confirmed"
-                    android:drawableStart="@drawable/ic_confirmed"
+                    android:text="@string/awaiting"
+                    android:drawableStart="@drawable/ic_awaiting"
+                    android:drawableTint="@color/md_red_400"
                     android:gravity="center_vertical"/>
 
 
@@ -186,8 +187,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="12sp"
                     android:text="@string/awaiting"
-                    android:drawableStart="@drawable/ic_awaiting"
-                    android:drawableTint="@color/md_red_400"
+                    android:drawableStart="@drawable/ic_confirmed"
                     android:gravity="center_vertical"/>
 
 
@@ -220,7 +220,7 @@
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/messageuser4"
+                    android:src="@drawable/messageuser5"
                     android:id="@+id/hostpic2"
                     android:textSize="10sp"
                     android:layout_alignEnd="@id/res2"
@@ -260,7 +260,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="12sp"
-                    android:text="@string/host_res3"
+                    android:text="@string/host_res1"
                     android:drawableStart="@drawable/ic_host"
                     android:gravity="center_vertical"/>
                 <TextView

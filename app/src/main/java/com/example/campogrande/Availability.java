@@ -33,8 +33,7 @@ public class Availability extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_availability);
-
-        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Date today = new Date();
         Date date2 = new Date(11-01-2020);

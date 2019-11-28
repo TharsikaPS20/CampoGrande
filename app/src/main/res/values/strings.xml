@@ -266,5 +266,48 @@
     <string name="sum">Total amount(DKK)</string>
     <string name="sumnumber" translatable="false">385 DKK</string>
     <string name="paymentmethod">Payment method:</string>
+    <string name="creditcardno">Credit card number:</string>
+    <string name="creditcardno1">Credit card number</string>
+    <string name="cvvcode">CVV code:</string>
+    <string name="cvv">CVV</string>
+    <string name="expirydate">Expiry date:</string>
+    <string name="error_invalid_cardno">Please enter a valid card number</string>
+    <string name="error_invalid_expdate">Please enter a valid expiry date</string>
+    <string name="error_invalid_cvc">Please enter a valid CVV code</string>
+    <string name="savedetails">Save card details</string>
+    <string name="error_dep">Your departure date must be after your arrival date</string>
+    <string name="error_fillarr">Please enter an arrival date!</string>
+    <string name="error_filldep">Please enter a departure date!</string>
+    <string name="error_time">Please enter your expected arrival time</string>
+    <string name="error_msg">Please say hi to your host!</string>
+
+    <string-array name="months">
+        <item>MM</item>
+        <item>01</item>
+        <item>02</item>
+        <item>03</item>
+        <item>04</item>
+        <item>05</item>
+        <item>06</item>
+        <item>07</item>
+        <item>08</item>
+        <item>09</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </string-array>
+
+    <string-array name="years">
+        <item>YYYY</item>
+        <item>2019</item>
+        <item>2020</item>
+        <item>2021</item>
+        <item>2021</item>
+        <item>2022</item>
+        <item>2023</item>
+        <item>2024</item>
+        <item>2025</item>
+        <item>2026</item>
+    </string-array>
 
 </resources>

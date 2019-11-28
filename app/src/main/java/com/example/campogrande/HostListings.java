@@ -33,7 +33,7 @@ public class HostListings extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_two);
+        setContentView(R.layout.activity_hostlistings);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             PropertyRef = FirebaseDatabase.getInstance().getReference().child("Properties");
             recyclerView = findViewById(R.id.recycler_menu);
