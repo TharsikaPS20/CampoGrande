@@ -3,7 +3,6 @@ package com.example.campogrande;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.example.campogrande.Interface.ItemClickListener;
 import com.example.campogrande.Model.Properties;
 import com.example.campogrande.ViewHolder.PropertyViewHolder;
 import com.facebook.login.LoginManager;

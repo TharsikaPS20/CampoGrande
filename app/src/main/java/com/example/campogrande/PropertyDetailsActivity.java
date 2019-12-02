@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import com.example.campogrande.Adapter.PropertyDetailsAdapter;
 import com.example.campogrande.Adapter.PropertyImagesAdapter;
+import com.example.campogrande.Model.CampingProperties;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.database.DataSnapshot;
@@ -27,8 +28,6 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import io.paperdb.Book;
 
 import static android.view.View.*;
 
