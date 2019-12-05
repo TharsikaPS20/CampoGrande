@@ -3,6 +3,8 @@ package com.example.campogrande;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+
+import com.example.campogrande.Model.CampingProperties;
 import com.facebook.login.LoginManager;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -38,7 +40,6 @@ import android.view.Menu;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.Toast;
 

@@ -1,4 +1,4 @@
-package com.example.campogrande;
+package com.example.campogrande.Adapter;
 
 import android.content.Context;
 import android.view.View;
@@ -8,12 +8,14 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
+import com.example.campogrande.R;
+
 public class ImageAdapter extends PagerAdapter {
 
     private Context mContext;
     private int[] mImageIds = new int[] {R.drawable.campspot1, R.drawable.campspot2, R.drawable.campspot3};
 
-    ImageAdapter(Context context){
+    public ImageAdapter(Context context){
 
         mContext =context;
     }

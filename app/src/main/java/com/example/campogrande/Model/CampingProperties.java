@@ -1,4 +1,4 @@
-package com.example.campogrande;
+package com.example.campogrande.Model;
 
 public class CampingProperties {
     private String propRandomKey;

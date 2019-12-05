@@ -30,7 +30,7 @@
         <activity
             android:name=".TermsAndConditionsStart"
             android:parentActivityName=".RegisterActivity" />
-        <activity android:name=".AdapterExp" />
+        <activity android:name=".Adapter.AdapterExp" />
         <activity
             android:name=".FrequentlyAskedQuestions"
             android:label="@string/faq"

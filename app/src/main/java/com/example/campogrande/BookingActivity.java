@@ -22,6 +22,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
+
+import com.example.campogrande.Adapter.ImageAdapter;
+
 import java.util.Calendar;
 
 public class BookingActivity extends AppCompatActivity implements View.OnClickListener {
