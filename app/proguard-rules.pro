@@ -29,3 +29,7 @@
 
 -keep class androidx.appcompat.widget.** { *; }
 
+-keepclassmembers class android.support.design.internal.BottomNavigationMenuView {
+    boolean mShiftingMode;
+}
+

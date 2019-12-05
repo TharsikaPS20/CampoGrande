@@ -1,20 +1,13 @@
 package com.example.campogrande;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
-
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import android.widget.Toolbar;
 
 import com.squareup.timessquare.CalendarCellDecorator;
 import com.squareup.timessquare.CalendarPickerView;
@@ -34,6 +27,7 @@ public class Availability extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_availability);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         Date today = new Date();
         Date date2 = new Date(11-01-2020);
@@ -113,6 +107,15 @@ public class Availability extends AppCompatActivity {
         cal.set(Calendar.DAY_OF_MONTH, 1);
 
         return cal.getTime();
+    }
+
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() ==android.R.id.home){
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 

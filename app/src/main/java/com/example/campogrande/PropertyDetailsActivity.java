@@ -3,11 +3,14 @@ package com.example.campogrande;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.content.res.ColorStateList;
+import android.content.res.Resources;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -42,7 +45,7 @@ public class PropertyDetailsActivity extends AppCompatActivity {
     private TextView propertyTitle;
     private TextView propertyPrice;
 
-    private String propertyID = "";
+    private String propertyID= "";
     private LinearLayout rateNowLayout;
     private List<String> propertyImages = new ArrayList<>();
 
@@ -63,7 +66,6 @@ public class PropertyDetailsActivity extends AppCompatActivity {
         propertyTitle = findViewById(R.id.property_title);
         propertyPrice = findViewById(R.id.property_price_detailview);
         checkButton = findViewById(R.id.check_btn);
-
         getPropertyDetails(propertyID);
 
         //propertyImages.add(getResources().getDrawable(R.drawable.caravanground1).toString());
@@ -78,6 +80,7 @@ public class PropertyDetailsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent1 = new Intent(PropertyDetailsActivity.this, Availability.class);
                 startActivity(intent1);
+                return;
             }
         });
 
@@ -157,8 +160,9 @@ public class PropertyDetailsActivity extends AppCompatActivity {
                     propertyPrice.setText(properties.getPrice() + "DKK");
                     propertyImages.add(properties.getImageUrl());
                     propertyImages.add("https://d5r9gdi4mky31.cloudfront.net/imagevault/publishedmedia/0a2gfy9bddu89kw981bb/18747018_img_1551.jpg");
-                    propertyImages.add("https://www.campingandcaravanningclub.co.uk/GetAsset.aspx?id=fAAxADQANgA0ADIAfAB8AEYAYQBsAHMAZQB8AHwAMAB8AA2");
-                    propertyImages.add("https://www.campingandcaravanningclub.co.uk/GetAsset.aspx?id=fAAxADQANgAzADUAfAB8AEYAYQBsAHMAZQB8AHwAMAB8AA2");
+                    propertyImages.add("https://images.startsat60.com/wp-content/uploads/20160413145010/130416_caravan_holiday-720x405.jpg");
+                    propertyImages.add("https://www.natur-on-line.dk/wp-content/uploads/2019/11/green-1072828_1920-720x405.jpg");
+                    propertyImages.add("https://havesektionen.dk/wp-content/uploads/2019/11/orginal-1-1140x641.jpg");
 
                     PropertyImagesAdapter propertyImagesAdapter = new PropertyImagesAdapter(propertyImages);
                     propertyImagesViewPager.setAdapter(propertyImagesAdapter);

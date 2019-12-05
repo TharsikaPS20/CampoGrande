@@ -81,7 +81,7 @@ public class Discover extends AppCompatActivity implements NavigationView.OnNavi
         navigationView.bringToFront();
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavView_Bar3);
-        BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
+//        BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
         Menu menu = bottomNavigationView.getMenu();
         MenuItem menuItem = menu.getItem(0);
         menuItem.setChecked(true);

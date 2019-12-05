@@ -18,10 +18,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexWarning">
-        <activity android:name=".Availability"
-            android:parentActivityName=".PropertyDetailsActivity"/>
+
         <activity android:name=".AboutUs"
             android:parentActivityName=".About" />
+        <activity android:name=".Availability"
+            android:label="Availability"
+            android:parentActivityName=".PropertyDetailsActivity"/>
         <activity android:name=".TermsAndConditions"
             android:label="@string/tac"
             android:parentActivityName=".About" />
@@ -30,7 +32,7 @@
         <activity
             android:name=".TermsAndConditionsStart"
             android:parentActivityName=".RegisterActivity" />
-        <activity android:name=".Adapter.AdapterExp" />
+        <activity android:name="$Adapter.AdapterExp" />
         <activity
             android:name=".FrequentlyAskedQuestions"
             android:label="@string/faq"
@@ -105,15 +107,12 @@
             android:label="@string/menu_discover"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Welcome" />
-        <activity
-            android:name="com.facebook.FacebookActivity"
+        <activity android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation" />
-        <activity
-            android:name="com.facebook.CustomTabActivity"
+        <activity android:name="com.facebook.CustomTabActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
-
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
@@ -140,7 +139,6 @@
             android:label="@string/campogrande">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -148,7 +146,7 @@
         <activity
             android:name=".PropertyDetailsActivity"
             android:label="@string/property"
-            android:parentActivityName=".Discover" />
+            android:parentActivityName=".Discover"/>
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
@@ -156,7 +154,8 @@
             tools:replace="android:value" />
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
-            android:value=".UserProfile" />
+            android:value=".UserProfile"/>
+
     </application>
 
 </manifest>
