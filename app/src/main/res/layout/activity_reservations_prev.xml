@@ -119,7 +119,7 @@
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/messageuser"
+                    android:src="@drawable/messageuser2"
                     android:id="@+id/hostpic1"
                     android:textSize="10sp"
                     android:layout_alignEnd="@id/res1"
@@ -161,7 +161,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="12sp"
-                    android:text="@string/prevrevhost1"
+                    android:text="@string/host_res2"
                     android:drawableStart="@drawable/ic_host"
                     android:gravity="center_vertical"/>
                 <TextView
@@ -169,7 +169,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="12sp"
                     android:drawableStart="@drawable/ic_listings"
-                    android:text="@string/loc_res2"
+                    android:text="@string/loc_res4"
                     android:textStyle="italic"
                     android:gravity="center_vertical"/>
 
@@ -193,7 +193,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/caravanground7"
+                    android:src="@drawable/campspot3"
                     android:id="@+id/res2"
                     android:clickable="true"
                     android:focusable="true"/>

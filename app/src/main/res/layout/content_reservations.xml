@@ -186,7 +186,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="12sp"
-                    android:text="@string/awaiting"
+                    android:text="@string/confirmed"
                     android:drawableStart="@drawable/ic_confirmed"
                     android:gravity="center_vertical"/>
 

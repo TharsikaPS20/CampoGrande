@@ -20,11 +20,9 @@
         tools:ignore="GoogleAppIndexWarning">
         <activity android:name=".Availability"
             android:parentActivityName=".PropertyDetailsActivity"/>
-        <activity
-            android:name=".AboutUs"
+        <activity android:name=".AboutUs"
             android:parentActivityName=".About" />
-        <activity
-            android:name=".TermsAndConditions"
+        <activity android:name=".TermsAndConditions"
             android:label="@string/tac"
             android:parentActivityName=".About" />
         <activity android:name=".BookingActivity"
@@ -131,10 +129,12 @@
         <activity
             android:name=".LoginActivity"
             android:label="@string/signin"
+            android:parentActivityName=".MainActivity"
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".RegisterActivity"
-            android:label="@string/register" />
+            android:label="@string/register"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".MainActivity"
             android:label="@string/campogrande">
