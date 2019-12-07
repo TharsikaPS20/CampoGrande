@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 public class Contact extends AppCompatActivity implements View.OnClickListener {
     TextView email;
-    ImageView fb;
+    ImageView facebook;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,8 +23,8 @@ public class Contact extends AppCompatActivity implements View.OnClickListener {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         email = findViewById(R.id.email_contact);
         email.setOnClickListener(this);
-        fb = findViewById(R.id.facebook_contact);
-        fb.setOnClickListener(this);
+        facebook = findViewById(R.id.facebook_contact);
+        facebook.setOnClickListener(this);
 
     }
 
