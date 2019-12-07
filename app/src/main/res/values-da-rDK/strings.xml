@@ -22,7 +22,7 @@
     <string name="alreadyreg">Denne e-mail er allerede registreret</string>
     <string name="alreadyuser"><u>Har du allerede en brugerkonto? Log ind her!</u></string>
     <string name="animallover">Dyreelsker</string>
-    <string name="assens">Sted at campere i Assens</string>
+    <string name="assens">Campingsted i Assens</string>
     <string name="authenticated">Godkendt</string>
     <string name="authfailed">Godkendelse gik galt</string>
     <string name="averagerating">Gennemsnitlig bedømmelse:</string>
@@ -140,7 +140,7 @@
     <string name="prevreshost">Vært: Nikolaj</string>
     <string name="prevrevhost1">Vært: Meryl</string>
     <string name="prevrevhost2">Vært: Pippi</string>
-    <string name="price">Pris...</string>
+    <string name="price">Pris i DKK</string>
     <string name="price_d">Pris</string>
     <string name="price_listings">Venligst tilføj en pris</string>
     <string name="pricepernight">70 DKK/nat</string>
@@ -184,7 +184,7 @@
     <string name="signin">Log ind</string>
     <string name="signinorcreate">Log ind/Opret konto</string>
     <string name="signoutofapp">Log ud/Gå til startside</string>
-    <string name="size">Størrelse...</string>
+    <string name="size">Størrelse i kvadratmeter (m^2)</string>
     <string name="size_d">Størrelse</string>
     <string name="size_listings">Venligst tilføj størrelsen!</string>
     <string name="skagen">Sted at campere i Skagen</string>
@@ -192,7 +192,7 @@
     <string name="story">Vores historie</string>
     <string name="tac">Vilkår og betingelser</string>
     <string name="team">Vores team</string>
-    <string name="terms_tac">Vilkår og betingelser for brug af Campo Grande</string>
+    <string name="terms_tac">Vilkår og betingelser ved brug af Campo Grande</string>
     <string name="totalratings">samlede vurderinger</string>
     <string name="touch_faq">Hvordan kommer jeg i kontakt med min vært?</string>
     <string name="touchcg_faq">Hvordan kommer jeg i kontakt med jer?</string>
@@ -235,4 +235,5 @@
     <string name="expirydate">Udløbsdato:</string>
     <string name="pricediscount">10% rabat:</string>
     <string name="savedetails">Gem kortoplysninger</string>
+    <string name="booking">Booking</string>
 </resources>

@@ -2,8 +2,8 @@
     <string name="app_name">Campo Grande</string>
     <string name="property_name">Property Name...</string>
     <string name="address">Address...</string>
-    <string name="size">Size...</string>
-    <string name="price">Price...</string>
+    <string name="size">Size in square meters (m^2)</string>
+    <string name="price">Price in DKK</string>
     <string name="description">Description...</string>
     <string name="facilities">Facilities:</string>
     <string name="water">Water</string>
@@ -280,6 +280,7 @@
     <string name="error_filldep">Please enter a departure date!</string>
     <string name="error_time">Please enter your expected arrival time</string>
     <string name="error_msg">Please say hi to your host!</string>
+    <string name="booking">Booking</string>
 
     <string-array name="months">
         <item>MM</item>

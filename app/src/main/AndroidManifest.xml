@@ -28,7 +28,8 @@
             android:label="@string/tac"
             android:parentActivityName=".About" />
         <activity android:name=".BookingActivity"
-            android:parentActivityName=".PropertyDetailsActivity"/>
+            android:parentActivityName=".PropertyDetailsActivity"
+            android:label="@string/booking"/>
         <activity
             android:name=".TermsAndConditionsStart"
             android:parentActivityName=".RegisterActivity" />

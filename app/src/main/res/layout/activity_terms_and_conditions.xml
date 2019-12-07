@@ -4,11 +4,11 @@
     android:layout_width="fill_parent"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".TermsAndConditions"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+    android:background="@color/md_green_50">
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-
     android:orientation="vertical"
     android:layout_marginStart="6dp"
     android:layout_marginEnd="6dp"
@@ -17,14 +17,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/terms_tac"
-        android:textSize="25sp"
+        android:textSize="22sp"
         android:textStyle="bold"
         android:gravity="center_horizontal"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"/>
 
     <ImageView
-        android:layout_width="194dp"
-        android:layout_height="80dp"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
         android:layout_gravity="center_horizontal"
         android:src="@drawable/agreement_tac" />
 
@@ -32,7 +33,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:text="@string/intro_tac"
         android:textSize="16sp"
         android:textStyle="bold"/>
